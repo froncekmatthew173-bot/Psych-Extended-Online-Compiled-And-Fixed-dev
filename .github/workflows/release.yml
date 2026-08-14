@@ -1,0 +1,68 @@
+name: Android Build Compiler Psych Online
+
+on: 
+  workflow_dispatch:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+  Build:
+    strategy:
+      fail-fast: false 
+      matrix:
+        include:
+          - name: Android-NORMAL
+            os: ubuntu-latest
+            setupCommand: sh ./setup/unix-alter.sh
+            buildArgs: "android -ONLY_ARM64 -final" 
+            artifactName: androidBuild-Astra
+            artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
+            doCache: "YES"
+
+          - name: Windows-NORMAL
+            os: windows-latest
+            setupCommand: "setup/windows.bat"
+            buildArgs: "windows -D officialBuild -final"
+            artifactName: windowsBuild-x86_64
+            # Changed this to point to the zip package created inside build.yml
+            artifactPath: "PsychOnline-Windows.zip"
+            doCache: "YES"
+
+    uses: ./.github/workflows/build.yml
+    with:
+      name: ${{ matrix.name }}
+      os: ${{ matrix.os }}
+      setupCommand: ${{ matrix.setupCommand }}
+      buildArgs: ${{ matrix.buildArgs }}
+      artifactName: ${{ matrix.artifactName }}
+      artifactPath: ${{ matrix.artifactPath }}
+      doCache: ${{ matrix.doCache }}
+    secrets: inherit
+
+  Release:
+    needs: Build
+    if: ${{ always() && contains(needs.Build.result, 'success') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download All Files
+        uses: actions/download-artifact@v4
+        with:
+          path: ./outputs
+          merge-multiple: true 
+
+      - name: Create Single Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: "v${{ github.run_number }}"
+          name: "Android Build Compiler Psych Online #${{ github.run_number }}"
+          body: |
+            ## 🚀 Automated Build Results
+            - Build Number: ${{ github.run_number }}
+            - Files included below (if successful)
+          files: |
+            ./outputs/*.apk
+            ./outputs/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
