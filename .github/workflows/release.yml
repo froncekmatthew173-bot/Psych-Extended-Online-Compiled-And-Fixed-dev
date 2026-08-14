@@ -1,20 +1,21 @@
 name: Android Build Compiler Psych Online
 
-on: 
+on:
   workflow_dispatch:
   push:
-    branches: [ "dev" ]
+    branches:
+      - "dev"
 
 jobs:
   Build:
     strategy:
-      fail-fast: false 
+      fail-fast: false
       matrix:
         include:
           - name: Android-NORMAL
             os: ubuntu-latest
             setupCommand: sh ./setup/unix-alter.sh
-            buildArgs: "android -ONLY_ARM64 -final" 
+            buildArgs: "android -ONLY_ARM64 -final"
             artifactName: androidBuild-Astra
             artifactPath: "export/release/android/bin/app/build/outputs/apk/release/*.apk"
             doCache: "YES"
@@ -22,9 +23,8 @@ jobs:
           - name: Windows-NORMAL
             os: windows-latest
             setupCommand: "setup/windows.bat"
-            buildArgs: "windows -D officialBuild -final"
+            buildArgs: "windows -DofficialBuild -final"
             artifactName: windowsBuild-x86_64
-            # Changed this to point to the zip package created inside build.yml
             artifactPath: "PsychOnline-Windows.zip"
             doCache: "YES"
 
@@ -45,12 +45,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Download All Files
         uses: actions/download-artifact@v4
         with:
           path: ./outputs
-          merge-multiple: true 
+          merge-multiple: true
 
       - name: Create Single Release
         uses: softprops/action-gh-release@v1
