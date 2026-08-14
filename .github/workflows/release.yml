@@ -8,6 +8,9 @@ on:
 
 jobs:
   Build:
+    permissions:
+      contents: write
+
     strategy:
       fail-fast: false
       matrix:
@@ -41,29 +44,3 @@ jobs:
 
   Release:
     needs: Build
-    if: ${{ always() && contains(needs.Build.result, 'success') }}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - name: Download All Files
-        uses: actions/download-artifact@v4
-        with:
-          path: ./outputs
-          merge-multiple: true
-
-      - name: Create Single Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: "v${{ github.run_number }}"
-          name: "Android Build Compiler Psych Online #${{ github.run_number }}"
-          body: |
-            ## 🚀 Automated Build Results
-            - Build Number: ${{ github.run_number }}
-            - Files included below (if successful)
-          files: |
-            ./outputs/*.apk
-            ./outputs/*.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
