@@ -24,14 +24,20 @@ body:
     validations:
       required: false
 
+  - type: textarea
+    id: version
+    attributes:
+      label: "Psych Online Version"
+    validations:
+      required: true
+
   - type: dropdown
     id: modding
     attributes:
-      label: "Have you modded the build?"
+      label: "Have you modified the Source Code?"
       options:
-        - Yes, at Source Code level
-        - Yes, using Mods
-        - No
+        - Yes.
+        - No.
     validations:
       required: true
 
@@ -51,8 +57,6 @@ body:
         - "Windows"
         - "Linux"
         - "MacOS"
-        - "Android"
-        - "iOS"
         - "Not in this list (WILL BE CLOSED)"
     validations:
       required: true
