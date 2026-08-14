@@ -2339,14 +2339,14 @@ class FlxCamera extends FlxBasic
 	{
 		result = viewToWorldHelper(viewPos.x, viewPos.y, safeGetX(scrollFactor, 1.0), safeGetY(scrollFactor, 1.0), result);
 		viewPos.putWeak();
-		FlxDestroyUtil.putWeak(scrollFactor);
+		FlxDestroyUtil.put(scrollFactor);
 		return result;
 	}
 
 	overload public inline extern function viewToWorldPosition(viewX:Float, viewY:Float, ?scrollFactor:FlxPoint, ?result:FlxPoint)
 	{
 		result = viewToWorldHelper(viewX, viewY, safeGetX(scrollFactor, 1.0), safeGetY(scrollFactor, 1.0), result);
-		FlxDestroyUtil.putWeak(scrollFactor);
+		FlxDestroyUtil.put(scrollFactor);
 		return result;
 	}
 

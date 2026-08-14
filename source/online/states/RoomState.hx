@@ -620,7 +620,7 @@ class RoomState extends MusicBeatState /*#if interpret implements interpret.Inte
 		#if lumod
 		if (FlxG.keys.justPressed.F12) {
 			trace('reloading lumod');
-			Lumod.cache.scripts.clear();
+			Lumod.storage = new lumod.LumodStorage();
 			lmLoad();
 		}
 		#end

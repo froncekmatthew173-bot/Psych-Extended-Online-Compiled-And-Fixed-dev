@@ -407,7 +407,7 @@ class TitleState extends MusicBeatState
 
 		#if lumod
 		if (FlxG.keys.justPressed.DELETE) {
-			lumod.Lumod.cache.scripts.clear();
+			lumod.Lumod.storage = new lumod.LumodStorage();
 			trace("cleared lumod cache");
 		}
 		#end

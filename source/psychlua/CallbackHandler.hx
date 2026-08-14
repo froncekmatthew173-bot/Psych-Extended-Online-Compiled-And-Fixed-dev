@@ -6,7 +6,7 @@ class CallbackHandler
 	{
 		try
 		{
-			var cbf:Dynamic = Lua_helper.callbacks.get(fname);
+			var cbf:Dynamic = Lua_helper.stateStorage[l].callbacks.get(fname);
 
 			//Local functions have the lowest priority
 			//This is to prevent a "for" loop being called in every single operation,
