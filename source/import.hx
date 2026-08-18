@@ -139,8 +139,6 @@ import android.os.Build.VERSION as AndroidVersion;
 import android.os.Build.VERSION_CODES as AndroidVersionCode;
 #end
 
-import online.backend.Deflection;
-
 using StringTools;
 using ArrayTools;
 

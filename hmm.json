@@ -86,11 +86,6 @@
     },
     {
       "name": "away3d",
-      "type": "haxelib",
-      "version": "5.0.9"
-    },
-    {
-      "name": "away3d",
       "type": "git",
       "dir": null,
       "ref": "master",
@@ -181,11 +176,6 @@
       "dir": null,
       "ref": null,
       "url": "https://github.com/PsychExtendedThings/hscript-improved"
-    },
-    {
-      "name": "tink_await",
-      "type": "haxelib",
-      "version": "0.6.0"
     }
   ]
 }

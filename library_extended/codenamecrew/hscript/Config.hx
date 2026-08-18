@@ -1,4 +1,4 @@
-package codenamecrew.hscript;
+package hscript;
 
 class Config {
 	// DISABLED: flixel 6.2.0 is incompatible with the ClassExtendMacro

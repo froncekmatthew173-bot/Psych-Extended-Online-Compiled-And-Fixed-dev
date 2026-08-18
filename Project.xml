@@ -155,7 +155,6 @@
 	<haxelib name="compiletime" />
 	<haxelib name="funkin.vis" />
 	<haxelib name="grig.audio" />
-	<haxelib name="away3d" />
 	<haxelib name="yagp" />
 	<haxelib name="tink_await" />
 	<!-- <haxelib name="interpret" /> -->
