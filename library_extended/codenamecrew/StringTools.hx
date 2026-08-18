@@ -20,6 +20,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+package codenamecrew;
+
 import haxe.iterators.StringIterator;
 import haxe.iterators.StringKeyValueIterator;
 

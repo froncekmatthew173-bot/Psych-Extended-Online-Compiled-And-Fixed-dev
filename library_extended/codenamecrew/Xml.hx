@@ -20,6 +20,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+package codenamecrew;
+
 /**
 	Xml node types.
 
