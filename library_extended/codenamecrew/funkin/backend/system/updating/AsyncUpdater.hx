@@ -1,7 +1,7 @@
-package funkin.backend.system.updating;
+package   codenamecrew.codenamecrew.funkin.backend.system.updating;
 
-import funkin.backend.system.github.GitHubRelease;
-import funkin.backend.utils.ZipUtil;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubRelease;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ZipUtil;
 import haxe.io.Path;
 import openfl.Lib;
 import openfl.events.Event;

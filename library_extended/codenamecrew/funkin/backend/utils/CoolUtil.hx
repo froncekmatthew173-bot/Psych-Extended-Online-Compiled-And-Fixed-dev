@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 #if cpp
 import cpp.Float64;
@@ -21,8 +21,8 @@ import flixel.util.FlxAxes;
 import flixel.util.FlxColor;
 import flixel.util.typeLimit.OneOfThree;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.system.Conductor;
-import funkin.backend.utils.XMLUtil.TextFormat;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.TextFormat;
 import haxe.CallStack;
 import haxe.Constraints.IMap;
 import haxe.EnumTools.EnumValueTools;
@@ -41,7 +41,7 @@ using StringTools;
 /**
  * Various utilities, that have no specific Util class.
 **/
-@:allow(funkin.game.PlayState)
+@:allow(  codenamecrew.codenamecrew.funkin.game.PlayState)
 final class CoolUtil
 {
 	/**
@@ -144,7 +144,7 @@ final class CoolUtil
 		} catch(e) {
 			var errMsg:String = 'Error while trying to save the file: ${Std.string(e).replace('\n', ' ')}';
 			Logs.error(errMsg);
-			if(showErrorBox) funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
+			if(showErrorBox)   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
 		}
 		#end
 	}
@@ -1300,7 +1300,7 @@ final class CoolUtil
 		return animsList;
 	}
 
-	public static function getAnimsListFromSprite(spr:FunkinSprite):Array<String> {
+	public static function getAnimsListFromSprite(spr:codenamecrew.funkin.Sprite):Array<String> {
 		return getAnimsListFromFrames(spr.frames);
 	}
 

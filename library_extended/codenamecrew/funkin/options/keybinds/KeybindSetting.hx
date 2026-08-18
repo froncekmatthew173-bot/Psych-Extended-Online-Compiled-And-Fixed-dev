@@ -1,4 +1,4 @@
-package funkin.options.keybinds;
+package   codenamecrew.codenamecrew.funkin.options.keybinds;
 
 import flixel.effects.FlxFlicker;
 import flixel.input.keyboard.FlxKey;

@@ -1,4 +1,4 @@
-package funkin.backend.utils.translations;
+package   codenamecrew.codenamecrew.funkin.backend.utils.translations;
 
 /**
  * The class used to format strings based on parameters.

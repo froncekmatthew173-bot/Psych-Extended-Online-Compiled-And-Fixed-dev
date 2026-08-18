@@ -1,8 +1,8 @@
-package lime.utils;
+package codenamecrew.lime.utils;
 
 import haxe.PosInfos;
 #if !macro
-import funkin.backend.system.Logs as FunkinLogs;
+import   codenamecrew.codenamecrew.funkin.backend.system.Logs as codenamecrew.funkin.Logs;
 #end
 
 #if !lime_debug
@@ -40,7 +40,7 @@ class Log
 			else
 			{
 				#if !macro
-				FunkinLogs.trace('[${info.className}] $message', ERROR, RED);
+				codenamecrew.funkin.Logs.trace('[${info.className}] $message', ERROR, RED);
 				#else
 				println("[" + info.className + "] ERROR: " + message);
 				#end
@@ -53,7 +53,7 @@ class Log
 		if (level >= LogLevel.INFO)
 		{
 			#if !macro
-			FunkinLogs.trace('[${info.className}] $message', INFO, RED);
+			codenamecrew.funkin.Logs.trace('[${info.className}] $message', INFO, RED);
 			#else
 			println("[" + info.className + "] " + Std.string(message));
 			#end
@@ -91,7 +91,7 @@ class Log
 		if (level >= LogLevel.VERBOSE)
 		{
 			#if !macro
-			FunkinLogs.trace('[${info.className}] $message', VERBOSE);
+			codenamecrew.funkin.Logs.trace('[${info.className}] $message', VERBOSE);
 			#else
 			println("[" + info.className + "] " + message);
 			#end
@@ -103,7 +103,7 @@ class Log
 		if (level >= LogLevel.WARN)
 		{
 			#if !macro
-			FunkinLogs.trace('[${info.className}] $message', WARNING, YELLOW);
+			codenamecrew.funkin.Logs.trace('[${info.className}] $message', WARNING, YELLOW);
 			#else
 			println("[" + info.className + "] WARNING: " + Std.string(message));
 			#end

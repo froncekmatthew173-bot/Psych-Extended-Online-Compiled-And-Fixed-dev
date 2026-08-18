@@ -1,6 +1,6 @@
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
-import funkin.savedata.FunkinSave;
+import   codenamecrew.codenamecrew.funkin.savedata.codenamecrew.funkin.Save;
 
 class MiscOptions extends TreeMenuScreen {
 	public function new() {
@@ -11,8 +11,8 @@ class MiscOptions extends TreeMenuScreen {
 		#if UPDATE_CHECKING
 		add(new Checkbox(getNameID('betaUpdates'), getDescID('betaUpdates'), 'betaUpdates'));
 		add(new TextOption(getNameID('checkForUpdates'), getDescID('checkForUpdates'), () -> {
-			var report = funkin.backend.system.updating.UpdateUtil.checkForUpdates(true);
-			if (report.newUpdate) FlxG.switchState(new funkin.backend.system.updating.UpdateAvailableScreen(report));
+			var report =   codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateUtil.checkForUpdates(true);
+			if (report.newUpdate) FlxG.switchState(new   codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateAvailableScreen(report));
 			else {
 				CoolUtil.playMenuSFX(CANCEL);
 				//updateDescText(translate('checkForUpdates-noUpdateFound'));
@@ -22,9 +22,9 @@ class MiscOptions extends TreeMenuScreen {
 
 		add(new Separator());
 		add(new TextOption(getNameID('resetSaveData'), getDescID('resetSaveData'), () -> {
-			FunkinSave.save.erase();
-			FunkinSave.highscores.clear();
-			FunkinSave.flush();
+			codenamecrew.funkin.Save.save.erase();
+			codenamecrew.funkin.Save.highscores.clear();
+			codenamecrew.funkin.Save.flush();
 		}));
 	}
 }

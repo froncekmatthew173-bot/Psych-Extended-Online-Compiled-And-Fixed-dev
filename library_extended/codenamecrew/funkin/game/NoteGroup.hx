@@ -1,7 +1,7 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.util.FlxSort;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 /**
  * Group of notes, that handles updating and rendering only the visible notes.

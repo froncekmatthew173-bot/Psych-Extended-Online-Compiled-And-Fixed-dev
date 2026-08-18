@@ -1,8 +1,8 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.util.FlxColor;
 import flixel.math.FlxPoint;
-import funkin.editors.ui.UIColorwheel.UIColorWheelSelector;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIColorwheel.UIColorWheelSelector;
 
 using flixel.util.FlxSpriteUtil;
 

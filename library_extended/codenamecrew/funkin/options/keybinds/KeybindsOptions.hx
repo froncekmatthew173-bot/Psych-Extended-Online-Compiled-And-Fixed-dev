@@ -1,4 +1,4 @@
-package funkin.options.keybinds;
+package   codenamecrew.codenamecrew.funkin.options.keybinds;
 
 import flixel.util.FlxColor;
 import haxe.xml.Access;
@@ -314,7 +314,7 @@ class KeybindsOptions extends MusicBeatSubstate {
 		var customCategories:Array<ControlsCategory> = [];
 
 		var xmlPath = Paths.xml("config/controls");
-		for(source in [funkin.backend.assets.AssetSource.SOURCE, funkin.backend.assets.AssetSource.MODS]) {
+		for(source in [  codenamecrew.codenamecrew.funkin.backend.assets.AssetSource.SOURCE,   codenamecrew.codenamecrew.funkin.backend.assets.AssetSource.MODS]) {
 			if (Paths.assetsTree.existsSpecific(xmlPath, "TEXT", source)) {
 				var access:Access = null;
 				try {

@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events;
 
 final class PointEvent extends CancellableEvent {
 	/**

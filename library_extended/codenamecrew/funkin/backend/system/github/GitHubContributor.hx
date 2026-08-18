@@ -1,4 +1,4 @@
-package funkin.backend.system.github;
+package   codenamecrew.codenamecrew.funkin.backend.system.github;
 
 // Also used by Organizations for members!
 typedef GitHubContributor = {

@@ -1,4 +1,4 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import hscript.IHScriptCustomBehaviour;
 
@@ -58,7 +58,7 @@ class MultiThreadedScript implements IFlxDestroyable implements IHScriptCustomBe
 
 	public function call(func:String, args:Array<Dynamic>) {
 		#if ALLOW_MULTITHREADING
-		funkin.backend.utils.ThreadUtil.execAsync(() -> {
+		  codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil.execAsync(() -> {
 			callEnded = false;
 			returnValue = script.call(func, args);
 			callEnded = true;

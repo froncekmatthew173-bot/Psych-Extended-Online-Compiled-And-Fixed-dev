@@ -1,13 +1,13 @@
-package funkin.game.cutscenes.dialogue;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes.dialogue;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.sound.FlxSound;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.sprite.*;
-import funkin.backend.scripting.events.dialogue.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.dialogue.*;
 import haxe.xml.Access;
 
-class DialogueBox extends FunkinSprite {
+class DialogueBox extends codenamecrew.funkin.Sprite {
 	public var dialogueBoxData:Access;
 	public var positions:Map<String, CharPosDef> = [];
 	public var dialogueEnded:Bool = false;  // Using text._typing is also fair but it doesn't check for eventual opening anims!  - Nex

@@ -1,4 +1,4 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 interface IModsAssetLibrary {
 	public var prefix:String;

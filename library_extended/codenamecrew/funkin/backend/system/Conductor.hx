@@ -1,11 +1,11 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.FlxState;
 import flixel.util.FlxSignal.FlxTypedSignal;
-import funkin.backend.chart.ChartData;
-import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.system.interfaces.IBeatCancellableReceiver;
-import funkin.editors.charter.Charter;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatCancellableReceiver;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter;
 
 enum BeatType {
 	BEAT;

@@ -1,25 +1,25 @@
-package funkin.editors.stage;
+package   codenamecrew.codenamecrew.funkin.editors.stage;
 
 import flixel.math.FlxAngle;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.utils.XMLUtil.AnimData;
-import funkin.editors.stage.elements.*;
-import funkin.editors.stage.elements.StageSpriteButton.StageSpriteEditScreen;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
-import funkin.editors.extra.AxisGizmo;
-import funkin.game.Character;
-import funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.*;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.StageSpriteButton.StageSpriteEditScreen;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.extra.AxisGizmo;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
 import haxe.xml.Access;
 import haxe.xml.Printer;
 import lime.ui.MouseCursor;
 import openfl.ui.Mouse;
 import openfl.display.BlendMode;
 
-using funkin.backend.utils.MatrixUtil;
+using   codenamecrew.codenamecrew.funkin.backend.utils.MatrixUtil;
 
 @:access(flixel.FlxSprite)
 class StageEditor extends UIState {
@@ -253,8 +253,8 @@ class StageEditor extends UIState {
 					var button = new StageCharacterButton(0,0, char, xml);
 					char.extra.set(exID("button"), button);
 					stageSpritesWindow.add(button);
-				} else if (sprite is FunkinSprite) {
-					var sprite:FunkinSprite = cast sprite;
+				} else if (sprite is codenamecrew.funkin.Sprite) {
+					var sprite:codenamecrew.funkin.Sprite = cast sprite;
 					var type = sprite.extra.get(exID("type"));
 					var button:StageElementButton = (type == "box" || type == "solid") ? new StageSolidButton(0,0, sprite, xml) : new StageSpriteButton(0,0, sprite, xml);
 					sprite.extra.set(exID("button"), button);
@@ -291,7 +291,7 @@ class StageEditor extends UIState {
 			if(sprite is FlxSprite) {
 				sprite.moves = false;
 			}
-			if (sprite is FunkinSprite) {
+			if (sprite is codenamecrew.funkin.Sprite) {
 				sprite.animEnabled = false;
 				//sprite.zoomFactorEnabled = false;
 			}
@@ -303,8 +303,8 @@ class StageEditor extends UIState {
 			if(sprite is FlxSprite) {
 				//sprite.forceIsOnScreen = true; // hack
 			}
-			if(sprite is FunkinSprite) {
-				var sprite:FunkinSprite = cast sprite;
+			if(sprite is codenamecrew.funkin.Sprite) {
+				var sprite:codenamecrew.funkin.Sprite = cast sprite;
 				//name = sprite.name;
 				sprite.extra.set(exID("node"), node);
 				sprite.extra.set(exID("type"), node.name);
@@ -449,7 +449,7 @@ class StageEditor extends UIState {
 			// TODO: make this work with multiple selections
 			if(selection.length == 1) {
 				for(sprite in selection) {
-					if(sprite is FunkinSprite) {
+					if(sprite is codenamecrew.funkin.Sprite) {
 						handleSelection(cast sprite);
 					}
 				}
@@ -535,7 +535,7 @@ class StageEditor extends UIState {
 		stage.stageXML.x.addChild(node.x);
 		node.att.name = "sprite_" + stageSpritesWindow.buttons.members.length;
 
-		var sprite:FunkinSprite = new FunkinSprite();
+		var sprite:codenamecrew.funkin.Sprite = new codenamecrew.funkin.Sprite();
 		insert(members.indexOf(stage), sprite);
 		sprite.extra.set(exID("node"), node);
 		sprite.extra.set(exID("type"), node.name);
@@ -635,7 +635,7 @@ class StageEditor extends UIState {
 		for(sprite in getSprites()) {
 			var button:StageElementButton = sprite.extra.get(exID("button"));
 			var newNode:Xml = null;
-			var sprite:FunkinSprite = button.getSprite();
+			var sprite:codenamecrew.funkin.Sprite = button.getSprite();
 			if(button is StageSolidButton) {
 				var button:StageSolidButton = cast button;
 				var node:Access = cast sprite.extra.get(exID("node"));
@@ -787,11 +787,11 @@ class StageEditor extends UIState {
 		}
 	}
 
-	public function selectSprite(_sprite:FunkinSprite) {
+	public function selectSprite(_sprite:codenamecrew.funkin.Sprite) {
 		if(!UIUtil.getKeyState(CONTROL, PRESSED))
 			_select_deselect(null, false);
 
-		if(_sprite is FunkinSprite) {
+		if(_sprite is codenamecrew.funkin.Sprite) {
 			if(selection.contains(_sprite))
 				selection.remove(_sprite);
 			else
@@ -811,16 +811,16 @@ class StageEditor extends UIState {
 		var sprites = getRealSprites();
 		// Unselect all
 		for(sprite in sprites) {
-			if(sprite is FunkinSprite) {
-				var sprite:FunkinSprite = cast sprite;
+			if(sprite is codenamecrew.funkin.Sprite) {
+				var sprite:codenamecrew.funkin.Sprite = cast sprite;
 				sprite.extra.set(exID("selected"), false);
 				sprite.extra.get(exID("button")).selected = false;
 			}
 		}
 		// Mark selected as selected
 		for(sprite in selection) {
-			if(sprite is FunkinSprite) {
-				var sprite:FunkinSprite = cast sprite;
+			if(sprite is codenamecrew.funkin.Sprite) {
+				var sprite:codenamecrew.funkin.Sprite = cast sprite;
 				sprite.extra.set(exID("selected"), true);
 				sprite.extra.get(exID("button")).selected = true;
 				//Logs.trace("Selected " + sprite.name);
@@ -914,10 +914,10 @@ class StageEditor extends UIState {
 		super.draw();
 
 		for(sprite in selection)
-			if(sprite is FunkinSprite) drawGuides(cast sprite);
+			if(sprite is codenamecrew.funkin.Sprite) drawGuides(cast sprite);
 	}
 
-	function drawGuides(sprite:FunkinSprite) {
+	function drawGuides(sprite:codenamecrew.funkin.Sprite) {
 		if(sprite == null || sprite.offset == null) return; // destroyed
 
 		var corners:Array<FlxPoint> = calcSpriteBounds(sprite);
@@ -982,7 +982,7 @@ class StageEditor extends UIState {
 		}
 	}
 
-	public static function calcSpriteBounds(sprite:FunkinSprite) {
+	public static function calcSpriteBounds(sprite:codenamecrew.funkin.Sprite) {
 		var oldWidth = sprite.width;
 		var oldHeight = sprite.height;
 
@@ -1028,8 +1028,8 @@ class StageEditor extends UIState {
 
 		//Logs.trace("Guide at " + corners[0].x + ", " + corners[0].y + " sprite at " + sprite.x + ", " + sprite.y);
 
-		if(sprite is FunkinSprite) {
-			var sprite:FunkinSprite = cast sprite;
+		if(sprite is codenamecrew.funkin.Sprite) {
+			var sprite:codenamecrew.funkin.Sprite = cast sprite;
 			var corner0 = corners[0];
 			var corner1 = corners[1];
 			var corner2 = corners[2];
@@ -1070,11 +1070,11 @@ class StageEditor extends UIState {
 		ROTATE_CORNER
 	];
 
-	function tryUpdateHitbox(sprite:FunkinSprite) {
+	function tryUpdateHitbox(sprite:codenamecrew.funkin.Sprite) {
 		call("tryUpdateHitbox", [sprite]);
 	}
 
-	function handleSelection(sprite:FunkinSprite) {
+	function handleSelection(sprite:codenamecrew.funkin.Sprite) {
 		if(!sprite.extra.exists(exID("buttonBoxes"))) return;
 		var buttonBoxes:Array<FlxPoint> = cast sprite.extra.get(exID("buttonBoxes"));
 
@@ -1249,11 +1249,11 @@ typedef StageSprInfo = {
 
 enum StageChange {
 	CEditInfo(oldInfo:StageInfo, newInfo:StageInfo);
-	CTransform(sprite:FunkinSprite, oldInfo:StageSprInfo, newInfo:StageSprInfo);
+	CTransform(sprite:codenamecrew.funkin.Sprite, oldInfo:StageSprInfo, newInfo:StageSprInfo);
 }
 
-@:forward abstract Selection(Array<FunkinSprite>) from Array<FunkinSprite> to Array<FunkinSprite> {
-	public inline function new(?array:Array<FunkinSprite>)
+@:forward abstract Selection(Array<codenamecrew.funkin.Sprite>) from Array<codenamecrew.funkin.Sprite> to Array<codenamecrew.funkin.Sprite> {
+	public inline function new(?array:Array<codenamecrew.funkin.Sprite>)
 		this = array == null ? [] : array;
 
 	// too lazy to put this in every for loop so i made it a abstract

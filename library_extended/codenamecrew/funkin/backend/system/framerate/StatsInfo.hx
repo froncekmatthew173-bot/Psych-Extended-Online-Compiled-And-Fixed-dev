@@ -1,9 +1,9 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
 #if (gl_stats && !disable_cffi && (!html5 || !canvas))
 import openfl.display._internal.stats.Context3DStats;
 import openfl.display._internal.stats.DrawCallContext;
-import funkin.backend.system.macros.StringMacro;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.StringMacro;
 
 class StatsInfo extends FramerateCategory {
 	public function new() {

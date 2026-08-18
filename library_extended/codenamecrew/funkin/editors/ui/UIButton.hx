@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 class UIButton extends UISliceSprite {
 	public var callback:Void->Void = null;

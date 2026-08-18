@@ -1,12 +1,12 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
-import funkin.backend.chart.ChartData;
-import funkin.backend.shaders.CustomShader;
-import funkin.game.Character;
-import funkin.game.HealthIcon;
-import funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
 
 class ChartCreationScreen extends UISubstateWindow {
 	private var onSave:(String, ChartData) -> Void = null;
@@ -318,7 +318,7 @@ class CompactCharacterButton extends UIButton {
 		super(0, 0, null, null, 200, 40);
 		autoAlpha = false;
 
-		charIcon = new HealthIcon(funkin.game.Character.getIconFromCharName(char));
+		charIcon = new HealthIcon(  codenamecrew.codenamecrew.funkin.game.Character.getIconFromCharName(char));
 		var size = Std.int(150 * 0.2);
 		charIcon.setUnstretchedGraphicSize(size, size, true);
 		charIcon.updateHitbox();
@@ -331,7 +331,7 @@ class CompactCharacterButton extends UIButton {
 		textBox.suggestItems = charsList;
 		textBox.antialiasing = true;
 		textBox.onChange = function(char:String) {
-			char = funkin.game.Character.getIconFromCharName(char);
+			char =   codenamecrew.codenamecrew.funkin.game.Character.getIconFromCharName(char);
 			charIcon.setIcon(char);
 			charIcon.setUnstretchedGraphicSize(size, size, true);
 			charIcon.updateHitbox();

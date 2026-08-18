@@ -1,7 +1,7 @@
-package funkin.backend.scripting.events.gameplay;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameplay;
 
 import flixel.math.FlxPoint;
-import funkin.game.StrumLine;
+import   codenamecrew.codenamecrew.funkin.game.StrumLine;
 
 final class CamMoveEvent extends CancellableEvent {
 	/**

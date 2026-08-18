@@ -1,18 +1,18 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
 import flixel.animation.FlxAnimation;
 import flixel.graphics.FlxGraphic;
 import openfl.geom.Rectangle;
 import flixel.graphics.frames.FlxFrame;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import flixel.animation.FlxPrerotatedAnimation;
 import animate.internal.RenderTexture;
 import flixel.graphics.frames.FlxFrame;
-import funkin.backend.system.Logs;
+import   codenamecrew.codenamecrew.funkin.backend.system.Logs;
 
-using funkin.backend.utils.BitmapUtil;
+using   codenamecrew.codenamecrew.funkin.backend.utils.BitmapUtil;
 
 typedef DisplayAnimFrameEntry = {
 	scale:Float,

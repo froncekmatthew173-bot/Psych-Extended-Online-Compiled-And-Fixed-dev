@@ -1,7 +1,7 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartBookmark;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartBookmark;
 
 class CharterBookmarkList extends UISubstateWindow {
 	public var bookmarkList:UIButtonList<BookmarkButton>;

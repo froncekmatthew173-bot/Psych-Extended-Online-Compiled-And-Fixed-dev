@@ -1,4 +1,4 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 // ! FUCK YOU CHUF (your biggest fan -lunar) <3
 
 // import flixel.FlxLayer;
@@ -6,19 +6,19 @@ import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 import flixel.util.FlxSort;
-import funkin.backend.chart.*;
-import funkin.backend.chart.ChartData;
-import funkin.backend.system.Conductor;
-import funkin.backend.system.framerate.Framerate;
-import funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
-import funkin.editors.charter.CharterBackdropGroup.CharterGridSeperatorBase;
-import funkin.editors.charter.CharterEvent;
-import funkin.editors.charter.CharterStrumline;
-import funkin.editors.extra.CameraHoverDummy;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOptionSpr;
-import funkin.editors.ui.UIState;
-import funkin.editors.ui.UITopMenu.UITopMenuButton;
+import   codenamecrew.codenamecrew.funkin.backend.chart.*;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterBackdropGroup.CharterGridSeperatorBase;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterEvent;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterStrumline;
+import   codenamecrew.codenamecrew.funkin.editors.extra.CameraHoverDummy;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOptionSpr;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIState;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UITopMenu.UITopMenuButton;
 import haxe.Json;
 #if sys
 import sys.FileSystem;
@@ -43,7 +43,7 @@ class Charter extends UIState {
 	private static inline function get_instance()
 		return FlxG.state is Charter ? cast FlxG.state : null;
 
-	public var charterBG:FunkinSprite;
+	public var charterBG:codenamecrew.funkin.Sprite;
 	public var charterBookmarksGroup:FlxTypedGroup<FlxSprite> = new FlxTypedGroup<FlxSprite>();
 	public var uiGroup:FlxTypedGroup<FlxSprite> = new FlxTypedGroup<FlxSprite>();
 
@@ -433,7 +433,7 @@ class Charter extends UIState {
 
 		for (camera in FlxG.cameras.list) camera.antialiasing = false;
 
-		charterBG = new FunkinSprite(0, 0, Paths.image('menus/menuDesat'));
+		charterBG = new codenamecrew.funkin.Sprite(0, 0, Paths.image('menus/menuDesat'));
 		charterBG.color = 0xFF181818;
 		charterBG.cameras = [charterCamera];
 		charterBG.screenCenter();

@@ -1,4 +1,4 @@
-package funkin.editors.alphabet;
+package   codenamecrew.codenamecrew.funkin.editors.alphabet;
 
 import flixel.math.FlxAngle;
 

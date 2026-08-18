@@ -1,6 +1,6 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
 
 class UITopMenu extends UISliceSprite {
 	var options:Array<UIContextMenuOption>;

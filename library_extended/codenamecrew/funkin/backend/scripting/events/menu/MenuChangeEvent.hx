@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.menu;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu;
 
 final class MenuChangeEvent extends CancellableEvent {
 	/**

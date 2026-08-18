@@ -1,8 +1,8 @@
-package funkin.editors.alphabet;
+package   codenamecrew.codenamecrew.funkin.editors.alphabet;
 
 import flixel.math.FlxRect;
-import funkin.editors.alphabet.AlphabetEditor;
-import funkin.menus.ui.Alphabet;
+import   codenamecrew.codenamecrew.funkin.editors.alphabet.AlphabetEditor;
+import   codenamecrew.codenamecrew.funkin.menus.ui.Alphabet;
 
 using StringTools;
 

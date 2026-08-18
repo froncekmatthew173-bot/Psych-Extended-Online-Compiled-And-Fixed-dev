@@ -1,4 +1,4 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
 class SaveWarning {
 	public static var showWarning(default, set):Bool;

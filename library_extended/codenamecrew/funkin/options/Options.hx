@@ -1,4 +1,4 @@
-package funkin.options;
+package   codenamecrew.codenamecrew.funkin.options;
 
 import flixel.input.keyboard.FlxKey;
 import flixel.util.FlxSave;
@@ -8,8 +8,8 @@ import openfl.Lib;
  * The save data of the engine.
  * Mod save data is stored in `FlxG.save.data`.
 **/
-@:build(funkin.backend.system.macros.OptionsMacro.build())
-@:build(funkin.backend.system.macros.FunkinSaveMacro.build("__save", "__flush", "__load"))
+@:build(  codenamecrew.codenamecrew.funkin.backend.system.macros.OptionsMacro.build())
+@:build(  codenamecrew.codenamecrew.funkin.backend.system.macros.codenamecrew.funkin.SaveMacro.build("__save", "__flush", "__load"))
 class Options
 {
 	@:dox(hide) @:doNotSave
@@ -75,7 +75,7 @@ class Options
 	public static var freeplayLastSong:String = null;
 	public static var freeplayLastDifficulty:String = "normal";
 	public static var freeplayLastVariation:String = null;
-	public static var contributors:Array<funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor> = [];
+	public static var contributors:Array<  codenamecrew.codenamecrew.funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor> = [];
 	public static var mainDevs:Array<Int> = [];  // IDs
 	public static var lastUpdated:Null<Float>;
 

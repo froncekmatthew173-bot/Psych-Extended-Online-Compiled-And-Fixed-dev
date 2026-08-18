@@ -1,12 +1,12 @@
-package funkin.game.cutscenes.dialogue;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes.dialogue;
 
 import flixel.tweens.FlxTween;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.sprite.*;
-import funkin.backend.scripting.events.dialogue.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.dialogue.*;
 import haxe.xml.Access;
 
-class DialogueCharacter extends FunkinSprite {
+class DialogueCharacter extends codenamecrew.funkin.Sprite {
 	public var charData:Access;
 	public var curTween:FlxTween;
 	public var curAnimContext:DialogueCharAnimContext = NONE;

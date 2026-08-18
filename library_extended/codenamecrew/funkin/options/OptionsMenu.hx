@@ -1,10 +1,10 @@
-package funkin.options;
+package   codenamecrew.codenamecrew.funkin.options;
 
 import haxe.xml.Access;
 import flixel.util.typeLimit.OneOfThree;
-import funkin.editors.ui.UIState;
-import funkin.options.categories.*;
-import funkin.options.type.*;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIState;
+import   codenamecrew.codenamecrew.funkin.options.categories.*;
+import   codenamecrew.codenamecrew.funkin.options.type.*;
 
 typedef OptionCategory = {
 	var name:String;
@@ -20,7 +20,7 @@ class OptionsMenu extends TreeMenu {
 			name: 'optionsTree.controls-name',
 			desc: 'optionsTree.controls-desc',
 			suffix: '',
-			substate: funkin.options.keybinds.KeybindsOptions
+			substate:   codenamecrew.codenamecrew.funkin.options.keybinds.KeybindsOptions
 		},
 		{
 			name: 'optionsTree.gameplay-name',
@@ -93,7 +93,7 @@ class OptionsMenu extends TreeMenu {
 		checkDebugOption();
 		var first = tree.first();
 
-		for (i in funkin.backend.assets.ModsFolder.getLoadedMods()) {
+		for (i in   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.getLoadedMods()) {
 			var xmlPath = Paths.xml('config/options/LIB_$i');
 
 			if (Paths.assetsTree.existsSpecific(xmlPath, "TEXT")) {

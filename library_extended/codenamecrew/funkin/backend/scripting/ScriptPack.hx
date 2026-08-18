@@ -1,7 +1,7 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import flixel.util.FlxStringUtil;
-import funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
 
 /**
  * Used to group multiple scripts together, and easily be able to call them.

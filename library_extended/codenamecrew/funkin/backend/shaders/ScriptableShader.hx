@@ -1,9 +1,9 @@
-package funkin.backend.shaders;
+package   codenamecrew.codenamecrew.funkin.backend.shaders;
 
 import hscript.IHScriptCustomBehaviour;
-import funkin.backend.scripting.events.shader.ShaderProcessEvent;
-import funkin.backend.scripting.ScriptPack;
-import funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.shader.ShaderProcessEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
 
 @:structInit
 class FieldInfo {
@@ -11,16 +11,16 @@ class FieldInfo {
 	public var set:Dynamic->Dynamic;
 }
 
-@:access(funkin.backend.shaders.FunkinShader)
+@:access(  codenamecrew.codenamecrew.funkin.backend.shaders.codenamecrew.funkin.Shader)
 class ScriptableShader extends FlxBasic implements IHScriptCustomBehaviour {
 	private static var __instanceFields = Type.getInstanceFields(ScriptableShader);
 
-	public var shader:FunkinShader;
+	public var shader:codenamecrew.funkin.Shader;
 	public var script:Script;
 
 	var fields:Map<String, FieldInfo> = [];
 
-	public function new(shader:FunkinShader, ?scriptName:String, ?parentScriptPack:ScriptPack) {
+	public function new(shader:codenamecrew.funkin.Shader, ?scriptName:String, ?parentScriptPack:ScriptPack) {
 		super();
 
 		if(parentScriptPack == null && PlayState.instance != null)

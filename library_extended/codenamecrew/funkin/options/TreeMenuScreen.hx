@@ -1,13 +1,13 @@
-package funkin.options;
+package   codenamecrew.codenamecrew.funkin.options;
 
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxSignal;
-import funkin.backend.system.Controls;
-import funkin.backend.TurboControls;
-import funkin.options.TreeMenu.ITreeOption;
-import funkin.options.TreeMenu.ITreeFloatOption;
-import funkin.options.type.OptionType;
-import funkin.options.type.Separator;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.backend.TurboControls;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenu.ITreeOption;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenu.ITreeFloatOption;
+import   codenamecrew.codenamecrew.funkin.options.type.OptionType;
+import   codenamecrew.codenamecrew.funkin.options.type.Separator;
 
 class TreeMenuScreen extends FlxSpriteGroup {
 	public var persistentUpdate:Bool = false;

@@ -1,4 +1,4 @@
-package openfl.display;
+package codenamecrew.openfl.display;
 
 #if !flash
 import openfl.display._internal.Context3DGraphics;

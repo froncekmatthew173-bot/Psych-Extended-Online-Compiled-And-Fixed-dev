@@ -1,4 +1,4 @@
-package flixel.sound;
+package codenamecrew.flixel.sound;
 
 /**
  * A way of grouping sounds for things such as collective volume control

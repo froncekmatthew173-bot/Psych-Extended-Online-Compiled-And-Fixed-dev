@@ -1,4 +1,4 @@
-package funkin.backend.system.macros;
+package   codenamecrew.codenamecrew.funkin.backend.system.macros;
 
 #if macro
 import haxe.macro.Context;

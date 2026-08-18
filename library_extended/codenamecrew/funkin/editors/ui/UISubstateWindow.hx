@@ -1,10 +1,10 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import openfl.display.ShaderParameter;
 import openfl.display.ShaderInput;
 import openfl.filters.ShaderFilter;
 import flixel.tweens.FlxTween;
-import funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
 import openfl.filters.ShaderFilter;
 
 // TODO: make UIWarningSubstate extend this

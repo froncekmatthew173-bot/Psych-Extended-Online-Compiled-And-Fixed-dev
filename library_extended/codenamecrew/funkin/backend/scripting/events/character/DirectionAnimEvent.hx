@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.character;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.character;
 
-import funkin.backend.scripting.events.sprite.PlayAnimContext;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite.PlayAnimContext;
 
 final class DirectionAnimEvent extends CancellableEvent {
 	/**

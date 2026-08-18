@@ -1,4 +1,4 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
 import flixel.input.actions.FlxAction;
 import flixel.input.gamepad.FlxGamepadInputID;
@@ -7,8 +7,8 @@ import flixel.input.keyboard.FlxKey;
 import flixel.input.FlxInput.FlxInputState;
 import flixel.FlxBasic;
 
-import funkin.backend.system.Controls;
-import funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
 
 class TurboBasic extends FlxBasic {
 	public static var DEFAULT_DELAY:Float = 0.4;

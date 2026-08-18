@@ -1,4 +1,4 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
 import openfl.display.Sprite;
 import openfl.text.TextField;

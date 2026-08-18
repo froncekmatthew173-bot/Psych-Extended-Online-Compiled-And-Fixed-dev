@@ -1,7 +1,7 @@
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
 import flixel.util.FlxTimer;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 class GameplayOptions extends TreeMenuScreen {
 	var __metronome = FlxG.sound.load(Paths.sound(Flags.DEFAULT_CHARTER_METRONOME_SOUND));
@@ -67,8 +67,8 @@ class AdvancedGameplayOptions extends TreeMenuScreen {
 	public function new() {
 		super('optionsMenu.advanced', 'optionsTree.gameplay.advanced-desc', 'GameplayOptions.Advanced.');
 
-		// Remove locked whenever this PR from FunkinCrew is merged.
-		// https://github.com/FunkinCrew/lime/pull/57
+		// Remove locked whenever this PR from codenamecrew.funkin.Crew is merged.
+		// https://github.com/codenamecrew.funkin.Crew/lime/pull/57
 		for (checkbox in [
 			new Checkbox(getNameID('streamedMusic'), getDescID('streamedMusic'), 'streamedMusic'),
 			new Checkbox(getNameID('streamedVocals'), getDescID('streamedVocals'), 'streamedVocals')

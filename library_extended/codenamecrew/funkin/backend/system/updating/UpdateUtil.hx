@@ -1,9 +1,9 @@
-package funkin.backend.system.updating;
+package   codenamecrew.codenamecrew.funkin.backend.system.updating;
 
-import funkin.backend.system.github.GitHub;
-import funkin.backend.system.github.GitHubRelease;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHub;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubRelease;
 #if ALLOW_MULTITHREADING
-import funkin.backend.utils.ThreadUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil;
 #end
 
 import lime.app.Application;
@@ -17,7 +17,7 @@ import sys.thread.Thread;
 import sys.thread.Mutex;
 #end
 
-using funkin.backend.system.github.GitHub;
+using   codenamecrew.codenamecrew.funkin.backend.system.github.GitHub;
 
 class UpdateUtil {
 	public static var lastUpdateCheck:Null<UpdateCheckCallback>;

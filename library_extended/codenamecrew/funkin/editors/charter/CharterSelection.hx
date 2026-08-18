@@ -1,12 +1,12 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.util.FlxColor;
-import funkin.backend.chart.Chart;
-import funkin.backend.chart.ChartData;
-import funkin.editors.charter.SongCreationScreen.SongCreationData;
-import funkin.editors.EditorTreeMenu;
-import funkin.menus.FreeplayState.FreeplaySonglist;
-import funkin.options.type.*;
+import   codenamecrew.codenamecrew.funkin.backend.chart.Chart;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.editors.charter.SongCreationScreen.SongCreationData;
+import   codenamecrew.codenamecrew.funkin.editors.EditorTreeMenu;
+import   codenamecrew.codenamecrew.funkin.menus.FreeplayState.FreeplaySonglist;
+import   codenamecrew.codenamecrew.funkin.options.type.*;
 import haxe.Json;
 
 using StringTools;

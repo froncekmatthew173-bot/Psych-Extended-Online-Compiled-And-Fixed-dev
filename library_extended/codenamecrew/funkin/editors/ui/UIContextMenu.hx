@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.input.keyboard.FlxKey;
 import flixel.util.FlxColor;
@@ -19,7 +19,7 @@ class UIContextMenu extends MusicBeatSubstate {
 	public var childContextMenu:UIContextMenu = null;
 	public var parentContextMenu:UIContextMenu = null;
 	private var childContextMenuOptionIndex:Int = -1;
-	@:allow(funkin.editors.ui.UIContextMenu)
+	@:allow(  codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu)
 	private var lastHoveredOptionIndex:Int = -1;
 
 	var scroll:Float = 0.0;

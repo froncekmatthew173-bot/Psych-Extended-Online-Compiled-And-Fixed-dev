@@ -1,7 +1,7 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.util.FlxSort;
-import funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
 
 class CharterEventGroup extends FlxTypedGroup<CharterEvent> {
 	public static var stopThisFuckingShitDudeIstg = false;

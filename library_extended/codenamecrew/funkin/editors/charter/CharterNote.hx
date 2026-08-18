@@ -1,11 +1,11 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.math.FlxAngle;
 import flixel.math.FlxPoint;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import funkin.backend.system.Conductor;
-import funkin.editors.charter.Charter.ICharterSelectable;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter.ICharterSelectable;
 
 class CharterNote extends UISprite implements ICharterSelectable {
 	var angleTween:FlxTween;

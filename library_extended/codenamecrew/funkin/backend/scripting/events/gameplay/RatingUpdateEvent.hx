@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.gameplay;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameplay;
 
 final class RatingUpdateEvent extends CancellableEvent {
 	/**

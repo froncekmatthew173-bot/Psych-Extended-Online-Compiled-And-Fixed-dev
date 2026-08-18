@@ -1,24 +1,24 @@
-package funkin.backend.system.updating;
+package   codenamecrew.codenamecrew.funkin.backend.system.updating;
 
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.math.FlxPoint;
-import funkin.backend.FunkinText;
-import funkin.backend.system.updating.UpdateUtil.UpdateCheckCallback;
-import funkin.backend.utils.MarkdownUtil;
-import funkin.menus.MainMenuState;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateUtil.UpdateCheckCallback;
+import   codenamecrew.codenamecrew.funkin.backend.utils.MarkdownUtil;
+import   codenamecrew.codenamecrew.funkin.menus.MainMenuState;
 
 class UpdateAvailableScreen extends MusicBeatState {
 	public var bg:FlxSprite;
 
 	public var versionCheckBG:FlxSprite;
 	public var title:Alphabet;
-	public var versionDifferenceLabel:FunkinText;
-	public var changeLogText:FunkinText;
+	public var versionDifferenceLabel:codenamecrew.funkin.Text;
+	public var changeLogText:codenamecrew.funkin.Text;
 	public var check:UpdateCheckCallback;
 
 	public var optionsBG:FlxSprite;
-	public var installButton:FunkinText;
-	public var skipButton:FunkinText;
+	public var installButton:codenamecrew.funkin.Text;
+	public var skipButton:codenamecrew.funkin.Text;
 
 	public var installSelected:Bool = true;
 
@@ -51,7 +51,7 @@ class UpdateAvailableScreen extends MusicBeatState {
 		title.screenCenter(X);
 		title.scrollFactor.set();
 
-		versionDifferenceLabel = new FunkinText(0, title.y + title.height + 10, FlxG.width, '${check.currentVersionTag} < ${check.newVersionTag}', 28, false);
+		versionDifferenceLabel = new codenamecrew.funkin.Text(0, title.y + title.height + 10, FlxG.width, '${check.currentVersionTag} < ${check.newVersionTag}', 28, false);
 		versionDifferenceLabel.color = 0xFFFFFFFF;
 		versionDifferenceLabel.alignment = CENTER;
 		versionDifferenceLabel.scrollFactor.set();
@@ -63,12 +63,12 @@ class UpdateAvailableScreen extends MusicBeatState {
 		versionCheckBG.updateHitbox();
 		versionCheckBG.scrollFactor.set();
 
-		changeLogText = new FunkinText(0, versionCheckBG.y + versionCheckBG.height + 10, FlxG.width, "", 20, true);
+		changeLogText = new codenamecrew.funkin.Text(0, versionCheckBG.y + versionCheckBG.height + 10, FlxG.width, "", 20, true);
 		changeLogText.borderColor = 0xFF000000;
 		MarkdownUtil.applyMarkdownText(changeLogText, check.updates.last().body);
 
-		installButton = new FunkinText(0, FlxG.height - 25, Std.int(FlxG.width / 2), "PLACEHOLDER", 32);
-		skipButton = new FunkinText(Std.int(FlxG.width / 2), FlxG.height - 25, Std.int(FlxG.width / 2), "PLACEHOLDER", 32);
+		installButton = new codenamecrew.funkin.Text(0, FlxG.height - 25, Std.int(FlxG.width / 2), "PLACEHOLDER", 32);
+		skipButton = new codenamecrew.funkin.Text(Std.int(FlxG.width / 2), FlxG.height - 25, Std.int(FlxG.width / 2), "PLACEHOLDER", 32);
 
 		skipButton.y -= skipButton.height;
 		installButton.y -= installButton.height;

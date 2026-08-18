@@ -1,7 +1,7 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
-import funkin.backend.system.Conductor;
-import funkin.backend.chart.EventsData;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.chart.EventsData;
 
 class CharterEventTypeSelection extends UISubstateWindow {
 	var callback:String->Void;

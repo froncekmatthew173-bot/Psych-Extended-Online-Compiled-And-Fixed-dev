@@ -1,4 +1,4 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFrame;

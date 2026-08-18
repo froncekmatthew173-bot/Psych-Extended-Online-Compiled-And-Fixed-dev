@@ -1,4 +1,4 @@
-package external;
+package codenamecrew.external;
 
 import haxe.io.Path;
 import haxe.macro.Expr;

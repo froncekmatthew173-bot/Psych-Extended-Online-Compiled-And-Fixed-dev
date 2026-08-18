@@ -1,7 +1,7 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
-import funkin.backend.scripting.MultiThreadedScript;
-import funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.MultiThreadedScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
 
 final class EngineUtil {
 	/**

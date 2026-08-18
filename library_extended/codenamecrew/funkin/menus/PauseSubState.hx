@@ -1,20 +1,20 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.sound.FlxSound;
-import funkin.backend.FunkinText;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import funkin.backend.FunkinText;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.NameEvent;
-import funkin.backend.scripting.events.menu.MenuChangeEvent;
-import funkin.backend.scripting.events.menu.pause.*;
-import funkin.backend.system.Conductor;
-import funkin.backend.utils.FunkinParentDisabler;
-import funkin.editors.charter.Charter;
-import funkin.menus.StoryMenuState;
-import funkin.options.OptionsMenu;
-import funkin.options.keybinds.KeybindsOptions;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.NameEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.MenuChangeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.pause.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.utils.codenamecrew.funkin.ParentDisabler;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter;
+import   codenamecrew.codenamecrew.funkin.menus.StoryMenuState;
+import   codenamecrew.codenamecrew.funkin.options.OptionsMenu;
+import   codenamecrew.codenamecrew.funkin.options.keybinds.KeybindsOptions;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -22,10 +22,10 @@ class PauseSubState extends MusicBeatSubstate
 
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var levelInfo:FunkinText;
-	var levelDifficulty:FunkinText;
-	var deathCounter:FunkinText;
-	var multiplayerText:FunkinText;
+	var levelInfo:codenamecrew.funkin.Text;
+	var levelDifficulty:codenamecrew.funkin.Text;
+	var deathCounter:codenamecrew.funkin.Text;
+	var multiplayerText:codenamecrew.funkin.Text;
 
 	var menuItems:Array<String>;
 
@@ -46,7 +46,7 @@ class PauseSubState extends MusicBeatSubstate
 		this.selectCall = selectCall;
 	}
 
-	var parentDisabler:FunkinParentDisabler;
+	var parentDisabler:codenamecrew.funkin.ParentDisabler;
 	override function create()
 	{
 		super.create();
@@ -54,7 +54,7 @@ class PauseSubState extends MusicBeatSubstate
 		if (menuItems.contains("Exit to charter") && !PlayState.chartingMode)
 			menuItems.remove("Exit to charter");
 
-		add(parentDisabler = new FunkinParentDisabler());
+		add(parentDisabler = new codenamecrew.funkin.ParentDisabler());
 
 		pauseScript = Script.create(Paths.script(script));
 		pauseScript.setParent(this);
@@ -85,12 +85,12 @@ class PauseSubState extends MusicBeatSubstate
 									 PlayState.coopMode ? 'pause.coopMode' :
 									 null;
 
-		levelInfo = new FunkinText(20, 15, 0, PlayState.SONG.meta.displayName, 32, false);
-		levelDifficulty = new FunkinText(20, 15, 0, TU.translateDiff(PlayState.difficulty).toUpperCase(), 32, false);
-		deathCounter = new FunkinText(20, 15, 0, TU.translate("pause.deathCounter", [PlayState.deathCounter]), 32, false);
+		levelInfo = new codenamecrew.funkin.Text(20, 15, 0, PlayState.SONG.meta.displayName, 32, false);
+		levelDifficulty = new codenamecrew.funkin.Text(20, 15, 0, TU.translateDiff(PlayState.difficulty).toUpperCase(), 32, false);
+		deathCounter = new codenamecrew.funkin.Text(20, 15, 0, TU.translate("pause.deathCounter", [PlayState.deathCounter]), 32, false);
 		multiplayerText = null;
 		if(multiplayerInfo != null)
-			multiplayerText = new FunkinText(20, 15, 0, TU.translate(multiplayerInfo), 32, false);
+			multiplayerText = new codenamecrew.funkin.Text(20, 15, 0, TU.translate(multiplayerInfo), 32, false);
 
 		for(k=>label in [levelInfo, levelDifficulty, deathCounter, multiplayerText]) {
 			if(label == null) continue;

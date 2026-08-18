@@ -1,12 +1,12 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.group.FlxGroup;
 import flixel.util.FlxColor;
-import funkin.backend.chart.ChartData.ChartEvent;
-import funkin.backend.chart.EventsData;
-import funkin.backend.system.Conductor;
-import funkin.game.Character;
-import funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartEvent;
+import   codenamecrew.codenamecrew.funkin.backend.chart.EventsData;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
 
 using StringTools;
 

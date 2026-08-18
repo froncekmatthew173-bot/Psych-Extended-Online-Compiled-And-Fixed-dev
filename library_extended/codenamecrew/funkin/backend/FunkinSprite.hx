@@ -1,4 +1,4 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
 import animate.FlxAnimate;
 import animate.FlxAnimateController.FlxAnimateAnimation;
@@ -9,12 +9,12 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.FlxAssets.FlxGraphicAsset;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.scripting.events.sprite.PlayAnimContext;
-import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.system.interfaces.IOffsetCompatible;
-import funkin.backend.utils.XMLUtil.AnimData;
-import funkin.backend.utils.XMLUtil.BeatAnim;
-import funkin.backend.utils.XMLUtil.IXMLEvents;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite.PlayAnimContext;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IOffsetCompatible;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.BeatAnim;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.IXMLEvents;
 import haxe.io.Path;
 import flixel.graphics.frames.FlxFrame;
 import flixel.math.FlxAngle;
@@ -48,7 +48,7 @@ enum abstract XMLAnimType(Int)
 	}
 }
 
-class FunkinSprite extends FlxAnimate implements IBeatReceiver implements IOffsetCompatible implements IXMLEvents
+class codenamecrew.funkin.Sprite extends FlxAnimate implements IBeatReceiver implements IOffsetCompatible implements IXMLEvents
 {
 	public var extra:Map<String, Dynamic> = [];
 
@@ -64,7 +64,7 @@ class FunkinSprite extends FlxAnimate implements IBeatReceiver implements IOffse
 	public var angleFactorEnabled:Bool = true;
 
 	//Backwards compatibility
-	public var animateAtlas(get, never):FunkinSprite;
+	public var animateAtlas(get, never):codenamecrew.funkin.Sprite;
 
 	public var globalCurFrame(get, set):Int;
 
@@ -98,13 +98,13 @@ class FunkinSprite extends FlxAnimate implements IBeatReceiver implements IOffse
 	}
 
 	/**
-	 * Gets the graphics and copies other properties from another sprite (Works both for `FlxSprite` and `FunkinSprite`!).
+	 * Gets the graphics and copies other properties from another sprite (Works both for `FlxSprite` and `codenamecrew.funkin.Sprite`!).
 	 */
-	public static function copyFrom(source:FlxSprite):FunkinSprite
+	public static function copyFrom(source:FlxSprite):codenamecrew.funkin.Sprite
 	{
-		var spr = new FunkinSprite();
-		var casted:FunkinSprite = null;
-		if (source is FunkinSprite)
+		var spr = new codenamecrew.funkin.Sprite();
+		var casted:codenamecrew.funkin.Sprite = null;
+		if (source is codenamecrew.funkin.Sprite)
 			casted = cast source;
 
 		@:privateAccess {
@@ -363,8 +363,8 @@ class FunkinSprite extends FlxAnimate implements IBeatReceiver implements IOffse
 	}
 
 	@:noCompletion
-	@:deprecated("`FunkinSprite.animateAtlas` is deprecated, just use `FunkinSprite` instead")
-	public function get_animateAtlas():FunkinSprite
+	@:deprecated("`codenamecrew.funkin.Sprite.animateAtlas` is deprecated, just use `codenamecrew.funkin.Sprite` instead")
+	public function get_animateAtlas():codenamecrew.funkin.Sprite
     	return isAnimate ? this : null;
 
 	@:noCompletion private inline function get_globalCurFrame()

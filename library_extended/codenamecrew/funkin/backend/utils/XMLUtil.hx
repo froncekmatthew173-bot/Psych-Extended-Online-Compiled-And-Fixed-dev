@@ -1,19 +1,19 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.util.FlxColor;
 import openfl.display.BlendMode;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.FunkinSprite.XMLAnimType;
-import funkin.backend.FunkinSprite;
-import funkin.game.Character;
-import funkin.backend.FunkinSprite.XMLAnimType;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Sprite.XMLAnimType;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Sprite;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Sprite.XMLAnimType;
 import flixel.util.FlxColor;
 import haxe.xml.Access;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.ScriptPack;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.system.interfaces.IOffsetCompatible;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IOffsetCompatible;
 import haxe.xml.Access;
 import animate.FlxAnimateFrames;
 
@@ -116,7 +116,7 @@ final class XMLUtil {
 	 * @param parentFolder The parent folder
 	 * @param defaultAnimType The default animation type
 	 */
-	public static function loadSpriteFromXML(spr:FunkinSprite, node:Access, parentFolder:String = "", defaultAnimType:XMLAnimType = BEAT, loadGraphic:Bool = true):FunkinSprite {
+	public static function loadSpriteFromXML(spr:codenamecrew.funkin.Sprite, node:Access, parentFolder:String = "", defaultAnimType:XMLAnimType = BEAT, loadGraphic:Bool = true):codenamecrew.funkin.Sprite {
 		if (parentFolder == null) parentFolder = "";
 
 		spr.name = node.getAtt("name");
@@ -250,8 +250,8 @@ final class XMLUtil {
 	 * @param cl The class to create (advanced)
 	 * @param args The arguments to pass to the class (advanced)
 	 */
-	public static inline function createSpriteFromXML(node:Access, parentFolder:String = "", defaultAnimType:XMLAnimType = BEAT, ?cl:Class<FunkinSprite>, ?args:Array<Dynamic>, loadGraphic:Bool = true):FunkinSprite {
-		if(cl == null) cl = FunkinSprite;
+	public static inline function createSpriteFromXML(node:Access, parentFolder:String = "", defaultAnimType:XMLAnimType = BEAT, ?cl:Class<codenamecrew.funkin.Sprite>, ?args:Array<Dynamic>, loadGraphic:Bool = true):codenamecrew.funkin.Sprite {
+		if(cl == null) cl = codenamecrew.funkin.Sprite;
 		if(args == null) args = [];
 		return loadSpriteFromXML(Type.createInstance(cl, args), node, parentFolder, defaultAnimType, loadGraphic);
 	}
@@ -295,8 +295,8 @@ final class XMLUtil {
 	 */
 	public static function addXMLAnimation(sprite:FlxSprite, anim:Access, loop:Bool = false):ErrorCode {
 		var animType:XMLAnimType = NONE;
-		if (sprite is FunkinSprite) {
-			animType = cast(sprite, FunkinSprite).spriteAnimType;
+		if (sprite is codenamecrew.funkin.Sprite) {
+			animType = cast(sprite, codenamecrew.funkin.Sprite).spriteAnimType;
 		}
 
 		return addAnimToSprite(sprite, extractAnimFromXML(anim, animType, loop));
@@ -315,7 +315,7 @@ final class XMLUtil {
 				if(animData.anim == null)
 					return MISSING_PROPERTY;
 
-				var animateAnim = cast(sprite, FunkinSprite).anim;
+				var animateAnim = cast(sprite, codenamecrew.funkin.Sprite).anim;
 
 				if (animData.label) {
 					if (animData.indices != null && animData.indices.length > 0)
@@ -341,8 +341,8 @@ final class XMLUtil {
 			if (sprite is IOffsetCompatible)
 				cast(sprite, IOffsetCompatible).addOffset(animData.name, animData.x, animData.y);
 
-			if (sprite is FunkinSprite) {
-				var xmlSpr:FunkinSprite = cast sprite;
+			if (sprite is codenamecrew.funkin.Sprite) {
+				var xmlSpr:codenamecrew.funkin.Sprite = cast sprite;
 				var name = animData.name;
 				switch(animData.animType) {
 					case BEAT:
@@ -362,7 +362,7 @@ final class XMLUtil {
 		return MISSING_PROPERTY;
 	}
 
-	public static inline function defaultForcedCheck(animName:String, sprite:FunkinSprite):Bool
+	public static inline function defaultForcedCheck(animName:String, sprite:codenamecrew.funkin.Sprite):Bool
 		return sprite is Character && (animName.startsWith("idle") || animName.startsWith("danceLeft") || animName.startsWith("danceRight")) ? false : sprite.spriteAnimType == BEAT;
 
 	public static inline function fixXMLText(text:String) {

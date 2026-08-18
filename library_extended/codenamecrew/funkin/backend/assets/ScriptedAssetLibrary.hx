@@ -1,6 +1,6 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
-import funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
 import lime.graphics.Image;
 import lime.media.AudioBuffer;
 import lime.text.Font;

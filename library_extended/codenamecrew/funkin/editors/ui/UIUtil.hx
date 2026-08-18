@@ -1,9 +1,9 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.util.typeLimit.OneOfTwo;
 import flixel.input.FlxInput.FlxInputState;
 import flixel.input.keyboard.FlxKey;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
 import flixel.group.FlxGroup;
 
 @:access(flixel.FlxSprite)

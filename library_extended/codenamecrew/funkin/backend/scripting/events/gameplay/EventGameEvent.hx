@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.gameplay;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameplay;
 
-import funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
 
 final class EventGameEvent extends CancellableEvent {
 	public var event:ChartEvent;

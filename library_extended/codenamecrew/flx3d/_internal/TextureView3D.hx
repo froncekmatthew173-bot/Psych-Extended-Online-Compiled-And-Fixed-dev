@@ -1,4 +1,4 @@
-package flx3d._internal;
+package codenamecrew.flx3d._internal;
 
 import flixel.FlxG;
 import haxe.Exception;

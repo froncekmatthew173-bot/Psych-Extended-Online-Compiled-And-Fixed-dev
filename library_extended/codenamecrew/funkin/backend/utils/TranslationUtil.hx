@@ -1,20 +1,20 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
-import funkin.backend.utils.IniUtil;
-import funkin.backend.assets.TranslatedAssetLibrary;
-import funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.utils.IniUtil;
+import   codenamecrew.codenamecrew.funkin.backend.assets.TranslatedAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
 import openfl.utils.Assets;
 import haxe.io.Path;
 import haxe.xml.Access;
 import haxe.Exception;
-import funkin.backend.utils.translations.FormatUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.translations.FormatUtil;
 
 /**
  * The class used for translations based on the XMLs inside the translations folders.
  *
  * Made by @NexIsDumb originally for the Poldhub mod.
  */
-@:allow(funkin.backend.assets.TranslatedAssetLibrary)
+@:allow(  codenamecrew.codenamecrew.funkin.backend.assets.TranslatedAssetLibrary)
 final class TranslationUtil
 {
 	/**

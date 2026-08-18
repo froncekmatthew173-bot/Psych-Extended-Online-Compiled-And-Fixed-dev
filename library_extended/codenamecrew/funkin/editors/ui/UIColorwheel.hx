@@ -1,8 +1,8 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
-import funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
 
 using flixel.util.FlxSpriteUtil;
 

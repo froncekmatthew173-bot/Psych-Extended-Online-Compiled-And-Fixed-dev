@@ -1,9 +1,9 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
-import funkin.backend.chart.ChartData;
-import funkin.editors.charter.SongCreationScreen;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.editors.charter.SongCreationScreen;
 
 class VariationCreationScreen extends SongCreationScreen {
 	public var parentMeta:ChartMetaData;

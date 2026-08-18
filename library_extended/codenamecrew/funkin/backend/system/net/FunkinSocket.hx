@@ -1,4 +1,4 @@
-package funkin.backend.system.net;
+package   codenamecrew.codenamecrew.funkin.backend.system.net;
 
 #if sys
 import sys.net.Host;
@@ -6,7 +6,7 @@ import sys.net.Socket as SysSocket;
 import haxe.io.Bytes;
 
 @:keep
-class FunkinSocket implements IFlxDestroyable {
+class codenamecrew.funkin.Socket implements IFlxDestroyable {
 	public var socket:SysSocket = new SysSocket();
 
 	public var metrics:Metrics = new Metrics();
@@ -90,9 +90,9 @@ class FunkinSocket implements IFlxDestroyable {
 		return false;
 	}
 
-	public function bind(?expectingConnections:Int = 1):FunkinSocket {
+	public function bind(?expectingConnections:Int = 1):codenamecrew.funkin.Socket {
 		Logs.traceColored([
-			Logs.logText('[FunkinSocket] ', BLUE),
+			Logs.logText('[codenamecrew.funkin.Socket] ', BLUE),
 			Logs.logText('Binding to ', NONE), Logs.logText(host.toString(), YELLOW), Logs.logText(':', NONE), Logs.logText(Std.string(port), CYAN),
 		]);
 		socket.bind(host, port);
@@ -100,9 +100,9 @@ class FunkinSocket implements IFlxDestroyable {
 		return this;
 	}
 
-	public function connect():FunkinSocket {
+	public function connect():codenamecrew.funkin.Socket {
 		Logs.traceColored([
-			Logs.logText('[FunkinSocket] ', BLUE),
+			Logs.logText('[codenamecrew.funkin.Socket] ', BLUE),
 			Logs.logText('Connecting to ', NONE), Logs.logText(host.toString(), YELLOW), Logs.logText(':', NONE), Logs.logText(Std.string(port), CYAN),
 		]);
 		socket.connect(host, port);
@@ -113,12 +113,12 @@ class FunkinSocket implements IFlxDestroyable {
 		try {
 			if (socket != null) socket.close();
 			Logs.traceColored([
-				Logs.logText('[FunkinSocket] ', BLUE),
+				Logs.logText('[codenamecrew.funkin.Socket] ', BLUE),
 				Logs.logText('Closing socket from ', NONE), Logs.logText(host.toString(), YELLOW), Logs.logText(':', NONE), Logs.logText(Std.string(port), CYAN),
 			]);
 		} catch(e) {
 			Logs.traceColored([
-				Logs.logText('[FunkinSocket] ', BLUE),
+				Logs.logText('[codenamecrew.funkin.Socket] ', BLUE),
 				Logs.logText('Failed to close socket: ${e}', NONE),
 			]);
 		}

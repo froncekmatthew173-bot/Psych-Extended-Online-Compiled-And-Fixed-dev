@@ -1,4 +1,4 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 #if sys
 import sys.FileSystem;
@@ -38,7 +38,7 @@ final class CommandLineHandler {
 						Sys.println("[ERROR] You need to specify the mod folder path");
 						Sys.exit(1);
 					} else if (FileSystem.exists(arg)) {
-						funkin.backend.assets.ModsFolder.modsPath = arg;
+						  codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.modsPath = arg;
 					} else {
 						Sys.println('[ERROR] Mod folder at "${arg}" does not exist.');
 						Sys.exit(1);
@@ -50,7 +50,7 @@ final class CommandLineHandler {
 						Sys.println("[ERROR] You need to specify the addon folder path");
 						Sys.exit(1);
 					} else if (FileSystem.exists(arg)) {
-						funkin.backend.assets.ModsFolder.addonsPath = arg;
+						  codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.addonsPath = arg;
 					} else {
 						Sys.println('[ERROR] Addons folder at "${arg}" does not exist.');
 						Sys.exit(1);

@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.util.typeLimit.OneOfTwo;
 import flixel.text.FlxText.FlxTextFormat;
@@ -13,7 +13,7 @@ import sys.io.File;
 import animate.FlxAnimateJson;
 
 using StringTools;
-using funkin.backend.utils.BitmapUtil;
+using   codenamecrew.codenamecrew.funkin.backend.utils.BitmapUtil;
 using flixel.util.FlxSpriteUtil;
 
 typedef ImageSaveData = {

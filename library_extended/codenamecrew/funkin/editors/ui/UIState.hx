@@ -1,13 +1,13 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import openfl.Lib;
-import funkin.editors.ui.notifications.UIBaseNotification;
+import   codenamecrew.codenamecrew.funkin.editors.ui.notifications.UIBaseNotification;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.utils.NativeAPI.CodeCursor;
-import funkin.editors.ui.UIContextMenu.UIContextMenuCallback;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.CodeCursor;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuCallback;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
 import lime.ui.KeyCode;
 import lime.ui.KeyModifier;
 import flixel.system.scaleModes.StageSizeScaleMode;

@@ -1,18 +1,18 @@
-package funkin;
+package codenamecrew.funkin.;
 
 #if !macro
-import funkin.backend.system.Main;
-import funkin.backend.assets.Paths;
-import funkin.backend.MusicBeatState;
-import funkin.backend.MusicBeatSubstate;
-import funkin.backend.MusicBeatGroup;
-import funkin.backend.FunkinSprite;
-import funkin.backend.utils.*;
-import funkin.backend.utils.TranslationUtil as TU;
-import funkin.backend.system.Logs;
-import funkin.options.Options;
-import funkin.game.PlayState;
-import funkin.backend.scripting.EventManager;
+import codenamecrew.funkin.backend.system.Main;
+import codenamecrew.funkin.backend.assets.Paths;
+import codenamecrew.funkin.backend.MusicBeatState;
+import codenamecrew.funkin.backend.MusicBeatSubstate;
+import codenamecrew.funkin.backend.MusicBeatGroup;
+import codenamecrew.funkin.backend.codenamecrew.funkin.Sprite;
+import codenamecrew.funkin.backend.utils.*;
+import codenamecrew.funkin.backend.utils.TranslationUtil as TU;
+import codenamecrew.funkin.backend.system.Logs;
+import codenamecrew.funkin.options.Options;
+import codenamecrew.funkin.game.PlayState;
+import codenamecrew.funkin.backend.scripting.EventManager;
 
 import openfl.utils.Assets;
 
@@ -25,13 +25,13 @@ import flixel.math.FlxMath;
 import flixel.tweens.FlxEase;
 import flixel.util.FlxDestroyUtil;
 
-import funkin.backend.system.Flags;
-import funkin.Types;
+import codenamecrew.funkin.backend.system.Flags;
+import codenamecrew.funkin.Types;
 
-import funkin.menus.ui.Alphabet;
+import codenamecrew.funkin.menus.ui.Alphabet;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 
 using StringTools;
-using funkin.backend.utils.CoolUtil;
+using codenamecrew.funkin.backend.utils.CoolUtil;
 #end

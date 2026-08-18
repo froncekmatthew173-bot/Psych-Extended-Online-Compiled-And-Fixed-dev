@@ -1,6 +1,6 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
-import funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
 
 /**
  * Group of FlxSprites, if the sprite implements `IBeatReceiver`, then beatHit, stepHit and measureHit will be called.

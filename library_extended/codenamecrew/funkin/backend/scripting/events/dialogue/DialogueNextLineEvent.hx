@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.dialogue;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.dialogue;
 
 /**
  * CANCEL this event to prevent continuing with the next dialogue.

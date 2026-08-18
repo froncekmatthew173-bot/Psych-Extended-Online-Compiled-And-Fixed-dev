@@ -1,4 +1,4 @@
-package lime.media;
+package codenamecrew.lime.media;
 
 import lime.app.Event;
 import lime.math.Vector4;

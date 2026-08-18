@@ -1,9 +1,9 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
-import funkin.backend.chart.ChartData.ChartEvent;
-import funkin.backend.chart.FNFLegacyParser.SwagSection;
-import funkin.backend.chart.FNFLegacyParser.SwagSong;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartEvent;
+import   codenamecrew.codenamecrew.funkin.backend.chart.FNFLegacyParser.SwagSection;
+import   codenamecrew.codenamecrew.funkin.backend.chart.FNFLegacyParser.SwagSong;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 /**
  * Parser for Psych Charts.

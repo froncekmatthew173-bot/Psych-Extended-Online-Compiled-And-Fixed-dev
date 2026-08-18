@@ -1,11 +1,11 @@
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
 class DebugOptions extends TreeMenuScreen {
 	public function new() {
 		super('DebugOptions.title', 'DebugOptions.desc', 'DebugOptions.');
 
 		#if windows
-		add(new TextOption(getNameID("showConsole"), getDescID("showConsole"), () -> funkin.backend.utils.NativeAPI.allocConsole()));
+		add(new TextOption(getNameID("showConsole"), getDescID("showConsole"), () ->   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.allocConsole()));
 		#end
 		add(new Checkbox(getNameID("editorsResizable"), getDescID("editorsResizable"), "editorsResizable"));
 		add(new Checkbox(getNameID("bypassEditorsResize"), getDescID("bypassEditorsResize"), "bypassEditorsResize"));

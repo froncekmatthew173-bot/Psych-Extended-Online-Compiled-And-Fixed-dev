@@ -1,9 +1,9 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import haxe.macro.Expr.Case;
 import openfl.ui.Mouse;
 import openfl.ui.MouseCursor;
-import funkin.backend.utils.native.*;
+import   codenamecrew.codenamecrew.funkin.backend.utils.native.*;
 import flixel.util.typeLimit.OneOfTwo;
 import flixel.util.typeLimit.OneOfThree;
 import flixel.util.FlxColor;

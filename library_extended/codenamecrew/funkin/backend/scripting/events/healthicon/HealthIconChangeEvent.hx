@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.healthicon;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.healthicon;
 
 import flixel.util.typeLimit.OneOfTwo;
 
@@ -11,5 +11,5 @@ final class HealthIconChangeEvent extends CancellableEvent {
 	/**
 	 * The health icon
 	 */
-	public var healthIcon:funkin.game.HealthIcon;
+	public var healthIcon:  codenamecrew.codenamecrew.funkin.game.HealthIcon;
 }

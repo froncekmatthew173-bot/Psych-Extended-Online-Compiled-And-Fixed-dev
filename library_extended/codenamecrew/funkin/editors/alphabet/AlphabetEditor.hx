@@ -1,15 +1,15 @@
-package funkin.editors.alphabet;
+package   codenamecrew.codenamecrew.funkin.editors.alphabet;
 
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.utils.XMLUtil.AnimData;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import haxe.xml.Access;
 import haxe.xml.Printer;
 
-@:access(funkin.menus.ui.Alphabet)
+@:access(  codenamecrew.codenamecrew.funkin.menus.ui.Alphabet)
 class AlphabetEditor extends UIState {
 	static var __typeface:String;
 

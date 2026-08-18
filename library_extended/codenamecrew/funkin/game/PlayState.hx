@@ -1,4 +1,4 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.FlxState;
 import flixel.FlxSubState;
@@ -12,34 +12,34 @@ import flixel.ui.FlxBar;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
-import funkin.backend.FunkinText;
-import funkin.backend.chart.Chart;
-import funkin.backend.chart.ChartData;
-import funkin.backend.chart.EventsData;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.ScriptPack;
-import funkin.backend.scripting.events.*;
-import funkin.backend.scripting.events.gameplay.*;
-import funkin.backend.scripting.events.note.*;
-import funkin.backend.system.Conductor;
-import funkin.backend.system.RotatingSpriteGroup;
-import funkin.editors.SaveWarning;
-import funkin.editors.charter.Charter;
-import funkin.editors.charter.CharterSelection;
-import funkin.game.SplashHandler;
-import funkin.game.cutscenes.*;
-import funkin.game.scoring.*;
-import funkin.game.scoring.RatingManager.Rating;
-import funkin.menus.*;
-import funkin.backend.week.WeekData;
-import funkin.savedata.FunkinSave;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.chart.Chart;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.EventsData;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameplay.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.note.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.RotatingSpriteGroup;
+import   codenamecrew.codenamecrew.funkin.editors.SaveWarning;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterSelection;
+import   codenamecrew.codenamecrew.funkin.game.SplashHandler;
+import   codenamecrew.codenamecrew.funkin.game.cutscenes.*;
+import   codenamecrew.codenamecrew.funkin.game.scoring.*;
+import   codenamecrew.codenamecrew.funkin.game.scoring.RatingManager.Rating;
+import   codenamecrew.codenamecrew.funkin.menus.*;
+import   codenamecrew.codenamecrew.funkin.backend.week.WeekData;
+import   codenamecrew.codenamecrew.funkin.savedata.codenamecrew.funkin.Save;
 import haxe.io.Path;
 
 using StringTools;
 
 @:access(flixel.text.FlxText.FlxTextFormatRange)
-@:access(funkin.game.StrumLine)
+@:access(  codenamecrew.codenamecrew.funkin.game.StrumLine)
 class PlayState extends MusicBeatState
 {
 	/**
@@ -344,17 +344,17 @@ class PlayState extends MusicBeatState
 	public var hits:Map<String, Int> = [];
 
 	/**
-	 * FunkinText that shows your score.
+	 * codenamecrew.funkin.Text that shows your score.
 	 */
-	public var scoreTxt:FunkinText;
+	public var scoreTxt:codenamecrew.funkin.Text;
 	/**
-	 * FunkinText that shows your amount of misses.
+	 * codenamecrew.funkin.Text that shows your amount of misses.
 	 */
-	public var missesTxt:FunkinText;
+	public var missesTxt:codenamecrew.funkin.Text;
 	/**
-	 * FunkinText that shows your accuracy.
+	 * codenamecrew.funkin.Text that shows your accuracy.
 	 */
-	public var accuracyTxt:FunkinText;
+	public var accuracyTxt:codenamecrew.funkin.Text;
 
 	/**
 	 * Score for the current week.
@@ -903,9 +903,9 @@ class PlayState extends MusicBeatState
 			add(icon);
 		}
 
-		scoreTxt = new FunkinText(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_SCORE.format([songScore]), 16);
-		missesTxt = new FunkinText(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_MISSES.format([misses]), 16);
-		accuracyTxt = new FunkinText(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_ACCURACY.format(["-%", "(N/A)"]), 16);
+		scoreTxt = new codenamecrew.funkin.Text(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_SCORE.format([songScore]), 16);
+		missesTxt = new codenamecrew.funkin.Text(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_MISSES.format([misses]), 16);
+		accuracyTxt = new codenamecrew.funkin.Text(healthBarBG.x + 50, healthBarBG.y + 30, Std.int(healthBarBG.width - 100), TEXT_GAME_ACCURACY.format(["-%", "(N/A)"]), 16);
 		accuracyTxt.addFormat(accFormat, 0, 1);
 
 		for(text in [scoreTxt, missesTxt, accuracyTxt]) {
@@ -1060,7 +1060,7 @@ class PlayState extends MusicBeatState
 				var spr = event.spritePath;
 				if (!Assets.exists(spr)) spr = Paths.image('$spr');
 
-				sprite = new FunkinSprite().loadAnimatedGraphic(spr);
+				sprite = new codenamecrew.funkin.Sprite().loadAnimatedGraphic(spr);
 				sprite.scrollFactor.set();
 				sprite.scale.set(event.scale, event.scale);
 				sprite.updateHitbox();
@@ -1420,7 +1420,7 @@ class PlayState extends MusicBeatState
 			updateRatingStuff();
 
 		if (canAccessDebugMenus && chartingMode && controls.DEV_ACCESS)
-			FlxG.switchState(new funkin.editors.charter.Charter(SONG.meta.name, difficulty, variation, false));
+			FlxG.switchState(new   codenamecrew.codenamecrew.funkin.editors.charter.Charter(SONG.meta.name, difficulty, variation, false));
 
 		if (Options.camZoomOnBeat && camZooming) {
 			var beat = Conductor.getBeats(camZoomingEvery, camZoomingInterval, camZoomingOffset);
@@ -1784,7 +1784,7 @@ class PlayState extends MusicBeatState
 
 		if (validScore) {
 			#if !switch
-			FunkinSave.setSongHighscore(SONG.meta.name, difficulty, variation, {
+			codenamecrew.funkin.Save.setSongHighscore(SONG.meta.name, difficulty, variation, {
 				score: songScore,
 				misses: misses,
 				accuracy: accuracy,
@@ -1825,7 +1825,7 @@ class PlayState extends MusicBeatState
 				if (validScore) {
 					#if !switch
 					// TODO: more week info saving
-					FunkinSave.setWeekHighscore(storyWeek.id, difficulty, {
+					codenamecrew.funkin.Save.setWeekHighscore(storyWeek.id, difficulty, {
 						score: campaignScore,
 						misses: campaignMisses,
 						accuracy: campaignAccuracy,
@@ -1846,7 +1846,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 		else if (chartingMode)
-			FlxG.switchState(new funkin.editors.charter.Charter(SONG.meta.name, difficulty, variation, false));
+			FlxG.switchState(new   codenamecrew.codenamecrew.funkin.editors.charter.Charter(SONG.meta.name, difficulty, variation, false));
 		else
 			FlxG.switchState(new FreeplayState());
 	}

@@ -1,4 +1,4 @@
-package funkin.backend.shaders;
+package   codenamecrew.codenamecrew.funkin.backend.shaders;
 
 import flixel.util.FlxColor;
 import openfl.display.ShaderParameter;

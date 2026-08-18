@@ -1,6 +1,6 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
-import funkin.backend.assets.ModsFolderLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolderLibrary;
 import flixel.FlxState;
 
 class ModConfigWarning extends UIState {
@@ -41,7 +41,7 @@ LOGO_KEY=""
 LOGO_TEXT=""
 
 [StateRedirects] # This section is used for state redirecting, see examples below.
-;StoryMenuState="funkin.menus.FreeplayState"
+;StoryMenuState="  codenamecrew.codenamecrew.funkin.menus.FreeplayState"
 ;FreeplayState="scriptedFreeplayState"
 
 [StateRedirects.force] # Use this if you want to override redirects set by subsequent addons/mods
@@ -50,7 +50,7 @@ LOGO_TEXT=""
 	public function new(library:ModsFolderLibrary, ?goToState:Class<FlxState>) {
 		super();
 		this.library = library;
-		this.goToState = goToState != null ? goToState : funkin.menus.TitleState;
+		this.goToState = goToState != null ? goToState :   codenamecrew.codenamecrew.funkin.menus.TitleState;
 	}
 
 	override function createPost() {

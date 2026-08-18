@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 class IniUtil {
 	public static inline function parseAsset(assetPath:String)

@@ -1,9 +1,9 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.util.FlxColor;
-import funkin.backend.FunkinText;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
 
-class UIText extends FunkinText {
+class UIText extends codenamecrew.funkin.Text {
 	public var optimized:Bool = false;
 	// PUTTING THIS HERE IN CASE IMMA MAKE FUTURE CHANGES
 	public function new(x, y, w, text, size:Int = 15, color:FlxColor = 0xFFFFFFFF, ?outline:Bool = true) {

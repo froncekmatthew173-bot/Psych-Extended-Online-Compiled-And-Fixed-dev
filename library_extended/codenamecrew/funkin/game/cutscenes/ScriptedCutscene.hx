@@ -1,12 +1,12 @@
-package funkin.game.cutscenes;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes;
 
 import haxe.io.Path;
 import flixel.FlxSubState;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.NameEvent;
-import funkin.backend.scripting.events.StateEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.NameEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.StateEvent;
 
 /**
  * Substate made for scripted cutscenes.

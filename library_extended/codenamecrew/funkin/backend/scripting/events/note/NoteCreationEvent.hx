@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.note;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.note;
 
-import funkin.game.Note;
+import   codenamecrew.codenamecrew.funkin.game.Note;
 
 final class NoteCreationEvent extends CancellableEvent {
 	/**

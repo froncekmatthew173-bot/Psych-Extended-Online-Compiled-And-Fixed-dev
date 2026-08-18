@@ -1,14 +1,14 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
 import flixel.util.FlxColor;
 import flixel.group.FlxSpriteGroup;
 import flixel.sound.FlxSound;
-import funkin.backend.chart.ChartData.ChartStrumLine;
-import funkin.backend.shaders.CustomShader;
-import funkin.editors.ui.UITopMenu.UITopMenuButton;
-import funkin.game.Character;
-import funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartStrumLine;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UITopMenu.UITopMenuButton;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
 
 class CharterStrumline extends UISprite {
 	public var strumLine:ChartStrumLine;

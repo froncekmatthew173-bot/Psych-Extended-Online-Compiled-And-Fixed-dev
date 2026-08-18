@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.character;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.character;
 
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import haxe.xml.Access;
 
 final class CharacterXMLEvent extends CancellableEvent {

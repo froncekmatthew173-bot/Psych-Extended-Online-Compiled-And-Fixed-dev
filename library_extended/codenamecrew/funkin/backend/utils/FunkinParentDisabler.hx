@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.sound.FlxSound;
 import flixel.tweens.FlxTween;
@@ -11,9 +11,9 @@ import flixel.util.FlxTimer;
  * - Timers
  * - Sounds
  *
- * To use, add `add(new FunkinParentDisabler());` after `super.create();` in your `create` function.
+ * To use, add `add(new codenamecrew.funkin.ParentDisabler());` after `super.create();` in your `create` function.
  */
-class FunkinParentDisabler extends FlxBasic {
+class codenamecrew.funkin.ParentDisabler extends FlxBasic {
 	var __tweens:Array<FlxTween>;
 	var __cameras:Array<FlxCamera>;
 	var __timers:Array<FlxTimer>;

@@ -1,9 +1,9 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
-import funkin.backend.system.FakeCamera.FakeCallCamera;
+import   codenamecrew.codenamecrew.funkin.backend.system.FakeCamera.FakeCallCamera;
 import openfl.geom.ColorTransform;
 import flixel.animation.FlxAnimation;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import haxe.xml.Access;
 import animate.internal.RenderTexture;
 

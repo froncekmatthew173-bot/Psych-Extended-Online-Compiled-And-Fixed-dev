@@ -1,4 +1,4 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.math.FlxPoint;
 

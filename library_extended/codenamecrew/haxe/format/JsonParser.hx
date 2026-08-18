@@ -20,7 +20,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-package haxe.format;
+package codenamecrew.haxe.format;
 
 /**
 	An implementation of JSON parser in Haxe.

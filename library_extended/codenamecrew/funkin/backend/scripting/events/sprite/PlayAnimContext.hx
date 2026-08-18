@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.sprite;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite;
 
 /**
 	Contains all contexts possible for `PlayAnimEvent`.

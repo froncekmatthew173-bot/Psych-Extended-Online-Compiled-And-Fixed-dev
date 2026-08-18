@@ -1,7 +1,7 @@
-package funkin.game.scoring;
+package   codenamecrew.codenamecrew.funkin.game.scoring;
 
-import funkin.game.scoring.*;
-import funkin.game.scoring.HitWindowData.WindowPreset;
+import   codenamecrew.codenamecrew.funkin.game.scoring.*;
+import   codenamecrew.codenamecrew.funkin.game.scoring.HitWindowData.WindowPreset;
 import flixel.util.FlxSignal;
 
 import haxe.ds.StringMap;

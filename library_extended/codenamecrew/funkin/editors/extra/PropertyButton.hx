@@ -1,4 +1,4 @@
-package funkin.editors.extra;
+package   codenamecrew.codenamecrew.funkin.editors.extra;
 
 class PropertyButton extends UIButton {
 	public var propertyText:UITextBox;

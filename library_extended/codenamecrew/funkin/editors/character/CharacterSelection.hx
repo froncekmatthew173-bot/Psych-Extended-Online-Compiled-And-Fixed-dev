@@ -1,13 +1,13 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import haxe.xml.Printer;
-import funkin.game.Character;
-import funkin.editors.ui.UIImageExplorer.ImageSaveData;
-import funkin.editors.EditorTreeMenu;
-import funkin.options.type.IconOption;
-import funkin.options.type.NewOption;
-import funkin.options.type.TextOption;
-import funkin.options.type.OptionType;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIImageExplorer.ImageSaveData;
+import   codenamecrew.codenamecrew.funkin.editors.EditorTreeMenu;
+import   codenamecrew.codenamecrew.funkin.options.type.IconOption;
+import   codenamecrew.codenamecrew.funkin.options.type.NewOption;
+import   codenamecrew.codenamecrew.funkin.options.type.TextOption;
+import   codenamecrew.codenamecrew.funkin.options.type.OptionType;
 
 class CharacterSelection extends EditorTreeMenu {
 	override function create() {

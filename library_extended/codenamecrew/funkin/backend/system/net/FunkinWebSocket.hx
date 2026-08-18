@@ -1,6 +1,6 @@
-package funkin.backend.system.net;
+package   codenamecrew.codenamecrew.funkin.backend.system.net;
 
-import funkin.backend.utils.ThreadUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil;
 
 import flixel.util.typeLimit.OneOfThree;
 
@@ -13,11 +13,11 @@ import hx.ws.WebSocket;
 import hx.ws.Types.MessageType;
 
 /**
-* This is a wrapper for hxWebSockets. Used in-tangem with `FunkinPacket` and `Metrics`.
-* You can override how `haxe.io.Bytes` is decoded by setting `AUTO_DECODE_PACKETS`. By default it will attempt to deserialize the packet into a `FunkinPacket`.
+* This is a wrapper for hxWebSockets. Used in-tangem with `codenamecrew.funkin.Packet` and `Metrics`.
+* You can override how `haxe.io.Bytes` is decoded by setting `AUTO_DECODE_PACKETS`. By default it will attempt to deserialize the packet into a `codenamecrew.funkin.Packet`.
 * It also has `Metrics` which keeps track of the amount of bytes sent and received.
 **/
-class FunkinWebSocket implements IFlxDestroyable {
+class codenamecrew.funkin.WebSocket implements IFlxDestroyable {
 	/**
 	* This interacts with the hxWebSockets logging system, probably the best way to get the debug info.
 	* Although, it's not in the format of CodenameEngine's logs so it might look weird.
@@ -64,11 +64,11 @@ class FunkinWebSocket implements IFlxDestroyable {
 	public var onOpen:FlxTypedSignal<Void->Void> = new FlxTypedSignal<Void->Void>();
 	/**
 	* This signal is called every time a message is received.
-	* It can be one of three types: String, Bytes, or FunkinPacket.
-	* If you have AUTO_DECODE_PACKETS set to true, It will attempt to deserialize the packet into a FunkinPacket.
+	* It can be one of three types: String, Bytes, or codenamecrew.funkin.Packet.
+	* If you have AUTO_DECODE_PACKETS set to true, It will attempt to deserialize the packet into a codenamecrew.funkin.Packet.
 	* If it fails to deserialize or AUTO_DECODE_PACKETS is false, it will just return the Bytes directly.
 	**/
-	public var onMessage:FlxTypedSignal<OneOfThree<String, Bytes, FunkinPacket>->Void> = new FlxTypedSignal<OneOfThree<String, Bytes, FunkinPacket>->Void>(); // cursed 😭😭
+	public var onMessage:FlxTypedSignal<OneOfThree<String, Bytes, codenamecrew.funkin.Packet>->Void> = new FlxTypedSignal<OneOfThree<String, Bytes, codenamecrew.funkin.Packet>->Void>(); // cursed 😭😭
 	/**
 	* This signal is only called once when the connection is closed.
 	**/
@@ -90,7 +90,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 	public function get_handshakeHeaders():Map<String, String> { return this._ws.additionalHeaders; }
 
 	/**
-	* If true, the packets will be automatically deserialized into a `FunkinPacket` if possible.
+	* If true, the packets will be automatically deserialized into a `codenamecrew.funkin.Packet` if possible.
 	* Otherwise you will handle everything manually.
 	**/
 	public var AUTO_DECODE_PACKETS:Bool = true;
@@ -113,7 +113,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 	* @param message The message to handle from hxWebSockets.
 	**/
 	private function _onMessage(message:MessageType):Void {
-		var data:OneOfThree<String, Bytes, FunkinPacket> = "";
+		var data:OneOfThree<String, Bytes, codenamecrew.funkin.Packet> = "";
 
 		switch(message) {
 			case StrMessage(content):
@@ -121,7 +121,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 				metrics.updateBytesReceived(Bytes.ofString(content).length);
 				// Can we just have a switch break in Haxe for the life of me bro 💔💔💔
 				if (AUTO_DECODE_PACKETS) {
-					var packet:FunkinPacket = FunkinPacket.fromJson(cast(data, String));
+					var packet:codenamecrew.funkin.Packet = codenamecrew.funkin.Packet.fromJson(cast(data, String));
 					if (packet != null) {		
 						packet.status = (packet.get("custom_status") ?? 200);
 
@@ -131,7 +131,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 			case BytesMessage(buffer):
 				metrics.updateBytesReceived(buffer.length);
 				if (AUTO_DECODE_PACKETS) {
-					var packet:FunkinPacket = new FunkinPacket();
+					var packet:codenamecrew.funkin.Packet = new codenamecrew.funkin.Packet();
 					packet.bytes = buffer.readAllAvailableBytes();
 					packet.status = 200;
 					data = packet;
@@ -167,16 +167,16 @@ class FunkinWebSocket implements IFlxDestroyable {
 	/**
 	* Opens the WebSocket connection.
 	**/
-	public function open():FunkinWebSocket {
+	public function open():codenamecrew.funkin.WebSocket {
 		Logs.traceColored([
-			Logs.logText('[FunkinWebSocket] ', CYAN),
+			Logs.logText('[codenamecrew.funkin.WebSocket] ', CYAN),
 			Logs.logText('Opening WebSocket to ', NONE), Logs.logText(url, YELLOW),
 		]);
 		try {
 			this._ws.open();
 		} catch(e) {
 			Logs.traceColored([
-				Logs.logText('[FunkinWebSocket] ', CYAN),
+				Logs.logText('[codenamecrew.funkin.WebSocket] ', CYAN),
 				Logs.logText('Failed to open WebSocket: ${e}', NONE),
 			]);
 			onError.dispatch(e);
@@ -191,7 +191,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 	**/
 	public function send(data:Dynamic):Bool {
 		try {
-			if (data is FunkinPacket)
+			if (data is codenamecrew.funkin.Packet)
 				this._ws.send(data.stringify());
 			else
 				this._ws.send(data);
@@ -200,13 +200,13 @@ class FunkinWebSocket implements IFlxDestroyable {
 			if (metrics.IS_LOGGING) {
 				if (data is String) metrics.updateBytesSent(Bytes.ofString(data).length);
 				else if (data is Bytes || data is ByteArrayData) metrics.updateBytesSent(data.length);
-				else if (data is FunkinPacket) metrics.updateBytesSent(data.toBytes().length);
+				else if (data is codenamecrew.funkin.Packet) metrics.updateBytesSent(data.toBytes().length);
 			}
 
 			return true;
 		} catch(e) {
 			Logs.traceColored([
-				Logs.logText('[FunkinWebSocket] ', CYAN),
+				Logs.logText('[codenamecrew.funkin.WebSocket] ', CYAN),
 				Logs.logText('Failed to send data: ${e}', NONE),
 			]);
 		}
@@ -217,7 +217,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 	public static var MAX_BYTES_PER_CHUNK:Int = 16 * 1024; // 16KB
 
 	public function send_bytes(bytes:ByteArrayData, ?extra_start_data:Dynamic, ?extra_end_data:Dynamic):Void {
-		var bytes_start:FunkinPacket = new FunkinPacket();
+		var bytes_start:codenamecrew.funkin.Packet = new codenamecrew.funkin.Packet();
 		bytes_start.set("sending_byte_chunks", true);
 		bytes_start.set("total_size", bytes.bytesAvailable);
 		bytes_start.appendJson(extra_start_data);
@@ -236,14 +236,14 @@ class FunkinWebSocket implements IFlxDestroyable {
 					this._ws.send(chunk);
 				} catch(e) {
 					Logs.traceColored([
-						Logs.logText('[FunkinWebSocket] ', CYAN),
+						Logs.logText('[codenamecrew.funkin.WebSocket] ', CYAN),
 						Logs.logText('Failed to compile a chunk: ${e}', NONE),
 					]);
 				};
 			}
 			bytes.position = 0;
 			
-			var bytes_end:FunkinPacket = new FunkinPacket();
+			var bytes_end:codenamecrew.funkin.Packet = new codenamecrew.funkin.Packet();
 			bytes_end.set("chunks_complete", true);
 			bytes_end.appendJson(extra_end_data);
 			this.send(bytes_end);
@@ -256,7 +256,7 @@ class FunkinWebSocket implements IFlxDestroyable {
 	**/
 	public function close():Void {
 		Logs.traceColored([
-			Logs.logText('[FunkinWebSocket] ', CYAN),
+			Logs.logText('[codenamecrew.funkin.WebSocket] ', CYAN),
 			Logs.logText('Closing WebSocket from ', NONE), Logs.logText(url, YELLOW),
 		]);
 		this._ws.close();

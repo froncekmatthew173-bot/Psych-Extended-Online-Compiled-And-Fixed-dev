@@ -1,16 +1,16 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
 import flixel.FlxState;
 import flixel.FlxSubState;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.ScriptPack;
-import funkin.backend.scripting.events.*;
-import funkin.backend.system.Conductor;
-import funkin.backend.system.Controls;
-import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.system.interfaces.IBeatCancellableReceiver;
-import funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatCancellableReceiver;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
 
 /**
  * Base class for all the sub states.
@@ -119,7 +119,7 @@ class MusicBeatSubstate extends FlxSubState implements IBeatCancellableReceiver
 		if (scriptsAllowed) {
 			if (stateScripts.scripts.length == 0) {
 				var scriptName = this.scriptName != null ? this.scriptName : className.substr(className.lastIndexOf(".")+1);
-				for (i in funkin.backend.assets.ModsFolder.getLoadedMods()) {
+				for (i in   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.getLoadedMods()) {
 					var path = Paths.script('data/states/${scriptName}/LIB_$i');
 					var script = Script.create(path);
 					if (script is DummyScript) continue;

@@ -1,8 +1,8 @@
-package funkin.editors.stage.elements;
+package   codenamecrew.codenamecrew.funkin.editors.stage.elements;
 
-import funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
 import haxe.xml.Access;
-import funkin.editors.extra.PropertyButton;
+import   codenamecrew.codenamecrew.funkin.editors.extra.PropertyButton;
 
 class StageSpriteAnimButton extends PropertyButton
 {

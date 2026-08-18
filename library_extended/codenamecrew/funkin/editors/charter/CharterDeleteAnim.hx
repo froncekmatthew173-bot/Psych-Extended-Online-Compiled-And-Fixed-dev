@@ -1,4 +1,4 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 class CharterDeleteAnim extends CharterNote {
 	public var garbageIcon:FlxSprite;

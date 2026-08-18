@@ -1,8 +1,8 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.util.FlxColor;
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartBookmark;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartBookmark;
 
 class CharterBookmarkCreation extends UISubstateWindow {
 	public var saveButton:UIButton;

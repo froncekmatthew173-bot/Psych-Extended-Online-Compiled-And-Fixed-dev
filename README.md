@@ -3,7 +3,7 @@
 > Expect breaking changes, missing features and unstable builds.<br>
 > Use at your own risk.
 
-# Friday Night Funkin' - Psych Extended Online (PEXO)
+# Friday Night codenamecrew.funkin.' - Psych Extended Online (PEXO)
 ![PsychionalExtendedLogo](docs/img/PsychExtendedLogo.png)
 
 The continuation of Psych Extended.
@@ -32,12 +32,12 @@ Be free to contribute your code to this project! [(Before you PR, read this!)](h
 
 ## Psych Online
 <p align="center">
-    <img width="200" src="https://github.com/Snirozu/Funkin-Online-Server/blob/main/client/public/images/transwag.png?raw=true">
+    <img width="200" src="https://github.com/Snirozu/codenamecrew.funkin.-Online-Server/blob/main/client/public/images/transwag.png?raw=true">
 </p>
 
-* [Github](https://github.com/Snirozu/Funkin-Psych-Online)
-* [Documentation](https://github.com/Snirozu/Funkin-Psych-Online/wiki)
-* [Server Source Code](https://github.com/Snirozu/Funkin-Online-Server)
+* [Github](https://github.com/Snirozu/codenamecrew.funkin.-Psych-Online)
+* [Documentation](https://github.com/Snirozu/codenamecrew.funkin.-Psych-Online/wiki)
+* [Server Source Code](https://github.com/Snirozu/codenamecrew.funkin.-Online-Server)
 
 ###### Generated with [contrib.rocks](https://contrib.rocks)!
 

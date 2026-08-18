@@ -1,12 +1,12 @@
-package funkin.menus.ui;
+package   codenamecrew.codenamecrew.funkin.menus.ui;
 
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.soundtray.*;
-import funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.soundtray.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
 import flixel.system.ui.FlxSoundTray;
 import openfl.text.TextFormat;
 
-class FunkinSoundTray extends FlxSoundTray
+class codenamecrew.funkin.SoundTray extends FlxSoundTray
 {
 	public var script:Script;
 

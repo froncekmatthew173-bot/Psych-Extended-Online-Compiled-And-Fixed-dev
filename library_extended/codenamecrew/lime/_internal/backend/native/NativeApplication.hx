@@ -1,4 +1,4 @@
-package lime._internal.backend.native;
+package codenamecrew.lime._internal.backend.native;
 
 import haxe.Timer;
 import lime._internal.backend.native.NativeCFFI;

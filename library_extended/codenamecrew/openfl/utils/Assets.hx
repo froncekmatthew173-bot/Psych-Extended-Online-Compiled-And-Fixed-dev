@@ -1,9 +1,9 @@
-package openfl.utils;
+package codenamecrew.openfl.utils;
 
 #if !macro
-import funkin.backend.system.Main;
-import funkin.options.Options;
-import funkin.backend.system.OptimizedBitmapData;
+import   codenamecrew.codenamecrew.funkin.backend.system.Main;
+import   codenamecrew.codenamecrew.funkin.options.Options;
+import   codenamecrew.codenamecrew.funkin.backend.system.OptimizedBitmapData;
 #end
 import openfl.utils._internal.Log;
 import openfl.display.BitmapData;

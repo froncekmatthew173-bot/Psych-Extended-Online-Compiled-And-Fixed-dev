@@ -1,4 +1,4 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 /**
  * Simple class for empty scripts or scripts whose language isn't imported yet.

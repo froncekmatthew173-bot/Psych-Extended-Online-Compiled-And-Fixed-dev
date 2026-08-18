@@ -1,9 +1,9 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartMetaData;
-import funkin.editors.extra.PropertyButton;
-import funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartMetaData;
+import   codenamecrew.codenamecrew.funkin.editors.extra.PropertyButton;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
 
 using StringTools;
 

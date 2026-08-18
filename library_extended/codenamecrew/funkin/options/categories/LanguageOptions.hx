@@ -1,4 +1,4 @@
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
 class LanguageRadio extends RadioButton {
 	public var langID:String;

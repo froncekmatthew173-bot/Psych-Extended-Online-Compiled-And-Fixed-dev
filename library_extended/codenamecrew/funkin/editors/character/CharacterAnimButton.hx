@@ -1,14 +1,14 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
 import flixel.graphics.frames.FlxFrame;
 import flixel.animation.FlxAnimation;
 import openfl.geom.Rectangle;
-import funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
-import funkin.editors.character.CharacterAnimsWindow;
+import   codenamecrew.codenamecrew.funkin.editors.character.CharacterAnimsWindow;
 
 using StringTools;
 

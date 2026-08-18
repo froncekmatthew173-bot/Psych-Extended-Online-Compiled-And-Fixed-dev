@@ -1,4 +1,4 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
 import flixel.FlxCamera;
 import flixel.FlxG;
@@ -10,9 +10,9 @@ import flixel.math.FlxRect;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.graphics.frames.FlxFrame;
-import funkin.backend.system.Flags;
+import   codenamecrew.codenamecrew.funkin.backend.system.Flags;
 
-class FunkinText extends FlxText
+class codenamecrew.funkin.Text extends FlxText
 {
     public var zoomFactor:Float = 1;
     public var zoomFactorEnabled:Bool = true;

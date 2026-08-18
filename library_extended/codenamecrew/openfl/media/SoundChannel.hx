@@ -1,4 +1,4 @@
-package openfl.media;
+package codenamecrew.openfl.media;
 
 #if !flash
 import haxe.Int64;
@@ -184,7 +184,7 @@ import lime.media.openal.AL;
 		pos -= pos % (buffer.channels * wordSize);
 
 		while (s > 0) {
-			b = funkin.backend.utils.AudioAnalyzer.getByte(buf, pos, wordSize);
+			b =   codenamecrew.codenamecrew.funkin.backend.utils.AudioAnalyzer.getByte(buf, pos, wordSize);
 			if (c % 2 == 0) ((b > leftMax) ? (leftMax = b) : (if ((b = -b) > leftMin) (leftMin = b)));
 			else ((b > rightMax) ? (rightMax = b) : (if ((b = -b) > rightMin) (rightMin = b)));
 			if ((pos += wordSize) >= size) #if lime_cffi {

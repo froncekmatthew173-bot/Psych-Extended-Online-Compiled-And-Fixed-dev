@@ -1,4 +1,4 @@
-package funkin.menus.ui;
+package   codenamecrew.codenamecrew.funkin.menus.ui;
 
 import flixel.animation.FlxAnimation;
 import flixel.graphics.frames.FlxFramesCollection;

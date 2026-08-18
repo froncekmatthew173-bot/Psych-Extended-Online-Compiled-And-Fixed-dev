@@ -1,14 +1,14 @@
-package funkin.editors.stage.elements;
+package   codenamecrew.codenamecrew.funkin.editors.stage.elements;
 
-import funkin.game.Character;
-import funkin.game.Stage.StageCharPos;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Stage.StageCharPos;
 import haxe.xml.Access;
 
 class StageUnknownButton extends StageElementButton {
 	public var lowMemory:Bool = false;
 	public var highMemory:Bool = false;
 	public var basic:FlxBasic;
-	var dummy:FunkinSprite; // to allow it to be saved
+	var dummy:codenamecrew.funkin.Sprite; // to allow it to be saved
 
 	public function new(x:Float,y:Float, basic:FlxBasic, xml:Access) {
 		this.basic = basic;
@@ -30,7 +30,7 @@ class StageUnknownButton extends StageElementButton {
 		setEditAdvanced();
 		updateInfo();
 
-		dummy = new FunkinSprite();
+		dummy = new codenamecrew.funkin.Sprite();
 		dummy.extra.set(StageEditor.exID("lowMemory"), lowMemory);
 		dummy.extra.set(StageEditor.exID("highMemory"), highMemory);
 		dummy.extra.set(StageEditor.exID("button"), this);
@@ -44,7 +44,7 @@ class StageUnknownButton extends StageElementButton {
 		super.updateInfo();
 	}
 
-	public override function getSprite():FunkinSprite {
+	public override function getSprite():codenamecrew.funkin.Sprite {
 		return dummy;
 	}
 

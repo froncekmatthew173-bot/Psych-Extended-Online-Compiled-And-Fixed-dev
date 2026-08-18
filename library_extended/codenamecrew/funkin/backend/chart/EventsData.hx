@@ -1,6 +1,6 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
-import funkin.backend.assets.Paths;
+import   codenamecrew.codenamecrew.funkin.backend.assets.Paths;
 import haxe.Json;
 import haxe.io.Path;
 import hscript.Interp;

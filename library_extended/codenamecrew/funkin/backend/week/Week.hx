@@ -1,9 +1,9 @@
-package funkin.backend.week;
+package   codenamecrew.codenamecrew.funkin.backend.week;
 
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
-import funkin.backend.week.WeekData.WeekCharacter;
-import funkin.backend.week.WeekData;
+import   codenamecrew.codenamecrew.funkin.backend.week.WeekData.WeekCharacter;
+import   codenamecrew.codenamecrew.funkin.backend.week.WeekData;
 import haxe.xml.Access;
 
 class Week {

@@ -1,9 +1,9 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
-import funkin.backend.shaders.CustomShader;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 import openfl.display.BitmapData;
 import openfl.display.ShaderInput;
 

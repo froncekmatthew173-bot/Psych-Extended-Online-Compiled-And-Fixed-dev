@@ -1,13 +1,13 @@
-package funkin.backend;
+package   codenamecrew.codenamecrew.funkin.backend;
 
 import flixel.FlxState;
 import flixel.tweens.FlxTween;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.ResizeEvent;
-import funkin.backend.scripting.events.TransitionCreationEvent;
-import funkin.backend.utils.FunkinParentDisabler;
-import funkin.editors.ui.UIState;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.ResizeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.TransitionCreationEvent;
+import   codenamecrew.codenamecrew.funkin.backend.utils.codenamecrew.funkin.ParentDisabler;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIState;
 
 class MusicBeatTransition extends MusicBeatSubstate {
 	public static var script:String = Flags.DEFAULT_TRANSITION_SCRIPT;
@@ -23,7 +23,7 @@ class MusicBeatTransition extends MusicBeatSubstate {
 	public var allowSkip:Bool = true;
 
 	public var blackSpr:FlxSprite;
-	public var transitionSprite:FunkinSprite;
+	public var transitionSprite:codenamecrew.funkin.Sprite;
 	public function new(?newState:FlxState) {
 		super();
 		this.newState = newState;
@@ -31,7 +31,7 @@ class MusicBeatTransition extends MusicBeatSubstate {
 
 	public override function create() {
 		if (newState != null)
-			add(new FunkinParentDisabler(true, false));
+			add(new codenamecrew.funkin.ParentDisabler(true, false));
 
 		transitionCamera = new FlxCamera();
 		transitionCamera.bgColor = 0;
@@ -56,7 +56,7 @@ class MusicBeatTransition extends MusicBeatSubstate {
 
 		add(blackSpr = new FlxSprite(0, transOut ? -transitionCamera.height : transitionCamera.height).makeGraphic(1, 1, -1));
 		blackSpr.color = 0xFF000000;
-		add(transitionSprite = new FunkinSprite().loadSprite(Paths.image('menus/transitionSpr')));
+		add(transitionSprite = new codenamecrew.funkin.Sprite().loadSprite(Paths.image('menus/transitionSpr')));
 		resizeDefaultSprites();
 
 		transitionCamera.flipY = !transOut;

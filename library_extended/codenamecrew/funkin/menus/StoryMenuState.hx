@@ -1,4 +1,4 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.math.FlxPoint;
 import flixel.text.FlxText;
@@ -6,12 +6,12 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.FunkinText;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.menu.MenuChangeEvent;
-import funkin.backend.scripting.events.menu.storymenu.*;
-import funkin.backend.week.*;
-import funkin.savedata.FunkinSave;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.MenuChangeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.storymenu.*;
+import   codenamecrew.codenamecrew.funkin.backend.week.*;
+import   codenamecrew.codenamecrew.funkin.savedata.codenamecrew.funkin.Save;
 import haxe.io.Path;
 import haxe.xml.Access;
 
@@ -45,7 +45,7 @@ class StoryMenuState extends MusicBeatState {
 	public var canSelect:Bool = true;
 
 	public var weekSprites:FlxTypedGroup<MenuItem>;
-	public var characterSprites:FlxTypedGroup<FunkinSprite>;
+	public var characterSprites:FlxTypedGroup<codenamecrew.funkin.Sprite>;
 
 	//public var charFrames:Map<String, FlxFramesCollection> = [];
 
@@ -59,7 +59,7 @@ class StoryMenuState extends MusicBeatState {
 		blackBar.color = 0xFF000000;
 		blackBar.updateHitbox();
 
-		scoreText = new FunkinText(10, 10, 0, TU.translate("story.score", ["-"]), 36);
+		scoreText = new codenamecrew.funkin.Text(10, 10, 0, TU.translate("story.score", ["-"]), 36);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32);
 
 		weekTitle = new FlxText(10, 10, FlxG.width - 20, "", 32);
@@ -90,7 +90,7 @@ class StoryMenuState extends MusicBeatState {
 		}
 		rightArrow.x -= rightArrow.width;
 
-		tracklist = new FunkinText(16, weekBG.y + weekBG.height + 44, Std.int(((FlxG.width - 400) / 2) - 80), TU.translate("story.tracks"), 32);
+		tracklist = new codenamecrew.funkin.Text(16, weekBG.y + weekBG.height + 44, Std.int(((FlxG.width - 400) / 2) - 80), TU.translate("story.tracks"), 32);
 		tracklist.alignment = CENTER;
 		tracklist.color = 0xFFE55777;
 
@@ -100,7 +100,7 @@ class StoryMenuState extends MusicBeatState {
 			add(e);
 		}
 
-		add(characterSprites = new FlxTypedGroup<FunkinSprite>());
+		add(characterSprites = new FlxTypedGroup<codenamecrew.funkin.Sprite>());
 
 		for (i=>week in weeks) {
 			var spr:MenuItem = new MenuItem(0, (i * 120) + 480, 'menus/storymenu/weeks/${week.sprite}');
@@ -194,11 +194,11 @@ class StoryMenuState extends MusicBeatState {
 
 		if (characterSprites != null) for (i in 0...3) {
 			var char = weeks[curWeek].chars[i];
-			var curChar:FunkinSprite = null;
+			var curChar:codenamecrew.funkin.Sprite = null;
 			var newChar = null;
 
 			if (char == null || (newChar = characters[char.name]) == null) modifyCharacterAt(i);
-			else if ((curChar = cast characterSprites.members[i]) == null || newChar.name != curChar.name) modifyCharacterAt(i, newChar);  // forcing the sprites to be FunkinSprite basically  - Nex
+			else if ((curChar = cast characterSprites.members[i]) == null || newChar.name != curChar.name) modifyCharacterAt(i, newChar);  // forcing the sprites to be codenamecrew.funkin.Sprite basically  - Nex
 		}
 
 		changeDifficulty(0, true);
@@ -230,7 +230,7 @@ class StoryMenuState extends MusicBeatState {
 			}
 		}
 
-		intendedScore = FunkinSave.getWeekHighscore(weeks[curWeek].id, weeks[curWeek].difficulties[curDifficulty]).score;
+		intendedScore = codenamecrew.funkin.Save.getWeekHighscore(weeks[curWeek].id, weeks[curWeek].difficulties[curDifficulty]).score;
 	}
 
 	public function loadXMLs() {
@@ -250,8 +250,8 @@ class StoryMenuState extends MusicBeatState {
 		characters[charName] = charObj == null ? Week.loadWeekCharacter(charName) : charObj;
 	}
 
-	public function modifyCharacterAt(i:Int, ?data:WeekData.WeekCharacter):FunkinSprite {
-		var curChar:FunkinSprite = null;
+	public function modifyCharacterAt(i:Int, ?data:WeekData.WeekCharacter):codenamecrew.funkin.Sprite {
+		var curChar:codenamecrew.funkin.Sprite = null;
 
 		if (characterSprites != null) {
 			var old = characterSprites.members[i];
@@ -268,7 +268,7 @@ class StoryMenuState extends MusicBeatState {
 				characterSprites.insert(i, curChar);
 			} else {
 				//characterSprites.members[i] = null;  // cant add nulls to flxgroups, so   - Nex
-				characterSprites.insert(i, new FunkinSprite()).visible = false;
+				characterSprites.insert(i, new codenamecrew.funkin.Sprite()).visible = false;
 			}
 		}
 		return curChar;
@@ -341,7 +341,7 @@ class StoryWeeklist {
 
 	public function new() {}
 
-	public function getWeeksFromSource(source:funkin.backend.assets.AssetSource, useTxt:Bool = true, loadCharactersData:Bool = true) {
+	public function getWeeksFromSource(source:  codenamecrew.codenamecrew.funkin.backend.assets.AssetSource, useTxt:Bool = true, loadCharactersData:Bool = true) {
 		var path:String = Paths.txt('weeks/weeks');
 		var weeksFound:Array<String> = useTxt && Paths.assetsTree.existsSpecific(path, "TEXT", source) ? CoolUtil.coolTextFile(path) :
 			[for (c in Paths.getFolderContent('data/weeks/weeks/', false, source)) if (Path.extension(c).toLowerCase() == "xml") Path.withoutExtension(c)];

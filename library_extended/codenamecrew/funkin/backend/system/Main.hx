@@ -1,4 +1,4 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
@@ -7,15 +7,15 @@ import flixel.graphics.FlxGraphic;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.system.ui.FlxSoundTray;
-import funkin.backend.assets.AssetSource;
-import funkin.backend.assets.AssetsLibraryList;
-import funkin.backend.assets.ModsFolder;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.system.framerate.SystemInfo;
-import funkin.backend.system.modules.*;
-import funkin.backend.utils.ThreadUtil;
-import funkin.editors.SaveWarning;
-import funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetSource;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetsLibraryList;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.SystemInfo;
+import   codenamecrew.codenamecrew.funkin.backend.system.modules.*;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil;
+import   codenamecrew.codenamecrew.funkin.editors.SaveWarning;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
 import openfl.Assets;
 import openfl.Lib;
 import openfl.display.Sprite;
@@ -37,7 +37,7 @@ class Main extends Sprite
 	public static var noTerminalColor:Bool = false;
 	public static var verbose:Bool = false;
 
-	public static var scaleMode:FunkinRatioScaleMode;
+	public static var scaleMode:codenamecrew.funkin.RatioScaleMode;
 	#if !mobile
 	public static var framerateSprite:Framerate;
 	#end
@@ -47,7 +47,7 @@ class Main extends Sprite
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
 
-	public static var game:FunkinGame;
+	public static var game:codenamecrew.funkin.Game;
 
 	/**
 	 * The time since the game was focused last time in seconds.
@@ -58,9 +58,9 @@ class Main extends Sprite
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function preInit() {
-		funkin.backend.utils.NativeAPI.registerAsDPICompatible();
-		funkin.backend.system.CommandLineHandler.parseCommandLine(Sys.args());
-		funkin.backend.system.Main.fixWorkingDirectory();
+		  codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.registerAsDPICompatible();
+		  codenamecrew.codenamecrew.funkin.backend.system.CommandLineHandler.parseCommandLine(Sys.args());
+		  codenamecrew.codenamecrew.funkin.backend.system.Main.fixWorkingDirectory();
 	}
 
 	public function new()
@@ -71,7 +71,7 @@ class Main extends Sprite
 
 		CrashHandler.init();
 
-		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
+		addChild(game = new codenamecrew.funkin.Game(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
 		#if (!mobile && !web)
 		addChild(framerateSprite = new Framerate());
@@ -105,20 +105,20 @@ class Main extends Sprite
 		MemoryUtil.init();
 		@:privateAccess
 		FlxG.game.getTimer = getTimer;
-		FunkinCache.init();
+		codenamecrew.funkin.Cache.init();
 		Paths.assetsTree = new AssetsLibraryList();
 
 		#if UPDATE_CHECKING
-		funkin.backend.system.updating.UpdateUtil.init();
+		  codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateUtil.init();
 		#end
 		ShaderResizeFix.init();
 		Logs.init();
 		Paths.init();
 
-		hscript.Interp.importRedirects = funkin.backend.scripting.Script.getDefaultImportRedirects();
+		hscript.Interp.importRedirects =   codenamecrew.codenamecrew.funkin.backend.scripting.Script.getDefaultImportRedirects();
 
 		#if GLOBAL_SCRIPT
-		funkin.backend.scripting.GlobalScript.init();
+		  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.init();
 		#end
 
 		var lib = new AssetLibrary();
@@ -126,12 +126,12 @@ class Main extends Sprite
 		lib.__proxy = Paths.assetsTree;
 		Assets.registerLibrary('default', lib);
 
-		funkin.options.PlayerSettings.init();
+		  codenamecrew.codenamecrew.funkin.options.PlayerSettings.init();
 		Options.load();
 
 		FlxG.fixedTimestep = false;
 
-		FlxG.scaleMode = scaleMode = new FunkinRatioScaleMode();
+		FlxG.scaleMode = scaleMode = new codenamecrew.funkin.RatioScaleMode();
 
 		Conductor.init();
 		AudioSwitchFix.init();
@@ -143,7 +143,7 @@ class Main extends Sprite
 
 		FlxG.mouse.useSystemCursor = true;
 		#if DARK_MODE_WINDOW
-		if(funkin.backend.utils.NativeAPI.hasVersion("Windows 10")) funkin.backend.utils.NativeAPI.redrawWindowHeader();
+		if(  codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.hasVersion("Windows 10"))   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.redrawWindowHeader();
 		#end
 
 		ModsFolder.init();
@@ -158,10 +158,10 @@ class Main extends Sprite
 	}
 
 	public static function refreshAssets() @:privateAccess {
-		FunkinCache.instance.clearSecondLayer();
+		codenamecrew.funkin.Cache.instance.clearSecondLayer();
 
 		var game = FlxG.game;
-		var daSndTray = Type.createInstance(game._customSoundTray = funkin.menus.ui.FunkinSoundTray, []);
+		var daSndTray = Type.createInstance(game._customSoundTray =   codenamecrew.codenamecrew.funkin.menus.ui.codenamecrew.funkin.SoundTray, []);
 		var index:Int = game.numChildren - 1;
 
 		if(game.soundTray != null)

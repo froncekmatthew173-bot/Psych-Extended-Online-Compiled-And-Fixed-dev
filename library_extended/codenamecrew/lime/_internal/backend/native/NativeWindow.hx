@@ -1,4 +1,4 @@
-package lime._internal.backend.native;
+package codenamecrew.lime._internal.backend.native;
 
 import haxe.io.Bytes;
 import lime._internal.backend.native.NativeCFFI;
@@ -109,7 +109,7 @@ class NativeWindow
 		handle = NativeCFFI.lime_window_create(parent.application.__backend.handle, width, height, flags, title);
 
 		#if (DARK_MODE_WINDOW && !macro)
-			funkin.backend.utils.NativeAPI.setDarkMode(title, true);
+			  codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.setDarkMode(title, true);
 		#end
 
 		if (handle != null)

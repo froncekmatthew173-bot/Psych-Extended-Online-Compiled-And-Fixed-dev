@@ -1,12 +1,12 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartMetaData;
-import funkin.backend.scripting.HScript;
-import funkin.backend.scripting.Script;
-import funkin.editors.extra.PropertyButton;
-import funkin.editors.stage.elements.StageElementButton;
-import funkin.editors.ui.UIDropDown;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartMetaData;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.HScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.editors.extra.PropertyButton;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.StageElementButton;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIDropDown;
 import haxe.xml.Access;
 import hscript.*;
 import hscript.Expr.Error;
@@ -169,7 +169,7 @@ class UISoftcodedWindow extends UISubstateWindow {
 						spr.y = y;
 						cast add(spr);
 					case "solid":
-						var spr = new FunkinSprite(x, y).makeSolid(
+						var spr = new codenamecrew.funkin.Sprite(x, y).makeSolid(
 							execAtt(el, "width", 100),
 							execAtt(el, "height", 100),
 							execAtt(el, "color", 0xFFFFFFFF)

@@ -1,9 +1,9 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.system.debug.log.LogStyle;
 import flixel.system.frontEnds.LogFrontEnd;
-import funkin.backend.utils.NativeAPI.ConsoleColor;
-import funkin.backend.utils.NativeAPI;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.ConsoleColor;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI;
 import haxe.Log;
 
 final class Logs {

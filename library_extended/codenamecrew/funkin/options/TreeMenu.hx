@@ -1,12 +1,12 @@
-package funkin.options;
+package   codenamecrew.codenamecrew.funkin.options;
 
 import flixel.tweens.FlxTween;
 import flixel.util.FlxArrayUtil;
 import flixel.util.FlxColor;
 import flixel.util.FlxSignal;
-import funkin.backend.FunkinText;
-import funkin.backend.system.framerate.Framerate;
-import funkin.editors.ui.UIState;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIState;
 
 interface ITreeOption {
 	var desc:String;
@@ -31,8 +31,8 @@ class TreeMenu extends UIState {
 
 	public var exitCallback:TreeMenu->Void;
 
-	public var titleLabel:FunkinText;
-	public var descLabel:FunkinText;
+	public var titleLabel:codenamecrew.funkin.Text;
+	public var descLabel:codenamecrew.funkin.Text;
 	public var bgLabel:FlxSprite;
 
 	var menuChangeTween:FlxTween;
@@ -53,11 +53,11 @@ class TreeMenu extends UIState {
 		bgLabel.alpha = 0.25;
 		bgLabel.scrollFactor.set();
 
-		titleLabel = new FunkinText(4, 4, FlxG.width - 8, 32);
+		titleLabel = new codenamecrew.funkin.Text(4, 4, FlxG.width - 8, 32);
 		titleLabel.borderSize = 1.25;
 		titleLabel.scrollFactor.set();
 
-		descLabel = new FunkinText(4, 0, FlxG.width - 8, 16);
+		descLabel = new codenamecrew.funkin.Text(4, 0, FlxG.width - 8, 16);
 		descLabel.scrollFactor.set();
 	}
 
@@ -268,7 +268,7 @@ class TreeMenu extends UIState {
 	public function exit() {
 		if (exitCallback != null) return exitCallback(this);
 
-		FlxG.switchState(new funkin.menus.MainMenuState());
+		FlxG.switchState(new   codenamecrew.codenamecrew.funkin.menus.MainMenuState());
 	}
 
 	public function updateAll(elapsed:Float) {

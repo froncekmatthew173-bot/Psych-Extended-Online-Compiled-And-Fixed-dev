@@ -1,11 +1,11 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 import flixel.util.FlxStringUtil;
 import haxe.io.Path;
 import lime.app.Application;
 
-@:allow(funkin.backend.scripting.ScriptPack)
+@:allow(  codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack)
 /**
  * Class used for scripting.
  * Use `Script.create` to create a script.
@@ -52,7 +52,7 @@ class Script extends FlxBasic implements IFlxDestroyable {
 			"BlendMode"			=> CoolUtil.getMacroAbstractClass("openfl.display.BlendMode"),
 			"Assets"			=> openfl.utils.Assets,
 			"Application"		=> lime.app.Application,
-			"Main"				=> funkin.backend.system.Main,
+			"Main"				=>   codenamecrew.codenamecrew.funkin.backend.system.Main,
 
 			// Flixel related stuff
 			"FlxG"				=> flixel.FlxG,
@@ -81,47 +81,47 @@ class Script extends FlxBasic implements IFlxDestroyable {
 				build: 2675, // 2675 being the last build num before it was removed
 				name: "Codename Engine"
 			},
-			"ModState"			=> funkin.backend.scripting.ModState,
-			"ModSubState"		=> funkin.backend.scripting.ModSubState,
-			"PlayState"			=> funkin.game.PlayState,
-			"GameOverSubstate"	=> funkin.game.GameOverSubstate,
-			"HealthIcon"		=> funkin.game.HealthIcon,
-			"HudCamera"			=> funkin.game.HudCamera,
-			"Note"				=> funkin.game.Note,
-			"Strum"				=> funkin.game.Strum,
-			"StrumLine"			=> funkin.game.StrumLine,
-			"Character"			=> funkin.game.Character,
-			"Boyfriend"			=> funkin.game.Character, // for compatibility
-			"PauseSubstate"		=> funkin.menus.PauseSubState,
-			"FreeplayState"		=> funkin.menus.FreeplayState,
-			"MainMenuState"		=> funkin.menus.MainMenuState,
-			"PauseSubState"		=> funkin.menus.PauseSubState,
-			"StoryMenuState"	=> funkin.menus.StoryMenuState,
-			"TitleState"		=> funkin.menus.TitleState,
-			"Options"			=> funkin.options.Options,
-			"Paths"				=> funkin.backend.assets.Paths,
-			"Conductor"			=> funkin.backend.system.Conductor,
-			"FunkinShader"		=> funkin.backend.shaders.FunkinShader,
-			"CustomShader"		=> funkin.backend.shaders.CustomShader,
-			"FunkinText"		=> funkin.backend.FunkinText,
+			"ModState"			=>   codenamecrew.codenamecrew.funkin.backend.scripting.ModState,
+			"ModSubState"		=>   codenamecrew.codenamecrew.funkin.backend.scripting.ModSubState,
+			"PlayState"			=>   codenamecrew.codenamecrew.funkin.game.PlayState,
+			"GameOverSubstate"	=>   codenamecrew.codenamecrew.funkin.game.GameOverSubstate,
+			"HealthIcon"		=>   codenamecrew.codenamecrew.funkin.game.HealthIcon,
+			"HudCamera"			=>   codenamecrew.codenamecrew.funkin.game.HudCamera,
+			"Note"				=>   codenamecrew.codenamecrew.funkin.game.Note,
+			"Strum"				=>   codenamecrew.codenamecrew.funkin.game.Strum,
+			"StrumLine"			=>   codenamecrew.codenamecrew.funkin.game.StrumLine,
+			"Character"			=>   codenamecrew.codenamecrew.funkin.game.Character,
+			"Boyfriend"			=>   codenamecrew.codenamecrew.funkin.game.Character, // for compatibility
+			"PauseSubstate"		=>   codenamecrew.codenamecrew.funkin.menus.PauseSubState,
+			"FreeplayState"		=>   codenamecrew.codenamecrew.funkin.menus.FreeplayState,
+			"MainMenuState"		=>   codenamecrew.codenamecrew.funkin.menus.MainMenuState,
+			"PauseSubState"		=>   codenamecrew.codenamecrew.funkin.menus.PauseSubState,
+			"StoryMenuState"	=>   codenamecrew.codenamecrew.funkin.menus.StoryMenuState,
+			"TitleState"		=>   codenamecrew.codenamecrew.funkin.menus.TitleState,
+			"Options"			=>   codenamecrew.codenamecrew.funkin.options.Options,
+			"Paths"				=>   codenamecrew.codenamecrew.funkin.backend.assets.Paths,
+			"Conductor"			=>   codenamecrew.codenamecrew.funkin.backend.system.Conductor,
+			"codenamecrew.funkin.Shader"		=>   codenamecrew.codenamecrew.funkin.backend.shaders.codenamecrew.funkin.Shader,
+			"CustomShader"		=>   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader,
+			"codenamecrew.funkin.Text"		=>   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text,
 			"FlxAnimate"		=> animate.FlxAnimate,
-			"FunkinSprite"		=> funkin.backend.FunkinSprite,
-			"Alphabet"			=> funkin.menus.ui.Alphabet,
-			"Flags"				=> funkin.backend.system.Flags,
+			"codenamecrew.funkin.Sprite"		=>   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Sprite,
+			"Alphabet"			=>   codenamecrew.codenamecrew.funkin.menus.ui.Alphabet,
+			"Flags"				=>   codenamecrew.codenamecrew.funkin.backend.system.Flags,
 
-			"CoolUtil"			=> funkin.backend.utils.CoolUtil,
-			"IniUtil"			=> funkin.backend.utils.IniUtil,
-			"XMLUtil"			=> funkin.backend.utils.XMLUtil,
-			#if sys "ZipUtil"	=> funkin.backend.utils.ZipUtil, #end
-			"MarkdownUtil"		=> funkin.backend.utils.MarkdownUtil,
-			"EngineUtil"		=> funkin.backend.utils.EngineUtil,
-			"ThreadUtil"		=> funkin.backend.utils.ThreadUtil,
-			"MemoryUtil"		=> funkin.backend.utils.MemoryUtil,
-			"BitmapUtil"		=> funkin.backend.utils.BitmapUtil,
+			"CoolUtil"			=>   codenamecrew.codenamecrew.funkin.backend.utils.CoolUtil,
+			"IniUtil"			=>   codenamecrew.codenamecrew.funkin.backend.utils.IniUtil,
+			"XMLUtil"			=>   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil,
+			#if sys "ZipUtil"	=>   codenamecrew.codenamecrew.funkin.backend.utils.ZipUtil, #end
+			"MarkdownUtil"		=>   codenamecrew.codenamecrew.funkin.backend.utils.MarkdownUtil,
+			"EngineUtil"		=>   codenamecrew.codenamecrew.funkin.backend.utils.EngineUtil,
+			"ThreadUtil"		=>   codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil,
+			"MemoryUtil"		=>   codenamecrew.codenamecrew.funkin.backend.utils.MemoryUtil,
+			"BitmapUtil"		=>   codenamecrew.codenamecrew.funkin.backend.utils.BitmapUtil,
 
 			#if TRANSLATIONS_SUPPORT
-			"TranslationUtil"	=> funkin.backend.utils.TranslationUtil,
-			"translate"		=> funkin.backend.utils.TranslationUtil.get,
+			"TranslationUtil"	=>   codenamecrew.codenamecrew.funkin.backend.utils.TranslationUtil,
+			"translate"		=>   codenamecrew.codenamecrew.funkin.backend.utils.TranslationUtil.get,
 			#end
 		];
 	}
@@ -135,7 +135,7 @@ class Script extends FlxBasic implements IFlxDestroyable {
 		var redirects:Map<String, String> = [];
 
 		// Events
-		final events = "funkin.backend.scripting.events.";
+		final events = "  codenamecrew.codenamecrew.funkin.backend.scripting.events.";
 		redirects[events + "CharacterNodeEvent"]			= events + "character.CharacterNodeEvent";
 		redirects[events + "CharacterXMLEvent"]				= events + "character.CharacterXMLEvent";
 		redirects[events + "DanceEvent"]					= events + "character.DanceEvent";
@@ -167,7 +167,7 @@ class Script extends FlxBasic implements IFlxDestroyable {
 		redirects[events + "StageXMLEvent"]					= events + "stage.StageXMLEvent";
 
 		// Old State Names
-		redirects["funkin.menus.BetaWarningState"] 			= "funkin.menus.WarningState";
+		redirects["  codenamecrew.codenamecrew.funkin.menus.BetaWarningState"] 			= "  codenamecrew.codenamecrew.funkin.menus.WarningState";
 
 		return redirects;
 	}
@@ -177,7 +177,7 @@ class Script extends FlxBasic implements IFlxDestroyable {
 	 * Includes all of the defines that the build was compiled with.
 	 */
 	public static function getDefaultPreprocessors():Map<String, Dynamic> {
-		var defines = funkin.backend.system.macros.DefinesMacro.defines;
+		var defines =   codenamecrew.codenamecrew.funkin.backend.system.macros.DefinesMacro.defines;
 		defines.set("CODENAME_ENGINE", true);
 		defines.set("CODENAME_VER", Flags.VERSION);
 		defines.set("CODENAME_BUILD", 2675); // 2675 being the last build num before it was removed

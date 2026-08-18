@@ -1,4 +1,4 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
 import flixel.math.FlxPoint;
 import openfl.display.Bitmap;

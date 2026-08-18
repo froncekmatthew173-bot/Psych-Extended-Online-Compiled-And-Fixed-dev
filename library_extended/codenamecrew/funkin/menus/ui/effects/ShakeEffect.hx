@@ -1,6 +1,6 @@
-package funkin.menus.ui.effects;
+package   codenamecrew.codenamecrew.funkin.menus.ui.effects;
 
-import funkin.menus.ui.effects.RegionEffect;
+import   codenamecrew.codenamecrew.funkin.menus.ui.effects.RegionEffect;
 
 class ShakeEffect extends RegionEffect {
 	public var intensityX:Float = 2;

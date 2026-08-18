@@ -1,10 +1,10 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.FlxGame;
 import flixel.FlxG;
 import openfl.events.KeyboardEvent;
 
-class FunkinGame extends FlxGame {
+class codenamecrew.funkin.Game extends FlxGame {
 	var skipNextTickUpdate:Bool = false;
 
 	#if desktop

@@ -1,15 +1,15 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
-import funkin.backend.system.Logs;
-import funkin.backend.utils.MemoryUtil;
-import funkin.backend.utils.native.HiddenProcess;
+import   codenamecrew.codenamecrew.funkin.backend.system.Logs;
+import   codenamecrew.codenamecrew.funkin.backend.utils.MemoryUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.native.HiddenProcess;
 #if cpp
 import cpp.Float64;
 import cpp.UInt64;
 #end
 
 using StringTools;
-import funkin.backend.system.macros.StringMacro;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.StringMacro;
 
 class SystemInfo extends FramerateCategory {
 	public static var osInfo:String = "Unknown";

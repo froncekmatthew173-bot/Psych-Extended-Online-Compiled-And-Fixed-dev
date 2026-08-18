@@ -1,4 +1,4 @@
-package lime.utils;
+package codenamecrew.lime.utils;
 
 import haxe.ds.ObjectMap;
 

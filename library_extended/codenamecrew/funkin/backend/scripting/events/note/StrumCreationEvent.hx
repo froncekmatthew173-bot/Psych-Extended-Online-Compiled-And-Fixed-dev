@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.note;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.note;
 
-import funkin.game.Strum;
+import   codenamecrew.codenamecrew.funkin.game.Strum;
 
 final class StrumCreationEvent extends CancellableEvent {
 	@:dox(hide) public var __doAnimation = true;

@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.gameplay;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameplay;
 
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 
 final class GameOverEvent extends CancellableEvent {
 	/**

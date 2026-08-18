@@ -1,4 +1,4 @@
-package openfl.display3D;
+package codenamecrew.openfl.display3D;
 
 #if !flash
 import openfl.display3D.utils.UInt8Buff;

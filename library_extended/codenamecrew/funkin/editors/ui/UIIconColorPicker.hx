@@ -1,9 +1,9 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import openfl.display.BitmapData;
 import flixel.util.FlxColor;
 import flixel.graphics.frames.FlxAtlasFrames;
-using funkin.backend.utils.BitmapUtil;
+using   codenamecrew.codenamecrew.funkin.backend.utils.BitmapUtil;
 
 class UIIconColorPicker extends UISliceSprite {
 	public var colorWheel:UIColorwheel;

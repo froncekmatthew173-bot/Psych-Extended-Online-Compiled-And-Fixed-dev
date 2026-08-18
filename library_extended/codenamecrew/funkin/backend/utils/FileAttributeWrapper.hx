@@ -1,7 +1,7 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.util.FlxStringUtil;
-import funkin.backend.utils.NativeAPI.FileAttribute;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.FileAttribute;
 
 /**
  * Currently only for Windows, but planned to work on other platforms later.

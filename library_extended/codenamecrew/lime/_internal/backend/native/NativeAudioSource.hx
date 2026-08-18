@@ -1,4 +1,4 @@
-package lime._internal.backend.native;
+package codenamecrew.lime._internal.backend.native;
 
 import sys.thread.Thread;
 import sys.thread.Mutex;
@@ -521,7 +521,7 @@ class NativeAudioSource {
 		}
 
 		#if ALLOW_MULTITHREADING
-		if (streamSources.length != 0) funkin.backend.utils.ThreadUtil.execAsync(streamBuffersUpdate);
+		if (streamSources.length != 0)   codenamecrew.codenamecrew.funkin.backend.utils.ThreadUtil.execAsync(streamBuffersUpdate);
 		#else
 		if (streamSources.length == 0) {
 			if (wasEmpty) {

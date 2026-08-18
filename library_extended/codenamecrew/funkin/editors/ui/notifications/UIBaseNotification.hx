@@ -1,4 +1,4 @@
-package funkin.editors.ui.notifications;
+package   codenamecrew.codenamecrew.funkin.editors.ui.notifications;
 
 import flixel.group.FlxGroup;
 import flixel.math.FlxRect;

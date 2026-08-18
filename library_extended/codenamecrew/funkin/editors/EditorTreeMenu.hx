@@ -1,9 +1,9 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
 import flixel.addons.display.FlxBackdrop;
-import funkin.options.type.OptionType;
+import   codenamecrew.codenamecrew.funkin.options.type.OptionType;
 
-class EditorTreeMenu extends funkin.options.TreeMenu {
+class EditorTreeMenu extends   codenamecrew.codenamecrew.funkin.options.TreeMenu {
 	public var bg:FlxBackdrop;
 	public var bgType:String = "default";
 	public var bgMovement:FlxPoint = new FlxPoint();
@@ -30,7 +30,7 @@ class EditorTreeMenu extends funkin.options.TreeMenu {
 	}
 
 	override function exit() {
-		FlxG.switchState(new funkin.menus.MainMenuState());
+		FlxG.switchState(new   codenamecrew.codenamecrew.funkin.menus.MainMenuState());
 	}
 
 	override function update(elapsed:Float) {
@@ -64,26 +64,26 @@ class EditorTreeMenu extends funkin.options.TreeMenu {
 	private function warnCompressLibrary() {
 		var warningMessage = "It seems you have libraries loaded that are compressed, and can not have files written to them.\n
 		This is just a friendly reminder that if you're loading a Mod and wish to edit files, you need to uncompress it to be able to use any editors!\n\nCompressed Libraries: ";
-		var compressedList = Paths.assetsTree.libraries.filter(l -> funkin.backend.assets.AssetsLibraryList.getCleanLibrary(l).isCompressed);
+		var compressedList = Paths.assetsTree.libraries.filter(l ->   codenamecrew.codenamecrew.funkin.backend.assets.AssetsLibraryList.getCleanLibrary(l).isCompressed);
 		var modNameList = [for (l in compressedList) {
-			l = funkin.backend.assets.AssetsLibraryList.getCleanLibrary(l);
-			if (l is funkin.backend.assets.IModsAssetLibrary) cast(l, funkin.backend.assets.IModsAssetLibrary).modName;
+			l =   codenamecrew.codenamecrew.funkin.backend.assets.AssetsLibraryList.getCleanLibrary(l);
+			if (l is   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary) cast(l,   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary).modName;
 		}];
 		warningMessage += modNameList.join(", ");
-		var zipLibraryWarning = new funkin.editors.ui.UIWarningSubstate("Compressed Library Detected!", warningMessage, [{label: "Ok", color: 0x969533, onClick: (state) -> {} }], false);
+		var zipLibraryWarning = new   codenamecrew.codenamecrew.funkin.editors.ui.UIWarningSubstate("Compressed Library Detected!", warningMessage, [{label: "Ok", color: 0x969533, onClick: (state) -> {} }], false);
 
 		openSubState(zipLibraryWarning);
 	}
 
 }
 
-class EditorTreeMenuScreen extends funkin.options.TreeMenuScreen {
+class EditorTreeMenuScreen extends   codenamecrew.codenamecrew.funkin.options.TreeMenuScreen {
 	public function new(name:String, desc:String, ?prefix:String, ?objects:Array<FlxSprite>,
 		?newButton:String, ?newButtonDesc:String, ?newCallback:Void->Void)
 	{
 		super(name, desc, prefix, objects);
 		if (newCallback != null) {
-			insert(0, new funkin.options.type.NewOption(getID(newButton), getID(newButtonDesc), newCallback));
+			insert(0, new   codenamecrew.codenamecrew.funkin.options.type.NewOption(getID(newButton), getID(newButtonDesc), newCallback));
 			curSelected = 1;
 		}
 	}

@@ -1,10 +1,10 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 #if TRANSLATIONS_SUPPORT
-import funkin.backend.assets.TranslatedAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.TranslatedAssetLibrary;
 #end
-import funkin.backend.assets.IModsAssetLibrary;
-import funkin.backend.assets.AssetSource;
+import   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetSource;
 import lime.utils.AssetLibrary;
 import haxe.ds.Map;
 
@@ -24,8 +24,8 @@ class AssetsLibraryList extends AssetLibrary {
 		return false;
 	}
 
-	@:allow(funkin.backend.system.Main)
-	@:allow(funkin.backend.system.MainState)
+	@:allow(  codenamecrew.codenamecrew.funkin.backend.system.Main)
+	@:allow(  codenamecrew.codenamecrew.funkin.backend.system.MainState)
 	private var __defaultLibraries:Array<AssetLibrary> = [];
 	public var base:AssetLibrary;
 

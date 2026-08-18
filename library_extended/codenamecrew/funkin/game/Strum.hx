@@ -1,9 +1,9 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.math.FlxPoint;
 import flixel.math.FlxAngle;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 class Strum extends FlxSprite {
 	/**

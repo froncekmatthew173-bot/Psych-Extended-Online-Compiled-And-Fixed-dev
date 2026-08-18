@@ -1,4 +1,4 @@
-package funkin.backend.utils.native;
+package   codenamecrew.codenamecrew.funkin.backend.utils.native;
 
 #if cpp
 /*

@@ -1,6 +1,6 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
-import funkin.backend.system.Flags;
+import   codenamecrew.codenamecrew.funkin.backend.system.Flags;
 
 import haxe.io.Path;
 import lime.graphics.Image;
@@ -11,8 +11,8 @@ import openfl.utils.AssetLibrary;
 import sys.io.File;
 
 #if MOD_SUPPORT
-import funkin.backend.utils.SysZip.SysZipEntry;
-import funkin.backend.utils.SysZip;
+import   codenamecrew.codenamecrew.funkin.backend.utils.SysZip.SysZipEntry;
+import   codenamecrew.codenamecrew.funkin.backend.utils.SysZip;
 
 class ZipFolderLibrary extends AssetLibrary implements IModsAssetLibrary {
 	public var basePath:String;

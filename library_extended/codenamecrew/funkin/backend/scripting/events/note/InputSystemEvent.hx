@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.note;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.note;
 
-import funkin.game.StrumLine;
+import   codenamecrew.codenamecrew.funkin.game.StrumLine;
 
 final class InputSystemEvent extends CancellableEvent {
 	/**

@@ -1,10 +1,10 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.FlxGraphic;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 import openfl.geom.Rectangle;
-import funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
 
 class FlxFastTypedGroup<T:FlxBasic> extends FlxTypedGroup<T> {
 	public function new(?maxSize:Int = 0) {

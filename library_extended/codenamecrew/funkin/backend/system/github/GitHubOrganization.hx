@@ -1,6 +1,6 @@
-package funkin.backend.system.github;
+package   codenamecrew.codenamecrew.funkin.backend.system.github;
 
-import funkin.backend.system.github.GitHubUser.GitHubUserType;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubUser.GitHubUserType;
 
 typedef GitHubOrganization = {
 	var login:String;

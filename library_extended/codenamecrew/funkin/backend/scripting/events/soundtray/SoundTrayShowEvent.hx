@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.soundtray;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.soundtray;
 
 final class SoundTrayShowEvent extends CancellableEvent
 {

@@ -1,13 +1,13 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxSignal.FlxTypedSignal;
-import funkin.backend.chart.ChartData;
-import funkin.backend.scripting.events.note.*;
-import funkin.backend.system.Conductor;
-import funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.note.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
 
 /**
  * Group of strums, that contains the strums and notes.

@@ -1,6 +1,6 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
-import funkin.backend.system.macros.StringMacro;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.StringMacro;
 
 class ConductorInfo extends FramerateCategory {
 	public function new() {

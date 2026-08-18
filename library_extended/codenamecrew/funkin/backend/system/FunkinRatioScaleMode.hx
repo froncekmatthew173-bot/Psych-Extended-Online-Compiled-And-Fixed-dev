@@ -1,8 +1,8 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.system.scaleModes.RatioScaleMode;
 
-class FunkinRatioScaleMode extends RatioScaleMode {
+class codenamecrew.funkin.RatioScaleMode extends RatioScaleMode {
 	@:isVar public var width(get, set):Null<Int> = null;
 	@:isVar public var height(get, set):Null<Int> = null;
 

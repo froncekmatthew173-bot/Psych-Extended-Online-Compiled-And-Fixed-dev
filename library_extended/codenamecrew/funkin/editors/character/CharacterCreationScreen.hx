@@ -1,8 +1,8 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import haxe.xml.Printer;
-import funkin.game.Character;
-import funkin.editors.ui.UIImageExplorer.ImageSaveData;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIImageExplorer.ImageSaveData;
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
 

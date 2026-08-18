@@ -1,11 +1,11 @@
-package funkin.backend.system.net;
+package   codenamecrew.codenamecrew.funkin.backend.system.net;
 
 import flixel.util.typeLimit.OneOfTwo;
 
 import haxe.io.Bytes;
 import haxe.io.BytesOutput;
 
-class FunkinPacket implements haxe.Constraints.IMap<String, Dynamic> {
+class codenamecrew.funkin.Packet implements haxe.Constraints.IMap<String, Dynamic> {
 	// Status of the packet. 200 is an OK response.
 	public var status:Int = -1;
 
@@ -17,9 +17,9 @@ class FunkinPacket implements haxe.Constraints.IMap<String, Dynamic> {
 
 	public function new() {}
 
-	public static function fromJson(json:OneOfTwo<String, haxe.DynamicAccess<Dynamic>>):FunkinPacket { return (new FunkinPacket().appendJson(json)); }
+	public static function fromJson(json:OneOfTwo<String, haxe.DynamicAccess<Dynamic>>):codenamecrew.funkin.Packet { return (new codenamecrew.funkin.Packet().appendJson(json)); }
 
-	public function appendJson(json:OneOfTwo<String, haxe.DynamicAccess<Dynamic>>):FunkinPacket {
+	public function appendJson(json:OneOfTwo<String, haxe.DynamicAccess<Dynamic>>):codenamecrew.funkin.Packet {
 		var parsedJson:haxe.DynamicAccess<Dynamic>;
 		if (json is String) {
 			try {
@@ -58,13 +58,13 @@ class FunkinPacket implements haxe.Constraints.IMap<String, Dynamic> {
 	inline public function iterator():Iterator<Dynamic> { return fields.iterator(); }
 	inline public function keyValueIterator():KeyValueIterator<String, Dynamic> { return fields.keyValueIterator(); }
 
-	public function copy():FunkinPacket { 
-		var copy = new FunkinPacket();
+	public function copy():codenamecrew.funkin.Packet { 
+		var copy = new codenamecrew.funkin.Packet();
 		copy.fields = this.fields.copy();
 		copy.status = this.status;
 		return copy;
 	}
 
 	inline public function clear():Void { fields.clear(); }
-	inline public function toString():String { return 'FunkinPacket (Status: $status)'; }
+	inline public function toString():String { return 'codenamecrew.funkin.Packet (Status: $status)'; }
 }

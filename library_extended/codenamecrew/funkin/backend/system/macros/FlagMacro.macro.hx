@@ -1,4 +1,4 @@
-package funkin.backend.system.macros;
+package   codenamecrew.codenamecrew.funkin.backend.system.macros;
 
 import haxe.macro.Context;
 import haxe.macro.Expr;
@@ -7,7 +7,7 @@ using StringTools;
 
 using haxe.macro.Tools;
 
-using funkin.backend.system.macros.FlagMacro;
+using   codenamecrew.codenamecrew.funkin.backend.system.macros.FlagMacro;
 
 class FlagMacro {
 	private static function hasMeta(meta:Array<MetadataEntry>, name:String):Bool {

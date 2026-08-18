@@ -1,4 +1,4 @@
-package funkin.backend.system.modules;
+package   codenamecrew.codenamecrew.funkin.backend.system.modules;
 
 import haxe.io.Path;
 

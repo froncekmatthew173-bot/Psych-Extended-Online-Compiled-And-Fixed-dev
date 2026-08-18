@@ -1,4 +1,4 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import sys.FileSystem;
 import flixel.util.FlxSpriteUtil;
@@ -8,20 +8,20 @@ import flixel.graphics.frames.FlxFrame;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.util.FlxColor;
-import funkin.backend.FunkinSprite;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.ScriptPack;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.character.*;
-import funkin.backend.scripting.events.sprite.*;
-import funkin.backend.scripting.events.PointEvent;
-import funkin.backend.scripting.events.DrawEvent;
-import funkin.backend.system.Conductor;
-import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.system.interfaces.IOffsetCompatible;
-import funkin.backend.utils.MatrixUtil;
-import funkin.backend.utils.XMLUtil;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Sprite;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.character.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.sprite.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.PointEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.DrawEvent;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IOffsetCompatible;
+import   codenamecrew.codenamecrew.funkin.backend.utils.MatrixUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil;
 import haxe.Exception;
 import haxe.io.Path;
 import haxe.xml.Access;
@@ -30,10 +30,10 @@ import animate.FlxAnimateFrames;
 
 using StringTools;
 
-@:allow(funkin.desktop.editors.CharacterEditor)
-@:allow(funkin.game.StrumLine)
-@:allow(funkin.game.PlayState)
-class Character extends FunkinSprite implements IBeatReceiver implements IOffsetCompatible implements IPrePostDraw {
+@:allow(  codenamecrew.codenamecrew.funkin.desktop.editors.CharacterEditor)
+@:allow(  codenamecrew.codenamecrew.funkin.game.StrumLine)
+@:allow(  codenamecrew.codenamecrew.funkin.game.PlayState)
+class Character extends codenamecrew.funkin.Sprite implements IBeatReceiver implements IOffsetCompatible implements IPrePostDraw {
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = Flags.DEFAULT_CHARACTER;
 	public var sprite:String = Flags.DEFAULT_CHARACTER;

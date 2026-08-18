@@ -1,8 +1,8 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
-import funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
 import flixel.util.FlxColor;
-import funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
 import haxe.Json;
 import haxe.io.Path;
 

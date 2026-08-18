@@ -1,7 +1,7 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
-import funkin.backend.chart.ChartData.ChartEvent;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartEvent;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 /**
  * Legacy FNF chart parser.

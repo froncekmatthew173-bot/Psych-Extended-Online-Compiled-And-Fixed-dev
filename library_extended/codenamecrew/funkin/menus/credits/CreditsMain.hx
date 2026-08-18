@@ -1,11 +1,11 @@
-package funkin.menus.credits;
+package   codenamecrew.codenamecrew.funkin.menus.credits;
 
 import flixel.util.FlxColor;
-import funkin.backend.assets.AssetSource;
-import funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor;
-import funkin.options.TreeMenu;
-import funkin.options.TreeMenuScreen;
-import funkin.options.type.*;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetSource;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenu;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenuScreen;
+import   codenamecrew.codenamecrew.funkin.options.type.*;
 import haxe.xml.Access;
 
 class CreditsMain extends TreeMenu {
@@ -25,7 +25,7 @@ class CreditsMain extends TreeMenu {
 		var first = new TreeMenuScreen('credits.name', 'credits.madePossible');
 		addMenu(first);
 
-		for (i in funkin.backend.assets.ModsFolder.getLoadedMods()) {
+		for (i in   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.getLoadedMods()) {
 			var xmlPath = Paths.xml('config/credits/LIB_$i');
 
 			if (Paths.assetsTree.existsSpecific(xmlPath, "TEXT")) {
@@ -37,7 +37,7 @@ class CreditsMain extends TreeMenu {
 		}
 
 		first.add(new TextOption('Codename Engine', 'credits.selectCodename', ' >', () -> addMenu(new CreditsCodename())));
-		first.add(new TextOption('Friday Night Funkin\'', 'credits.selectBase', ' >', () -> CoolUtil.openURL(Flags.URL_FNF_ITCH)));
+		first.add(new TextOption('Friday Night codenamecrew.funkin.\'', 'credits.selectBase', ' >', () -> CoolUtil.openURL(Flags.URL_FNF_ITCH)));
 	}
 
 	public function updateBG() {

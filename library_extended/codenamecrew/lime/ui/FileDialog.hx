@@ -1,4 +1,4 @@
-package lime.ui;
+package codenamecrew.lime.ui;
 
 import haxe.io.Bytes;
 import haxe.io.Path;

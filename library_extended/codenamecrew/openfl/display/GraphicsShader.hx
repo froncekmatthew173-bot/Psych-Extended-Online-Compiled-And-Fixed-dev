@@ -1,4 +1,4 @@
-package openfl.display;
+package codenamecrew.openfl.display;
 
 import openfl.utils.ByteArray;
 

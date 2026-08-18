@@ -1,4 +1,4 @@
-package funkin.backend.shaders;
+package   codenamecrew.codenamecrew.funkin.backend.shaders;
 
 import flixel.graphics.FlxGraphic;
 import flixel.system.FlxAssets.FlxShader;
@@ -19,8 +19,8 @@ using StringTools;
 @:access(openfl.display3D.Program3D)
 @:access(openfl.display.ShaderInput)
 @:access(openfl.display.ShaderParameter)
-class FunkinShader extends FlxShader implements IHScriptCustomBehaviour {
-	private static var __instanceFields = Type.getInstanceFields(FunkinShader);
+class codenamecrew.funkin.Shader extends FlxShader implements IHScriptCustomBehaviour {
+	private static var __instanceFields = Type.getInstanceFields(codenamecrew.funkin.Shader);
 	private static var FRAGMENT_SHADER = 0;
 	private static var VERTEX_SHADER = 1;
 
@@ -28,9 +28,9 @@ class FunkinShader extends FlxShader implements IHScriptCustomBehaviour {
 	public var onProcessGLData:FlxTypedSignal<(String, String)->Void> = new FlxTypedSignal<(String, String)->Void>();
 
 	public var glslVer:String = Flags.DEFAULT_GLSL_VERSION;
-	public var fileName:String = "FunkinShader";
-	public var fragFileName:String = "FunkinShader";
-	public var vertFileName:String = "FunkinShader";
+	public var fileName:String = "codenamecrew.funkin.Shader";
+	public var fragFileName:String = "codenamecrew.funkin.Shader";
+	public var vertFileName:String = "codenamecrew.funkin.Shader";
 
 	public var shaderPrefix:String = "";
 	public var fragmentPrefix:String = "";

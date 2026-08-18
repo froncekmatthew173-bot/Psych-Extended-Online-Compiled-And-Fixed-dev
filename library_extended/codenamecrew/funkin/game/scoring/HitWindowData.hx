@@ -1,4 +1,4 @@
-package funkin.game.scoring;
+package   codenamecrew.codenamecrew.funkin.game.scoring;
 
 import haxe.ds.StringMap;
 
@@ -68,8 +68,8 @@ enum abstract WindowPreset(Int) from Int to Int
 		return switch (cast this : WindowPreset)
 		{
 			case CNE_CLASSIC: "Codename (Classic)";
-			case FNF_CLASSIC: "Funkin' (Week 7)";
-			case FNF_VSLICE: "Funkin' (V-Slice)";
+			case FNF_CLASSIC: "codenamecrew.funkin.' (Week 7)";
+			case FNF_VSLICE: "codenamecrew.funkin.' (V-Slice)";
 			case _: "Default";
 		}
 	}

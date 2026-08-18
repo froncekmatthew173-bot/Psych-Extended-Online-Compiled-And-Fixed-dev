@@ -1,15 +1,15 @@
-package funkin.menus.credits;
+package   codenamecrew.codenamecrew.funkin.menus.credits;
 
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import funkin.backend.system.github.GitHub;
-import funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor;
-import funkin.options.PlayerSettings;
-import funkin.options.type.GithubIconOption;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHub;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubContributor.CreditsGitHubContributor;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.options.type.GithubIconOption;
 
 using StringTools;
 
-class CreditsCodename extends funkin.options.TreeMenuScreen {
+class CreditsCodename extends   codenamecrew.codenamecrew.funkin.options.TreeMenuScreen {
 	public var error:Bool = false;
 	public var totalContributions:Int = 0;
 	public var contribFormats:Array<FlxTextFormatMarkerPair> = [];
@@ -77,7 +77,7 @@ class CreditsCodename extends funkin.options.TreeMenuScreen {
 			error = true;
 			var errMsg:String = 'Error while trying to download contributors list:\n${CoolUtil.removeIP(e.message)}';
 			Logs.error(errMsg.replace('\n', ' '));
-			funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
+			  codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
 		});
 		if(error) return false;
 		if((idk is Array)) {
@@ -98,7 +98,7 @@ class CreditsCodename extends funkin.options.TreeMenuScreen {
 			errorOnMain = true;
 			var errMsg:String = 'Error while trying to download ${Flags.REPO_OWNER} members list:\n${CoolUtil.removeIP(e.message)}';
 			Logs.error(errMsg.replace('\n', ' '));
-			funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
+			  codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.showMessageBox("Codename Engine Warning", errMsg, MSG_WARNING);
 		});
 		if(!errorOnMain) {
 			Options.mainDevs = [for(m in idk2) m.id];

@@ -1,12 +1,12 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
-import funkin.game.StrumLine;
+import   codenamecrew.codenamecrew.funkin.game.StrumLine;
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartStrumLine;
-import funkin.game.Character;
-import funkin.game.Note;
-import funkin.game.HudCamera;
-import funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartStrumLine;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Note;
+import   codenamecrew.codenamecrew.funkin.game.HudCamera;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
 import flixel.tweens.FlxTween;
 
 class CharterStrumlineScreen extends UISubstateWindow {

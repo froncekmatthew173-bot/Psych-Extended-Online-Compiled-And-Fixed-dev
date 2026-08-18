@@ -1,17 +1,17 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import flixel.util.FlxColor;
-import funkin.editors.stage.StageEditor;
-import funkin.editors.extra.PropertyButton;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageEditor;
+import   codenamecrew.codenamecrew.funkin.editors.extra.PropertyButton;
 import flixel.graphics.FlxGraphic;
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
 import openfl.display.BitmapData;
-import funkin.game.Character;
-import funkin.backend.utils.XMLUtil.AnimData;
-import funkin.editors.character.CharacterEditor;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.editors.character.CharacterEditor;
 
-using funkin.backend.utils.BitmapUtil;
+using   codenamecrew.codenamecrew.funkin.backend.utils.BitmapUtil;
 
 typedef CharacterExtraInfo = {
 	var icon:String;

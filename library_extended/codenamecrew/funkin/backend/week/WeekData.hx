@@ -1,4 +1,4 @@
-package funkin.backend.week;
+package   codenamecrew.codenamecrew.funkin.backend.week;
 
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;

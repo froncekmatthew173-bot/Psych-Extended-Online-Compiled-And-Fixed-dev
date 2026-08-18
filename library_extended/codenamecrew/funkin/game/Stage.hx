@@ -1,16 +1,16 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.editors.character.CharacterEditor;
+import   codenamecrew.codenamecrew.funkin.editors.character.CharacterEditor;
 import flixel.FlxState;
 import flixel.math.FlxPoint;
 import haxe.xml.Access;
-import funkin.backend.utils.XMLUtil.XMLImportedScriptInfo;
-import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.stage.*;
-import funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.XMLImportedScriptInfo;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.stage.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.interfaces.IBeatReceiver;
 import haxe.io.Path;
 import haxe.xml.Access;
 
@@ -133,7 +133,7 @@ class Stage extends FlxBasic implements IBeatReceiver {
 
 						var isSolid = node.name == "solid";
 
-						var spr = new FunkinSprite();
+						var spr = new codenamecrew.funkin.Sprite();
 						(isSolid ? spr.makeSolid : spr.makeGraphic)(
 							Std.parseInt(node.att.width),
 							Std.parseInt(node.att.height),

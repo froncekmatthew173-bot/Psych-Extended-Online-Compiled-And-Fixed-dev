@@ -1,4 +1,4 @@
-package funkin.menus.ui.effects;
+package   codenamecrew.codenamecrew.funkin.menus.ui.effects;
 
 import flixel.util.FlxColor;
 

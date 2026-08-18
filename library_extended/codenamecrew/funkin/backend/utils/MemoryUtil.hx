@@ -1,6 +1,6 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
-import funkin.backend.utils.native.HiddenProcess;
+import   codenamecrew.codenamecrew.funkin.backend.utils.native.HiddenProcess;
 #if cpp
 import cpp.vm.Gc;
 #elseif hl
@@ -90,11 +90,11 @@ final class MemoryUtil {
 	{
 		#if cpp
 			#if windows
-			return funkin.backend.utils.native.Windows.getTotalRam();
+			return   codenamecrew.codenamecrew.funkin.backend.utils.native.Windows.getTotalRam();
 			#elseif mac
-			return funkin.backend.utils.native.Mac.getTotalRam();
+			return   codenamecrew.codenamecrew.funkin.backend.utils.native.Mac.getTotalRam();
 			#elseif linux
-			return funkin.backend.utils.native.Linux.getTotalRam();
+			return   codenamecrew.codenamecrew.funkin.backend.utils.native.Linux.getTotalRam();
 			#else
 			return 0;
 			#end

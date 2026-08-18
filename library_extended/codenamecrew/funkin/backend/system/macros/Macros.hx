@@ -1,4 +1,4 @@
-package funkin.backend.system.macros;
+package   codenamecrew.codenamecrew.funkin.backend.system.macros;
 
 #if macro
 import haxe.macro.*;
@@ -38,7 +38,7 @@ class Macros {
 		];
 
 		if(Context.defined("sys")) {
-			for(inc in ["sys", "openfl.net", "funkin.backend.system.net"]) {
+			for(inc in ["sys", "openfl.net", "  codenamecrew.codenamecrew.funkin.backend.system.net"]) {
 				if(!isHl) Compiler.include(inc, compathx4);
 				else {
 
@@ -48,15 +48,15 @@ class Macros {
 			}
 		}
 
-		Compiler.include("funkin", [#if !UPDATE_CHECKING 'funkin.backend.system.updating' #end]);
+		Compiler.include("codenamecrew.funkin.", [#if !UPDATE_CHECKING '  codenamecrew.codenamecrew.funkin.backend.system.updating' #end]);
 	}
 
 	public static function initMacros() {
 		if (Context.defined("hl")) {
-			for (c in ["lime", "std", "Math", ""]) Compiler.addGlobalMetadata(c, "@:build(funkin.backend.system.macros.HashLinkFixer.build())");
+			for (c in ["lime", "std", "Math", ""]) Compiler.addGlobalMetadata(c, "@:build(  codenamecrew.codenamecrew.funkin.backend.system.macros.HashLinkFixer.build())");
 		}
 
-		final macroPath = 'funkin.backend.system.macros.Macros';
+		final macroPath = '  codenamecrew.codenamecrew.funkin.backend.system.macros.Macros';
 		Compiler.addMetadata('@:build($macroPath.buildLimeAssetLibrary())', 'lime.utils.AssetLibrary');
 
 		//Adds Compat for #if hscript blocks when you have hscript improved
@@ -68,7 +68,7 @@ class Macros {
 	public static function buildLimeAssetLibrary():Array<Field> {
 		final fields:Array<Field> = Context.getBuildFields(), pos:Position = Context.currentPos();
 
-		fields.push({name: 'tag', access: [APublic], pos: pos, kind: FVar(macro :funkin.backend.assets.AssetSource)});
+		fields.push({name: 'tag', access: [APublic], pos: pos, kind: FVar(macro :  codenamecrew.codenamecrew.funkin.backend.assets.AssetSource)});
 		fields.push({name: 'isCompressed', access: [APublic], pos: pos, kind: FVar(macro :Bool, macro false)});
 
 		return fields;

@@ -1,4 +1,4 @@
-package funkin.backend.system.github;
+package   codenamecrew.codenamecrew.funkin.backend.system.github;
 
 typedef GitHubUser = {
 	/**

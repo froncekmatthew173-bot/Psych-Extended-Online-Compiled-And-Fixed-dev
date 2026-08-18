@@ -1,10 +1,10 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
-import funkin.editors.ui.old.OldUISliceSpriteTri;
-import funkin.editors.ui.UITopMenu.UITopMenuButton;
+import   codenamecrew.codenamecrew.funkin.editors.ui.old.OldUISliceSpriteTri;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UITopMenu.UITopMenuButton;
 import flixel.tweens.FlxTween;
-import funkin.editors.ui.*;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.ui.*;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 
 class UIDebugState extends UIState {
 	public var topMenuSpr:UITopMenu;
@@ -45,7 +45,7 @@ class UIDebugState extends UIState {
 					null,
 					{
 						label: "Exit",
-						onSelect: (t) -> {FlxG.switchState(new funkin.menus.MainMenuState());}
+						onSelect: (t) -> {FlxG.switchState(new   codenamecrew.codenamecrew.funkin.menus.MainMenuState());}
 					}
 				]
 			},

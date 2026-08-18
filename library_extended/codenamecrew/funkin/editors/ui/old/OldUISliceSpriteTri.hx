@@ -1,4 +1,4 @@
-package funkin.editors.ui.old;
+package   codenamecrew.codenamecrew.funkin.editors.ui.old;
 
 import flixel.math.FlxRect;
 import flixel.graphics.frames.FlxFrame;

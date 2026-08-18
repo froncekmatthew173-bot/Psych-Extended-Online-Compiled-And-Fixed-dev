@@ -1,7 +1,7 @@
-package funkin.menus.ui.effects;
+package   codenamecrew.codenamecrew.funkin.menus.ui.effects;
 
 import flixel.util.FlxColor;
-import funkin.menus.ui.effects.RegionEffect;
+import   codenamecrew.codenamecrew.funkin.menus.ui.effects.RegionEffect;
 
 class ColorWaveEffect extends RegionEffect {
 	public var period:Float = 30;

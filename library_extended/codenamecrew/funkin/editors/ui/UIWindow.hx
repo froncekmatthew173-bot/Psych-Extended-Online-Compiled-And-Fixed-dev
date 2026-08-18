@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 class UIWindow extends UISliceSprite {
 	public var titleSpr:UIText;

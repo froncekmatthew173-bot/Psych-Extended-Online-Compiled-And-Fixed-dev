@@ -1,7 +1,7 @@
-package funkin.backend.utils.native;
+package   codenamecrew.codenamecrew.funkin.backend.utils.native;
 
 #if (mac && cpp)
-import funkin.backend.utils.NativeAPI.CodeCursor;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.CodeCursor;
 import openfl.ui.Mouse;
 
 @:headerInclude('sys/sysctl.h')

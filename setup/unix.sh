@@ -9,7 +9,7 @@ echo Installing dependencies...
 echo This might take a few moments depending on your internet speed.
 haxelib install hscript 2.6.0 --quiet --global
 haxelib git lime https://github.com/ShadowEngineTeam/lime --quiet --global
-haxelib git openfl https://github.com/FunkinCrew/openfl feature/desktop-angle --quiet --global
+haxelib git openfl https://github.com/codenamecrew.funkin.Crew/openfl feature/desktop-angle --quiet --global
 haxelib git flixel https://github.com/ArkoseLabsOfficial/flixel-peo peo-mobile --quiet --global
 haxelib install flixel-addons 3.3.2 --quiet --global
 haxelib install flixel-tools 1.5.1 --quiet --global
@@ -34,7 +34,7 @@ haxelib git grig.audio https://github.com/osakared/grig.audio 57f5d47f2533fd0c3d
 haxelib install tink_core 2.1.1 --quiet --global
 haxelib git hxvlc https://github.com/ShadowEngineTeam/hxvlc --quiet --global
 haxelib git yagp https://github.com/Snirozu/yagp master --quiet --global
-haxelib git funkin.vis https://github.com/FunkinCrew/funkVis 1966f8fbbbc509ed90d4b520f3c49c084fc92fd6 --quiet --global
+haxelib git   codenamecrew.codenamecrew.funkin.vis https://github.com/codenamecrew.funkin.Crew/funkVis 1966f8fbbbc509ed90d4b520f3c49c084fc92fd6 --quiet --global
 haxelib git mobile-controls https://github.com/ArkoseLabsOfficial/mobile-controls-dev main --quiet
 haxelib git hscript-improved https://github.com/PsychExtendedThings/hscript-improved --quiet --global
 haxelib install tink_await 0.6.0 --quiet --global

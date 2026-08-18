@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 enum abstract RegistryHive(Int) {
 	var HKEY_CLASSES_ROOT = 0x80000000;

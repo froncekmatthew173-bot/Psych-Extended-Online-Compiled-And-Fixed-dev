@@ -1,7 +1,7 @@
-package funkin.menus.ui.effects;
+package   codenamecrew.codenamecrew.funkin.menus.ui.effects;
 
 import flixel.tweens.FlxEase;
-import funkin.menus.ui.effects.RegionEffect;
+import   codenamecrew.codenamecrew.funkin.menus.ui.effects.RegionEffect;
 
 class TypeEffect extends RegionEffect {
 	public var interval:Float = 0.075;

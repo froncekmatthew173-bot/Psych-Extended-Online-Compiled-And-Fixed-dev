@@ -1,6 +1,6 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
-import funkin.editors.charter.Charter;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter;
 
 class GitarooPause extends MusicBeatState
 {

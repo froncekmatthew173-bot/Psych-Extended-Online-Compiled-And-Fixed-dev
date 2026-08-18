@@ -1,11 +1,11 @@
-package hscript;
+package codenamecrew.hscript;
 
 class Config {
 	// DISABLED: flixel 6.2.0 is incompatible with the ClassExtendMacro
 	// Runs support for custom classes in these
 	public static final ALLOWED_CUSTOM_CLASSES = [
 		//"flixel",
-		//"funkin"
+		//"codenamecrew.funkin."
 	];
 
 	// DISABLED: flixel 6.2.0 is incompatible with the AbstractHandler macro

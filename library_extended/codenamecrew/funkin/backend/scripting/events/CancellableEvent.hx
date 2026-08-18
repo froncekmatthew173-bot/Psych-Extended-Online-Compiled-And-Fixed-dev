@@ -1,9 +1,9 @@
-package funkin.backend.scripting.events;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events;
 
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 
-@:allow(funkin.backend.scripting.ScriptPack)
-@:autoBuild(funkin.backend.system.macros.EventMacro.build())
+@:allow(  codenamecrew.codenamecrew.funkin.backend.scripting.ScriptPack)
+@:autoBuild(  codenamecrew.codenamecrew.funkin.backend.system.macros.EventMacro.build())
 class CancellableEvent implements IFlxDestroyable {
 	@:dox(hide) public var cancelled:Bool = false;
 	@:dox(hide) private var __continueCalls:Bool = true;

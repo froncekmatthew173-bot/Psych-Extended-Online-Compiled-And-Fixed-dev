@@ -1,4 +1,4 @@
-package funkin.editors.stage.elements;
+package   codenamecrew.codenamecrew.funkin.editors.stage.elements;
 
 import flixel.util.FlxColor;
 import haxe.xml.Access;
@@ -172,7 +172,7 @@ class StageElementButton extends UIButton {
 		tagColor.y = y;
 	}
 
-	public function getSprite():FunkinSprite {
+	public function getSprite():codenamecrew.funkin.Sprite {
 		return null;
 	}
 

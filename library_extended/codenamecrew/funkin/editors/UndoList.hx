@@ -1,4 +1,4 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
 class UndoList<T> {
 	public var undoList:Array<T> = [];

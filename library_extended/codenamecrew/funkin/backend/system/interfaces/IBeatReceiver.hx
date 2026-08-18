@@ -1,4 +1,4 @@
-package funkin.backend.system.interfaces;
+package   codenamecrew.codenamecrew.funkin.backend.system.interfaces;
 
 interface IBeatReceiver {
 	public function measureHit(curMeasure:Int):Void;

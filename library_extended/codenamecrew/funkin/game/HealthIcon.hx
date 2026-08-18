@@ -1,11 +1,11 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.graphics.FlxGraphic;
 import flixel.math.FlxPoint;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.scripting.events.healthicon.HealthIconChangeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.healthicon.HealthIconChangeEvent;
 
-class HealthIcon extends FunkinSprite
+class HealthIcon extends codenamecrew.funkin.Sprite
 {
 	/**
 	 * Attaches the icon to a sprite, following it's position
@@ -374,7 +374,7 @@ class HealthIcon extends FunkinSprite
 
 			if (data.isValid && curAnimState != localAnimState) {
 				var event = EventManager.get(HealthIconChangeEvent).recycle(localAnimState, this);
-				funkin.backend.scripting.GlobalScript.event("onHealthIconAnimChange", event);
+				  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.event("onHealthIconAnimChange", event);
 				if (!event.cancelled) {
 					if (this.animated) {
 						var transAnim = 'from-$curAnimState-to-${event.anim}';
@@ -418,7 +418,7 @@ class IconAnimData {
 }
 
 /**
- * Used for `funkin.game.HealthIcon.sprTrackerAlignment`.
+ * Used for `  codenamecrew.codenamecrew.funkin.game.HealthIcon.sprTrackerAlignment`.
  * This determines the position of the icon in relation to the sprite tracker.
 **/
 enum abstract TrackerAlignment(Int) {

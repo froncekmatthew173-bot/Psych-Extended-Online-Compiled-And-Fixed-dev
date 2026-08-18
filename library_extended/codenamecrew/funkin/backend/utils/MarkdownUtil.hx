@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.text.FlxText;
 import flixel.util.FlxColor;

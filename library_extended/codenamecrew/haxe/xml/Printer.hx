@@ -20,7 +20,7 @@
 * DEALINGS IN THE SOFTWARE.
 */
 
-package haxe.xml;
+package codenamecrew.haxe.xml;
 
 using StringTools;
 

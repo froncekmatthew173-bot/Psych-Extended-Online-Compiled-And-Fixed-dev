@@ -1,7 +1,7 @@
-package external;
+package codenamecrew.external;
 
 #if (mac && cpp)
-@:build(external.LinkerMacro.xml('external_code.xml'))
+@:build(codenamecrew.external.LinkerMacro.xml('external_code.xml'))
 @:include('Mac.h')
 @:native('ExternalMac')
 extern class ExternalMac

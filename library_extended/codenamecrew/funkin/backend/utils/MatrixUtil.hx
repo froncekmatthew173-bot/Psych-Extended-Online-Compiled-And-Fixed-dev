@@ -1,11 +1,11 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.graphics.frames.FlxFrame;
 import flixel.FlxCamera;
 import flixel.math.FlxPoint;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.system.FakeCamera;
-import funkin.backend.system.FakeCamera.FakeCallCamera;
+import   codenamecrew.codenamecrew.funkin.backend.system.FakeCamera;
+import   codenamecrew.codenamecrew.funkin.backend.system.FakeCamera.FakeCallCamera;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFrame;
 import flixel.graphics.tile.FlxDrawTrianglesItem;
@@ -59,9 +59,9 @@ final class MatrixUtil {
 	 * Warning: modifies the points in the array
 	**/
 	public static function transformPoints(sprite:FlxSprite, points:Array<FlxPoint>, matrix:FlxMatrix, ?camera:FlxCamera, _width:Float = 1, _height:Float = 1, doCameraTransform:Bool = true):Array<FlxPoint> {
-		var isFunkinSprite = sprite is FunkinSprite;
-		var funkinSprite:FunkinSprite = null;
-		if(isFunkinSprite) funkinSprite = cast sprite;
+		var iscodenamecrew.funkin.Sprite = sprite is codenamecrew.funkin.Sprite;
+		var codenamecrew.funkin.Sprite:codenamecrew.funkin.Sprite = null;
+		if(iscodenamecrew.funkin.Sprite) codenamecrew.funkin.Sprite = cast sprite;
 
 		for(point in points) {
 			var x = matrix.__transformX(point.x * _width, point.y * _height);
@@ -72,8 +72,8 @@ final class MatrixUtil {
 				x += camera.scroll.x;
 				y += camera.scroll.y;
 
-				if(isFunkinSprite) {
-					var ratio = 1 - FlxMath.lerp(1 / camera.zoom, 1, funkinSprite.zoomFactor);
+				if(iscodenamecrew.funkin.Sprite) {
+					var ratio = 1 - FlxMath.lerp(1 / camera.zoom, 1, codenamecrew.funkin.Sprite.zoomFactor);
 					x += camera.width / 2 * ratio;
 					y += camera.height / 2 * ratio;
 				}

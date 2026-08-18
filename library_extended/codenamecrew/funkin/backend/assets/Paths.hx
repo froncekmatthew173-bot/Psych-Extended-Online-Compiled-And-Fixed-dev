@@ -1,10 +1,10 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.graphics.frames.FlxFramesCollection;
-import funkin.backend.assets.ModsFolder;
-import funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
 import haxe.io.Path;
 import lime.utils.AssetLibrary;
 import openfl.utils.Assets as OpenFlAssets;

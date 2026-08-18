@@ -1,4 +1,4 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
 import flixel.effects.FlxFlicker;
 import flixel.math.FlxPoint;
@@ -11,22 +11,22 @@ class EditorPicker extends MusicBeatSubstate {
 		{
 			name: "Chart Editor",
 			id: "chart",
-			state: funkin.editors.charter.CharterSelection
+			state:   codenamecrew.codenamecrew.funkin.editors.charter.CharterSelection
 		},
 		{
 			name: "Character Editor",
 			id: "character",
-			state: funkin.editors.character.CharacterSelection
+			state:   codenamecrew.codenamecrew.funkin.editors.character.CharacterSelection
 		},
 		{
 			name: "Stage Editor",
 			id: "stage",
-			state: funkin.editors.stage.StageSelection
+			state:   codenamecrew.codenamecrew.funkin.editors.stage.StageSelection
 		},
 		{
 			name: "Alphabet Editor",
 			id: "alphabet",
-			state: funkin.editors.alphabet.AlphabetSelection
+			state:   codenamecrew.codenamecrew.funkin.editors.alphabet.AlphabetSelection
 		},
 		#if (debug || debug_ui)
 		{

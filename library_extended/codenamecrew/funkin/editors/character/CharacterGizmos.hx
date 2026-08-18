@@ -1,8 +1,8 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
-import funkin.editors.stage.StageEditor;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageEditor;
 import flixel.math.FlxRect;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 
 class CharacterGizmos extends FlxSprite {
 	public var character:Character;

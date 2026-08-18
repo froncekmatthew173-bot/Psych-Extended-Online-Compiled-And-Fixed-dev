@@ -1,7 +1,7 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import flixel.FlxState;
-import funkin.backend.scripting.events.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.*;
 
 final class EventManager {
 	#if cpp

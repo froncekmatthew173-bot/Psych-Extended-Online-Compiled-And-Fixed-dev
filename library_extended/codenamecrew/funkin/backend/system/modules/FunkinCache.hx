@@ -1,4 +1,4 @@
-package funkin.backend.system.modules;
+package   codenamecrew.codenamecrew.funkin.backend.system.modules;
 
 import openfl.display.BitmapData;
 import openfl.media.Sound;
@@ -9,8 +9,8 @@ import lime.utils.Assets as LimeAssets;
 #end
 
 
-class FunkinCache extends AssetCache {
-	public static var instance:FunkinCache;
+class codenamecrew.funkin.Cache extends AssetCache {
+	public static var instance:codenamecrew.funkin.Cache;
 	/**
 		Internal
 	**/
@@ -33,7 +33,7 @@ class FunkinCache extends AssetCache {
 	}
 
 	public static function init() {
-		openfl.utils.Assets.cache = new FunkinCache();
+		openfl.utils.Assets.cache = new codenamecrew.funkin.Cache();
 
 		FlxG.signals.preStateSwitch.add(function() {
 			instance.moveToSecondLayer();

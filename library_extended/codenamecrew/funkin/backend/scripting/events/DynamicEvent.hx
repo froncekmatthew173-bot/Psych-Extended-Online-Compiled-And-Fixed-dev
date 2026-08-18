@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events;
 
 /**
  * Event with random dynamic values useful for making your own custom events

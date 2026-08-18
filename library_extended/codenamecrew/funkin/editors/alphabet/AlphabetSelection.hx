@@ -1,12 +1,12 @@
-package funkin.editors.alphabet;
+package   codenamecrew.codenamecrew.funkin.editors.alphabet;
 
 import haxe.io.Path;
 import haxe.xml.Access;
-import funkin.game.Character;
-import funkin.editors.EditorTreeMenu;
-import funkin.options.type.NewOption;
-import funkin.options.type.TextOption;
-import funkin.options.type.OptionType;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.EditorTreeMenu;
+import   codenamecrew.codenamecrew.funkin.options.type.NewOption;
+import   codenamecrew.codenamecrew.funkin.options.type.TextOption;
+import   codenamecrew.codenamecrew.funkin.options.type.OptionType;
 
 class AlphabetSelection extends EditorTreeMenu {
 	override function create() {

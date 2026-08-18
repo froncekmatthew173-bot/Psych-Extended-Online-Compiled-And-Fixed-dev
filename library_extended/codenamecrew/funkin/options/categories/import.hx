@@ -1,7 +1,7 @@
 #if !macro
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
-import funkin.options.TreeMenu;
-import funkin.options.TreeMenuScreen;
-import funkin.options.type.*;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenu;
+import   codenamecrew.codenamecrew.funkin.options.TreeMenuScreen;
+import   codenamecrew.codenamecrew.funkin.options.type.*;
 #end

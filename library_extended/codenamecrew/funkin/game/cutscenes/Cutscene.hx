@@ -1,7 +1,7 @@
-package funkin.game.cutscenes;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes;
 
-import funkin.backend.scripting.events.NameEvent;
-import funkin.menus.PauseSubState;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.NameEvent;
+import   codenamecrew.codenamecrew.funkin.menus.PauseSubState;
 
 /**
  * Substate made for cutscenes.

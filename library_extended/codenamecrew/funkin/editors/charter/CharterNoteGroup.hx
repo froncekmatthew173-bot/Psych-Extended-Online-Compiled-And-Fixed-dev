@@ -1,7 +1,7 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.util.FlxSort;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 class CharterNoteGroup extends FlxTypedGroup<CharterNote> {
 	var __loopSprite:CharterNote;

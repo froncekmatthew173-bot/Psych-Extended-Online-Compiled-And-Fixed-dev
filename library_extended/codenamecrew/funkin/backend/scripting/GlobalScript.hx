@@ -1,10 +1,10 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import flixel.FlxState;
-import funkin.backend.assets.ModsFolder;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.system.Conductor;
-import funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
 
 #if GLOBAL_SCRIPT
 /**
@@ -77,7 +77,7 @@ class GlobalScript {
 				@:privateAccess {
 					var classFromString = Type.resolveClass(Flags.MOD_REDIRECT_STATES.get(stateName));
 					if (classFromString != null) FlxG.game._requestedState = Type.createInstance(classFromString, []);
-					else FlxG.game._requestedState = new funkin.backend.scripting.ModState(Flags.MOD_REDIRECT_STATES.get(stateName));
+					else FlxG.game._requestedState = new   codenamecrew.codenamecrew.funkin.backend.scripting.ModState(Flags.MOD_REDIRECT_STATES.get(stateName));
 				}
 			}
 		});
@@ -106,7 +106,7 @@ class GlobalScript {
 	public static function onModSwitch(newMod:String) {
 		destroy();
 		scripts = new ScriptPack("GlobalScript");
-		for (lib in funkin.backend.assets.ModsFolder.getLoadedModsLibs()) {
+		for (lib in   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder.getLoadedModsLibs()) {
 			var modName = lib.modName;
 			var path = Paths.script('data/global/LIB_$modName');
 			var script = Script.create(path);

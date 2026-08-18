@@ -1,6 +1,6 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
-import funkin.backend.scripting.events.splash.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.splash.*;
 
 class SplashHandler extends FlxTypedGroup<Splash> {
 	/**

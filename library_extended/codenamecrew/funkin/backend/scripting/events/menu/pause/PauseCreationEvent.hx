@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.menu.pause;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.pause;
 
 /**
  * CANCEL this event to prevent default behaviour!

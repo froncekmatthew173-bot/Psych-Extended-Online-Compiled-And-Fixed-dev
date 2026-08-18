@@ -1,7 +1,7 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.util.FlxSort;
-import funkin.backend.chart.EventsData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.EventsData;
 
 class CharterStrumLineGroup extends FlxTypedGroup<CharterStrumline> {
 	var __pastStrumlines:Array<CharterStrumline>;

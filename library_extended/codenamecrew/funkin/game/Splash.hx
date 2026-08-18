@@ -1,6 +1,6 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
-class Splash extends FunkinSprite
+class Splash extends codenamecrew.funkin.Sprite
 {
 	/**
 	 * The current splash strum

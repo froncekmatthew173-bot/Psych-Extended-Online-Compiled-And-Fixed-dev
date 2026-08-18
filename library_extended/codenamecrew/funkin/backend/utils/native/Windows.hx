@@ -1,8 +1,8 @@
-package funkin.backend.utils.native;
+package   codenamecrew.codenamecrew.funkin.backend.utils.native;
 
 #if windows
-import funkin.backend.utils.NativeAPI.FileAttribute;
-import funkin.backend.utils.NativeAPI.MessageBoxIcon;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.FileAttribute;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.MessageBoxIcon;
 @:buildXml('
 <target id="haxe">
 	<lib name="dwmapi.lib" if="windows" />
@@ -106,7 +106,7 @@ class AudioFixClient : public IMMNotificationClient {
 		EDataFlow flow, ERole role,
 		LPCWSTR pwstrDeviceId)
 	{
-		::funkin::backend::_hx_system::Main_obj::audioDisconnected = true;
+		::codenamecrew.funkin.::backend::_hx_system::Main_obj::audioDisconnected = true;
 		return S_OK;
 	};
 };
@@ -125,7 +125,7 @@ final class Windows {
 	if (!curAudioFix) curAudioFix = new AudioFixClient();
 	')
 	public static function registerAudio() {
-		funkin.backend.system.Main.audioDisconnected = false;
+		  codenamecrew.codenamecrew.funkin.backend.system.Main.audioDisconnected = false;
 	}
 
 	@:functionCode('

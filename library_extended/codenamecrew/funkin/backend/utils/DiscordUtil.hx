@@ -1,12 +1,12 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 import flixel.util.FlxSignal.FlxTypedSignal;
 import flixel.sound.FlxSound;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.scripting.*; // lazy
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.discord.DiscordPresenceUpdateEvent;
-import funkin.backend.system.macros.Utils;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.*; // lazy
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.discord.DiscordPresenceUpdateEvent;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.Utils;
 import haxe.Json;
 import openfl.display.BitmapData;
 #if DISCORD_RPC
@@ -211,7 +211,7 @@ final class DiscordUtil
 		var evt = EventManager.get(DiscordPresenceUpdateEvent).recycle(data);
 		#if GLOBAL_SCRIPT
 		// kept for "backwards compat"
-		funkin.backend.scripting.GlobalScript.event("onDiscordPresenceUpdate", evt);
+		  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.event("onDiscordPresenceUpdate", evt);
 		#end
 		event("onDiscordPresenceUpdate", evt);
 		if (evt.cancelled)

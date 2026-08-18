@@ -1,4 +1,4 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 enum abstract AssetSource(Null<Int>)/* from Null<Bool>*/ from Null<Int> to Null<Int> {
 	var SOURCE = 0;

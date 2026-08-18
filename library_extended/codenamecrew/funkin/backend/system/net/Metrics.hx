@@ -1,4 +1,4 @@
-package funkin.backend.system.net;
+package   codenamecrew.codenamecrew.funkin.backend.system.net;
 
 import flixel.util.FlxSignal.FlxTypedSignal;
 

@@ -1,4 +1,4 @@
-package funkin.editors.stage;
+package   codenamecrew.codenamecrew.funkin.editors.stage;
 
 typedef StageCreationData = {
 	var name:String;

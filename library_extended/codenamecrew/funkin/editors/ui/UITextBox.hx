@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.math.FlxPoint;
 import lime.ui.KeyCode;

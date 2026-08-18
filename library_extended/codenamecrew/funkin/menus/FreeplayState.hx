@@ -1,14 +1,14 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import funkin.backend.chart.Chart;
-import funkin.backend.chart.ChartData.ChartMetaData;
-import funkin.backend.scripting.events.menu.MenuChangeEvent;
-import funkin.backend.scripting.events.menu.freeplay.*;
-import funkin.backend.system.Conductor;
-import funkin.game.HealthIcon;
-import funkin.savedata.FunkinSave;
+import   codenamecrew.codenamecrew.funkin.backend.chart.Chart;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartMetaData;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.MenuChangeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.freeplay.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.savedata.codenamecrew.funkin.Save;
 
 using StringTools;
 
@@ -397,7 +397,7 @@ class FreeplayState extends MusicBeatState
 		var changes:Array<HighscoreChange> = [];
 		if (__coopMode) changes.push(CCoopMode);
 		if (__opponentMode) changes.push(COpponentMode);
-		var saveData = FunkinSave.getSongHighscore(curSong.name, curDifficulties[curDifficulty], curSong.variant, changes);
+		var saveData = codenamecrew.funkin.Save.getSongHighscore(curSong.name, curDifficulties[curDifficulty], curSong.variant, changes);
 		intendedScore = saveData.score;
 	}
 
@@ -524,7 +524,7 @@ class FreeplaySonglist {
 
 	public function new() {}
 
-	public function getSongsFromSource(source:funkin.backend.assets.AssetSource, useTxt:Bool = true) {
+	public function getSongsFromSource(source:  codenamecrew.codenamecrew.funkin.backend.assets.AssetSource, useTxt:Bool = true) {
 		var songsFound:Array<String> = null;
 		if (useTxt) {
 			var oldPath = Paths.txt('freeplaySonglist');

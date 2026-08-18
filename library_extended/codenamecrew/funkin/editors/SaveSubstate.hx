@@ -1,4 +1,4 @@
-package funkin.editors;
+package   codenamecrew.codenamecrew.funkin.editors;
 
 import haxe.io.Path;
 import lime.ui.FileDialog;

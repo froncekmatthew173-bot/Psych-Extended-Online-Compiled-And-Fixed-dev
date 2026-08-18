@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.shader;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.shader;
 
 final class ShaderProcessEvent extends CancellableEvent
 {

@@ -1,16 +1,16 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.group.FlxGroup;
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
-import funkin.backend.chart.Chart;
-import funkin.backend.chart.ChartData;
-import funkin.backend.chart.FNFLegacyParser.SwagSong;
-import funkin.backend.chart.PsychParser;
-import funkin.backend.chart.VSliceParser;
-import funkin.backend.utils.ZipUtil;
-import funkin.backend.utils.ZipUtil.ZipReader;
-import funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.backend.chart.Chart;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.FNFLegacyParser.SwagSong;
+import   codenamecrew.codenamecrew.funkin.backend.chart.PsychParser;
+import   codenamecrew.codenamecrew.funkin.backend.chart.VSliceParser;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ZipUtil;
+import   codenamecrew.codenamecrew.funkin.backend.utils.ZipUtil.ZipReader;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
 import haxe.Json;
 import haxe.io.Bytes;
 import haxe.io.BytesInput;

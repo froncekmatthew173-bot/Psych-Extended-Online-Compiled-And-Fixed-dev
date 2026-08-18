@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import lime.ui.KeyCode;
 import lime.ui.KeyModifier;

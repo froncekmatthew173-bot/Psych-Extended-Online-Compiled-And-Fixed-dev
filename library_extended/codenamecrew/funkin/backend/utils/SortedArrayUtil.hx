@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 /**
  * Tools to work with sorted arrays, in a more efficient way.

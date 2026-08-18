@@ -1,4 +1,4 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.input.FlxInput;
 import flixel.input.actions.FlxAction;
@@ -49,7 +49,7 @@ enum KeyboardScheme
 // A and B are swapped for switch
 @:noCustomClass
 @:nullSafety
-@:build(funkin.backend.system.macros.ControlsMacro.build())
+@:build(  codenamecrew.codenamecrew.funkin.backend.system.macros.ControlsMacro.build())
 class Controls extends FlxActionSet
 {
 	// Menus
@@ -185,7 +185,7 @@ class Controls extends FlxActionSet
 	@:pressed("dev-reload") public var DEV_RELOAD_HOLD(get, set): Bool;
 	@:justReleased("dev-reload") public var DEV_RELOAD_R(get, set): Bool;
 
-	@:allow(funkin.backend.utils.ControlsUtil)
+	@:allow(  codenamecrew.codenamecrew.funkin.backend.utils.ControlsUtil)
 	var byName:Map<String, FlxActionDigital> = [];
 
 	public var gamepadsAdded:Array<Int> = [];

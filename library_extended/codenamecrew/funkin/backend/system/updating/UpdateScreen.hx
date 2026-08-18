@@ -1,12 +1,12 @@
-package funkin.backend.system.updating;
+package   codenamecrew.codenamecrew.funkin.backend.system.updating;
 
 import flixel.math.FlxRect;
 import flixel.sound.FlxSound;
 import flixel.ui.FlxBar;
-import funkin.backend.FunkinText;
-import funkin.backend.shaders.CustomShader;
-import funkin.backend.system.updating.UpdateUtil.UpdateCheckCallback;
-import funkin.menus.TitleState;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.shaders.CustomShader;
+import   codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateUtil.UpdateCheckCallback;
+import   codenamecrew.codenamecrew.funkin.menus.TitleState;
 
 class UpdateScreen extends MusicBeatState {
 	public var updater:AsyncUpdater;
@@ -19,8 +19,8 @@ class UpdateScreen extends MusicBeatState {
 	public var lerpSpeed:Float = 0;
 	public var overSound:FlxSound;
 
-	public var generalProgress:FunkinText;
-	public var partProgress:FunkinText;
+	public var generalProgress:codenamecrew.funkin.Text;
+	public var partProgress:codenamecrew.funkin.Text;
 
 	public var rainbowShader:CustomShader;
 
@@ -46,12 +46,12 @@ class UpdateScreen extends MusicBeatState {
 		bf.screenCenter();
 		add(bf);
 
-		partProgress = new FunkinText(0, progressBar.y, FlxG.width, "-\n-", 20);
+		partProgress = new codenamecrew.funkin.Text(0, progressBar.y, FlxG.width, "-\n-", 20);
 		partProgress.y -= partProgress.height;
 		partProgress.alignment = CENTER;
 		add(partProgress);
 
-		generalProgress = new FunkinText(0, partProgress.y - 10, FlxG.width, "", 32);
+		generalProgress = new codenamecrew.funkin.Text(0, partProgress.y - 10, FlxG.width, "", 32);
 		generalProgress.y -= generalProgress.height;
 		generalProgress.alignment = CENTER;
 		add(generalProgress);

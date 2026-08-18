@@ -1,4 +1,4 @@
-package funkin.backend.system.macros;
+package   codenamecrew.codenamecrew.funkin.backend.system.macros;
 
 
 import haxe.macro.Context;
@@ -103,7 +103,7 @@ class ControlsMacro
 				},
 				args: [{
 					name: "keyScheme",
-					type: macro : funkin.backend.system.Controls.KeyboardScheme
+					type: macro :   codenamecrew.codenamecrew.funkin.backend.system.Controls.KeyboardScheme
 				}]
 			}),
 			pos: Context.currentPos(),

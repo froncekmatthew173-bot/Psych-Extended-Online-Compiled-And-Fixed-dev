@@ -1,14 +1,14 @@
-package funkin.editors.stage.elements;
+package   codenamecrew.codenamecrew.funkin.editors.stage.elements;
 
-import funkin.editors.stage.StageEditor.StageXMLEditScreen;
-import funkin.editors.stage.elements.StageElementButton;
-import funkin.editors.ui.UISoftcodedWindow;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageEditor.StageXMLEditScreen;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.StageElementButton;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UISoftcodedWindow;
 import haxe.xml.Access;
 
 class StageSpriteButton extends StageElementButton {
-	public var sprite:FunkinSprite;
+	public var sprite:codenamecrew.funkin.Sprite;
 
-	public function new(x:Float,y:Float, sprite:FunkinSprite, xml:Access) {
+	public function new(x:Float,y:Float, sprite:codenamecrew.funkin.Sprite, xml:Access) {
 		this.sprite = sprite;
 		super(x,y, xml);
 
@@ -28,7 +28,7 @@ class StageSpriteButton extends StageElementButton {
 		super.updateInfo();
 	}
 
-	public override function getSprite():FunkinSprite {
+	public override function getSprite():codenamecrew.funkin.Sprite {
 		return sprite;
 	}
 
@@ -73,7 +73,7 @@ class StageSpriteButton extends StageElementButton {
 class StageSpriteEditScreen extends UISoftcodedWindow {
 	public var newSprite:Bool = false;
 	public var button:StageSpriteButton;
-	public var sprite:FunkinSprite;
+	public var sprite:codenamecrew.funkin.Sprite;
 	var isSaving:Bool = false;
 
 	inline function translate(id:String, ?args:Array<Dynamic>)

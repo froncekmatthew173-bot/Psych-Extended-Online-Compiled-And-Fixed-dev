@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 class UICheckbox extends UISprite {
 	public var checked:Bool = false;

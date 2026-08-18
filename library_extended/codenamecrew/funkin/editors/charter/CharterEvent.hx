@@ -1,18 +1,18 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import openfl.display.BitmapData;
 import openfl.geom.ColorTransform;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxGraphicAsset;
-import funkin.backend.chart.ChartData.ChartEvent;
-import funkin.backend.scripting.DummyScript;
-import funkin.backend.scripting.Script;
-import funkin.backend.system.Conductor;
-import funkin.editors.charter.Charter.ICharterSelectable;
-import funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
-import funkin.game.Character;
-import funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.DummyScript;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter.ICharterSelectable;
+import   codenamecrew.codenamecrew.funkin.editors.charter.CharterBackdropGroup.EventBackdrop;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
 
 using flixel.util.FlxColorTransformUtil;
 

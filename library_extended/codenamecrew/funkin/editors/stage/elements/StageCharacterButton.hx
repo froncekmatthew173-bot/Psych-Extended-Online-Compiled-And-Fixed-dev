@@ -1,9 +1,9 @@
-package funkin.editors.stage.elements;
+package   codenamecrew.codenamecrew.funkin.editors.stage.elements;
 
-import funkin.editors.stage.StageEditor.StageXMLEditScreen;
-import funkin.editors.ui.notifications.UIBaseNotification;
-import funkin.editors.ui.UIState;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageEditor.StageXMLEditScreen;
+import   codenamecrew.codenamecrew.funkin.editors.ui.notifications.UIBaseNotification;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIState;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import haxe.xml.Access;
 
 using StringTools;
@@ -37,7 +37,7 @@ class StageCharacterButton extends StageElementButton {
 		char.scale.scale(charScale);
 	}
 
-	public override function getSprite():FunkinSprite {
+	public override function getSprite():codenamecrew.funkin.Sprite {
 		return char;
 	}
 

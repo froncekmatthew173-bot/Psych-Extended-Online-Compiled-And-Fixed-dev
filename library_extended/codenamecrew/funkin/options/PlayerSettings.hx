@@ -1,7 +1,7 @@
-package funkin.options;
+package   codenamecrew.codenamecrew.funkin.options;
 
 import flixel.util.FlxSignal;
-import funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
 
 // import props.Player;
 // import ui.DeviceManager;

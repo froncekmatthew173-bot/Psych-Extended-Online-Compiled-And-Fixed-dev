@@ -1,11 +1,11 @@
-package funkin.editors.stage;
+package   codenamecrew.codenamecrew.funkin.editors.stage;
 
-import funkin.editors.stage.StageCreationScreen.StageCreationData;
-import funkin.editors.EditorTreeMenu;
-import funkin.game.Stage;
-import funkin.options.type.NewOption;
-import funkin.options.type.OptionType;
-import funkin.options.type.TextOption;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageCreationScreen.StageCreationData;
+import   codenamecrew.codenamecrew.funkin.editors.EditorTreeMenu;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.options.type.NewOption;
+import   codenamecrew.codenamecrew.funkin.options.type.OptionType;
+import   codenamecrew.codenamecrew.funkin.options.type.TextOption;
 
 using StringTools;
 

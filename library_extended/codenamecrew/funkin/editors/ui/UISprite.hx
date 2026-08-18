@@ -1,11 +1,11 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 import flixel.math.FlxRect;
-import funkin.backend.utils.NativeAPI.CodeCursor;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI.CodeCursor;
 import openfl.ui.MouseCursor;
 
-@:allow(funkin.editors.ui.UIState)
-@:allow(funkin.editors.ui.UIUtil)
+@:allow(  codenamecrew.codenamecrew.funkin.editors.ui.UIState)
+@:allow(  codenamecrew.codenamecrew.funkin.editors.ui.UIUtil)
 class UISprite extends FlxSprite {
 	public var members:Array<FlxBasic> = [];
 

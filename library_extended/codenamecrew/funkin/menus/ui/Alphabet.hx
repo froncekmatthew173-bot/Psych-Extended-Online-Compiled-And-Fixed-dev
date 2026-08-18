@@ -1,8 +1,8 @@
-package funkin.menus.ui;
+package   codenamecrew.codenamecrew.funkin.menus.ui;
 
 import flixel.util.typeLimit.OneOfTwo;
 import haxe.ds.Vector;
-import funkin.menus.ui.effects.RegionEffect;
+import   codenamecrew.codenamecrew.funkin.menus.ui.effects.RegionEffect;
 
 import flixel.animation.FlxAnimation;
 import flixel.util.FlxDirectionFlags;
@@ -117,8 +117,8 @@ enum abstract AlphabetRenderMode(ByteUInt) from ByteUInt to ByteUInt {
 	var MONOSPACE = 1;
 }
 
-@:allow(funkin.editors.alphabet.AlphabetEditor)
-@:allow(funkin.editors.alphabet.AlphabetMainDataScreen)
+@:allow(  codenamecrew.codenamecrew.funkin.editors.alphabet.AlphabetEditor)
+@:allow(  codenamecrew.codenamecrew.funkin.editors.alphabet.AlphabetMainDataScreen)
 class Alphabet extends FlxSprite {
 	public var effects:Array<RegionEffect> = [];
 	var __renderData:AlphabetRenderData;

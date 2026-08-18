@@ -1,9 +1,9 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import haxe.io.Bytes;
 import flixel.util.typeLimit.OneOfTwo;
 import flixel.text.FlxText.FlxTextFormat;
-import funkin.editors.ui.UIImageExplorer.ImageSaveData;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIImageExplorer.ImageSaveData;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
 
 class CharacterSpriteScreen extends UISubstateWindow {

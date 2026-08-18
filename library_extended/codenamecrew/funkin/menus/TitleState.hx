@@ -1,19 +1,19 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.util.typeLimit.OneOfTwo;
-import funkin.backend.MusicBeatGroup;
-import funkin.backend.utils.XMLUtil;
+import   codenamecrew.codenamecrew.funkin.backend.MusicBeatGroup;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil;
 import haxe.xml.Access;
 import openfl.Assets;
 
 using StringTools;
 
-@:allow(funkin.backend.assets.ModsFolder)
-@:allow(funkin.backend.system.MainState)
+@:allow(  codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder)
+@:allow(  codenamecrew.codenamecrew.funkin.backend.system.MainState)
 class TitleState extends MusicBeatState
 {
 	static var initialized:Bool = false;
@@ -156,12 +156,12 @@ class TitleState extends MusicBeatState
 	function goToMainMenu(force = true) {
 		#if UPDATE_CHECKING
 		if (!force && !Flags.DISABLE_AUTOUPDATER) {
-			funkin.backend.system.updating.UpdateUtil.waitForUpdates(false, (report) -> {
+			  codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateUtil.waitForUpdates(false, (report) -> {
 				hasCheckedUpdates = true;
 				if (FlxG.state != this) return;
 
 				if (!report.newUpdate) goToMainMenu(true);
-				else FlxG.switchState(new funkin.backend.system.updating.UpdateAvailableScreen(report));
+				else FlxG.switchState(new   codenamecrew.codenamecrew.funkin.backend.system.updating.UpdateAvailableScreen(report));
 			}, true);
 		}
 		else
@@ -227,7 +227,7 @@ class TitleState extends MusicBeatState
 		12 => new IntroText(),
 		13 => new IntroText(['Friday']),
 		14 => new IntroText(['Friday', 'Night']),
-		15 => new IntroText(['Friday', 'Night', "Funkin'"]),
+		15 => new IntroText(['Friday', 'Night', "codenamecrew.funkin.'"]),
 	];
 
 	public var titleSprites:Map<String, FlxSprite> = [];

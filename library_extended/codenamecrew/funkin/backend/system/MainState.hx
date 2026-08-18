@@ -1,17 +1,17 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 #if MOD_SUPPORT
 import sys.FileSystem;
 #end
 import flixel.FlxState;
-import funkin.backend.assets.AssetsLibraryList;
-import funkin.backend.assets.ModsFolder;
-import funkin.backend.assets.ModsFolderLibrary;
-import funkin.backend.assets.ZipFolderLibrary;
-import funkin.backend.chart.EventsData;
-import funkin.backend.system.framerate.Framerate;
-import funkin.editors.ModConfigWarning;
-import funkin.menus.TitleState;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetsLibraryList;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolderLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ZipFolderLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.chart.EventsData;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.editors.ModConfigWarning;
+import   codenamecrew.codenamecrew.funkin.menus.TitleState;
 import haxe.io.Path;
 
 
@@ -111,9 +111,9 @@ class MainState extends FlxState {
 		#end
 
 		#if GLOBAL_SCRIPT
-		funkin.backend.scripting.GlobalScript.destroy();
+		  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.destroy();
 		#end
-		funkin.backend.scripting.Script.staticVariables.clear();
+		  codenamecrew.codenamecrew.funkin.backend.scripting.Script.staticVariables.clear();
 
 		#if MOD_SUPPORT
 		for (addon in _lowPriorityAddons)
@@ -136,7 +136,7 @@ class MainState extends FlxState {
 
 		Flags.reset();
 		Flags.load();
-		funkin.savedata.FunkinSave.init();
+		  codenamecrew.codenamecrew.funkin.savedata.codenamecrew.funkin.Save.init();
 
 		TranslationUtil.findAllLanguages();
 		TranslationUtil.setLanguage(Flags.DISABLE_LANGUAGES ? Flags.DEFAULT_LANGUAGE : null);
@@ -162,7 +162,7 @@ class MainState extends FlxState {
 			if (cast(lib, ZipFolderLibrary).PRELOAD_VIDEOS) cast(lib, ZipFolderLibrary).precacheVideos();
 		}
 
-		var startState:Class<FlxState> = Flags.DISABLE_WARNING_SCREEN ? TitleState : funkin.menus.WarningState;
+		var startState:Class<FlxState> = Flags.DISABLE_WARNING_SCREEN ? TitleState :   codenamecrew.codenamecrew.funkin.menus.WarningState;
 
 		// In this case if the mod we just loaded a compressed modpack, we can't edit or modify files without decompressing it.
 		if (Options.devMode && Options.allowConfigWarning && !isZipMod) {

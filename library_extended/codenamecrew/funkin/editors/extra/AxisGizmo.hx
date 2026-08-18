@@ -1,4 +1,4 @@
-package funkin.editors.extra;
+package   codenamecrew.codenamecrew.funkin.editors.extra;
 
 class AxisGizmo extends FlxObject {
 	var _worldPos:FlxPoint = FlxPoint.get();

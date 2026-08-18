@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.menu.freeplay;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.freeplay;
 
 final class FreeplaySongSelectEvent extends CancellableEvent {
 	/**

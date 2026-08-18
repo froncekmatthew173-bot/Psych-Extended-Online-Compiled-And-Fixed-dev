@@ -1,8 +1,8 @@
-package funkin.backend.scripting.events.note;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.note;
 
-import funkin.game.Character;
-import funkin.game.HealthIcon;
-import funkin.game.Note;
+import   codenamecrew.codenamecrew.funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.game.HealthIcon;
+import   codenamecrew.codenamecrew.funkin.game.Note;
 
 final class NoteHitEvent extends CancellableEvent {
 	@:dox(hide) public var animCancelled:Bool = false;

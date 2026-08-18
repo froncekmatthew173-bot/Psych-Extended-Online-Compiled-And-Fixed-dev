@@ -1,6 +1,6 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
-import funkin.backend.system.macros.GitCommitMacro;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.GitCommitMacro;
 import openfl.text.TextField;
 
 class CodenameBuildField extends TextField {

@@ -1,4 +1,4 @@
-package funkin.editors.extra;
+package   codenamecrew.codenamecrew.funkin.editors.extra;
 
 class CameraHoverDummy extends UISprite {
 	var parent:FlxBasic;

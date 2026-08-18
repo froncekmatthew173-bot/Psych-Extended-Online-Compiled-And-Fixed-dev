@@ -1,6 +1,6 @@
-package funkin.backend.system.github;
+package   codenamecrew.codenamecrew.funkin.backend.system.github;
 
-import funkin.backend.system.github.GitHubUser;
+import   codenamecrew.codenamecrew.funkin.backend.system.github.GitHubUser;
 
 typedef GitHubAsset = {
 	var url:String;

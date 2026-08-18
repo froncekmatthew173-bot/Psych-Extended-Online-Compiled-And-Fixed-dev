@@ -1,15 +1,15 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.sound.FlxSound;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.gameover.*;
-import funkin.backend.system.Conductor;
-import funkin.editors.charter.Charter;
-import funkin.menus.FreeplayState;
-import funkin.menus.StoryMenuState;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameover.*;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.editors.charter.Charter;
+import   codenamecrew.codenamecrew.funkin.menus.FreeplayState;
+import   codenamecrew.codenamecrew.funkin.menus.StoryMenuState;
 
 class GameOverSubstate extends MusicBeatSubstate
 {

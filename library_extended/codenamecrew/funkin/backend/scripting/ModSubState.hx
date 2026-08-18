@@ -1,4 +1,4 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 class ModSubState extends MusicBeatSubstate {
 

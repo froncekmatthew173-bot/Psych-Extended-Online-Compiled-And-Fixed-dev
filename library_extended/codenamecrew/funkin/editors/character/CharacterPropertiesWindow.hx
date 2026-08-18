@@ -1,9 +1,9 @@
 
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
 import haxe.io.Path;
-import funkin.editors.character.CharacterInfoScreen.CharacterExtraInfo;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.editors.character.CharacterInfoScreen.CharacterExtraInfo;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 
 class CharacterPropertiesWindow extends UISliceSprite {
 	public var character:Character;

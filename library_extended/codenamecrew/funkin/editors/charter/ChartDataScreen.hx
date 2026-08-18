@@ -1,10 +1,10 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 import flixel.math.FlxPoint;
-import funkin.backend.chart.ChartData.ChartMetaData;
-import funkin.backend.chart.ChartData;
-import funkin.game.Stage;
-import funkin.game.HudCamera;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartMetaData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.game.HudCamera;
 
 using StringTools;
 

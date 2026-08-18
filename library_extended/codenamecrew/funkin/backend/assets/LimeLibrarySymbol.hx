@@ -1,4 +1,4 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 /**
  * COPIED DIRECTLY FROM LIME SOURCE CAUSE LIME IS SO FUCKING DUMB!!

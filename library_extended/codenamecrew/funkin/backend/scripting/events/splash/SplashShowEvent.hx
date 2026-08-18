@@ -1,8 +1,8 @@
-package funkin.backend.scripting.events.splash;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.splash;
 
-import funkin.game.Splash;
-import funkin.game.SplashGroup;
-import funkin.game.Strum;
+import   codenamecrew.codenamecrew.funkin.game.Splash;
+import   codenamecrew.codenamecrew.funkin.game.SplashGroup;
+import   codenamecrew.codenamecrew.funkin.game.Strum;
 
 final class SplashShowEvent extends CancellableEvent {
 	/**

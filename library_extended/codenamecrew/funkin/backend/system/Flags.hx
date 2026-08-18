@@ -1,11 +1,11 @@
-package funkin.backend.system;
+package   codenamecrew.codenamecrew.funkin.backend.system;
 
 import flixel.util.FlxColor;
-import funkin.backend.assets.ModsFolder;
-import funkin.backend.assets.IModsAssetLibrary;
-import funkin.backend.assets.ScriptedAssetLibrary;
-import funkin.backend.system.macros.GitCommitMacro;
-import funkin.backend.utils.IniUtil;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ModsFolder;
+import   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ScriptedAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.GitCommitMacro;
+import   codenamecrew.codenamecrew.funkin.backend.utils.IniUtil;
 import lime.app.Application;
 import lime.utils.AssetLibrary as LimeAssetLibrary;
 import lime.utils.AssetType;
@@ -13,7 +13,7 @@ import lime.utils.AssetType;
 /**
  * A class that reads the `flags.ini` file, allowing to read settable Flags (customs too).
  */
-@:build(funkin.backend.system.macros.FlagMacro.build())
+@:build(  codenamecrew.codenamecrew.funkin.backend.system.macros.FlagMacro.build())
 class Flags {
 	public static var overridenFlags:Map<String, Bool> = [];
 
@@ -73,12 +73,12 @@ class Flags {
 	public static var DEFAULT_DISCORD_CLIENT_ID:String = "1383853614589673472";
 	public static var DEFAULT_DISCORD_LOGO_TEXT:String = "Codename Engine";
 
-	@:also(funkin.game.Character.FALLBACK_CHARACTER)
+	@:also(  codenamecrew.codenamecrew.funkin.game.Character.FALLBACK_CHARACTER)
 	public static var DEFAULT_CHARACTER:String = "bf";
 	public static var DEFAULT_GIRLFRIEND:String = "gf";
 	public static var DEFAULT_OPPONENT:String = "dad";
 
-	@:also(funkin.game.PlayState.difficulty)
+	@:also(  codenamecrew.codenamecrew.funkin.game.PlayState.difficulty)
 	public static var DEFAULT_DIFFICULTY:String = "normal";
 	public static var DEFAULT_STAGE:String = "stage";
 	public static var DEFAULT_SCROLL_SPEED:Float = 2.0;
@@ -112,7 +112,7 @@ class Flags {
 
 	public static var VSLICE_SONG_METADATA_VERSION:String = "2.2.2";
 	public static var VSLICE_SONG_CHART_DATA_VERSION:String = "2.0.0";
-	public static var VSLICE_DEFAULT_NOTE_STYLE:String = 'funkin';
+	public static var VSLICE_DEFAULT_NOTE_STYLE:String = 'codenamecrew.funkin.';
 	public static var VSLICE_DEFAULT_ALBUM_ID:String = 'volume1';
 	public static var VSLICE_DEFAULT_PREVIEW_START:Int = 0;
 	public static var VSLICE_DEFAULT_PREVIEW_END:Int = 15000;
@@ -125,9 +125,9 @@ class Flags {
 	public static var DEFAULT_COOP_ALLOWED:Bool = false;
 	public static var DEFAULT_OPPONENT_MODE_ALLOWED:Bool = false;
 
-	@:also(funkin.game.PlayState.coopMode)
+	@:also(  codenamecrew.codenamecrew.funkin.game.PlayState.coopMode)
 	public static var DEFAULT_COOP_MODE:Bool = false; // used in playstate if it doesn't find it
-	@:also(funkin.game.PlayState.opponentMode)
+	@:also(  codenamecrew.codenamecrew.funkin.game.PlayState.opponentMode)
 	public static var DEFAULT_OPPONENT_MODE:Bool = false;
 
 	public static var EARLY_HIT_WINDOW_RANGE:Float = 1.0; // was 0.5 for easier early hitting, but now 1 to demotivate mashing and getting away with it.
@@ -146,7 +146,7 @@ class Flags {
 	public static var USE_LEGACY_CENTER_CAM:Null<Bool> = null;
 	public static var USE_LEGACY_FLXANIMATE_STAGE_MATRIX:Null<Bool> = null;
 
-	@:also(funkin.game.Character.FALLBACK_DEAD_CHARACTER)
+	@:also(  codenamecrew.codenamecrew.funkin.game.Character.FALLBACK_DEAD_CHARACTER)
 	public static var DEFAULT_GAMEOVER_CHARACTER:String = "bf-dead";
 
 	public static var DEFAULT_CAM_ZOOM_INTERVAL:Int = 1;
@@ -202,7 +202,7 @@ class Flags {
 	public static var MAX_SPLASHES:Int = 8;
 	public static var STUNNED_TIME:Float = 5 / 60;
 
-	@:also(funkin.game.PlayState.daPixelZoom)
+	@:also(  codenamecrew.codenamecrew.funkin.game.PlayState.daPixelZoom)
 	public static var PIXEL_ART_SCALE:Float = 6.0;
 
 	public static var DEFAULT_COMBO_GROUP_MAX_SIZE:Int = 25;
@@ -225,16 +225,16 @@ class Flags {
 	public static var DISABLE_LANGUAGES:Bool = false;
 	public static var DISABLE_AUTOUPDATER:Bool = false;
 
-	@:also(funkin.backend.MusicBeatTransition.script)
+	@:also(  codenamecrew.codenamecrew.funkin.backend.MusicBeatTransition.script)
 	public static var DEFAULT_TRANSITION_SCRIPT:String = "";
-	@:also(funkin.menus.PauseSubState.script)
+	@:also(  codenamecrew.codenamecrew.funkin.menus.PauseSubState.script)
 	public static var DEFAULT_PAUSE_SCRIPT:String = "";
-	@:also(funkin.game.GameOverSubstate.script)
+	@:also(  codenamecrew.codenamecrew.funkin.game.GameOverSubstate.script)
 	public static var DEFAULT_GAMEOVER_SCRIPT:String = "";
 
 	public static var URL_WIKI:String = "https://codename-engine.com/";
 	public static var URL_EDITOR_FALLBACK:String = "https://www.youtube.com/watch?v=9Youam7GYdQ";
-	public static var URL_FNF_ITCH:String = "https://ninja-muffin24.itch.io/funkin";
+	public static var URL_FNF_ITCH:String = "https://ninja-muffin24.itch.io/codenamecrew.funkin.";
 
 	/**
 	 * Default audio paths
@@ -286,7 +286,7 @@ class Flags {
 	public static var DEFAULT_CHARACTER_GHOSTENABLE_SOUND:String = "editors/character/ghostEnable";
 
 	public static var DEFAULT_GLSL_VERSION:String = "120";
-	@:also(funkin.backend.utils.HttpUtil.userAgent)
+	@:also(  codenamecrew.codenamecrew.funkin.backend.utils.HttpUtil.userAgent)
 	public static var USER_AGENT:String = 'request';
 	// -- End of Codename's Default Flags --
 
@@ -363,7 +363,7 @@ class Flags {
 				@:privateAccess
 				l = cast(l, openfl.utils.AssetLibrary).__proxy;
 			}
-			if(lib is funkin.backend.assets.TranslatedAssetLibrary) {
+			if(lib is   codenamecrew.codenamecrew.funkin.backend.assets.TranslatedAssetLibrary) {
 				// skip translations since it would be useless, if you wanna modify it set the flags inside of global.hx
 				continue;
 			}

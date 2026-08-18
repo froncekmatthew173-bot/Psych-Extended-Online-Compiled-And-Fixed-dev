@@ -1,4 +1,4 @@
-package funkin.backend.shaders;
+package   codenamecrew.codenamecrew.funkin.backend.shaders;
 
 import haxe.Timer;
 import openfl.filters.BitmapFilter;

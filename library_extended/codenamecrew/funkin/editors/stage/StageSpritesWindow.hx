@@ -1,7 +1,7 @@
-package funkin.editors.stage;
+package   codenamecrew.codenamecrew.funkin.editors.stage;
 
-import funkin.editors.stage.elements.StageElementButton;
-import funkin.editors.stage.elements.*;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.StageElementButton;
+import   codenamecrew.codenamecrew.funkin.editors.stage.elements.*;
 
 class StageSpritesWindow extends UIButtonList<StageElementButton> {
 

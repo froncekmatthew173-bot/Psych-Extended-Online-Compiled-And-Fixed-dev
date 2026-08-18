@@ -1,4 +1,4 @@
-package funkin.backend.shaders;
+package   codenamecrew.codenamecrew.funkin.backend.shaders;
 
 import openfl.Assets;
 
@@ -11,7 +11,7 @@ import openfl.Assets;
  *
  * To access the shader's uniform variables, use `shader.variable`
  */
-class CustomShader extends FunkinShader {
+class CustomShader extends codenamecrew.funkin.Shader {
 	public var path:String = "";
 
 	/**

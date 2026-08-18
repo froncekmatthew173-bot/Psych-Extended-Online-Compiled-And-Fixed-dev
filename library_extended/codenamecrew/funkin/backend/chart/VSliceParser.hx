@@ -1,6 +1,6 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
-import funkin.backend.chart.ChartData.ChartMetaData;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData.ChartMetaData;
 
 typedef ChartDataWithInfo = {
 	var diffName:String;

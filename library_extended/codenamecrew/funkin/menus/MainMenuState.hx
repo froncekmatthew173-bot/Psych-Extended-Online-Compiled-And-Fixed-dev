@@ -1,13 +1,13 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.FlxState;
 import flixel.effects.FlxFlicker;
 import flixel.tweens.FlxTween;
-import funkin.backend.FunkinText;
-import funkin.backend.scripting.events.menu.MenuChangeEvent;
-import funkin.backend.scripting.events.NameEvent;
-import funkin.menus.credits.CreditsMain;
-import funkin.options.OptionsMenu;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.menu.MenuChangeEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.NameEvent;
+import   codenamecrew.codenamecrew.funkin.menus.credits.CreditsMain;
+import   codenamecrew.codenamecrew.funkin.options.OptionsMenu;
 import lime.app.Application;
 
 using StringTools;
@@ -23,9 +23,9 @@ class MainMenuState extends MusicBeatState
 	var bg:FlxSprite;
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
-	var versionText:FunkinText;
+	var versionText:codenamecrew.funkin.Text;
 
-	var devModeWarning:FunkinText;
+	var devModeWarning:codenamecrew.funkin.Text;
 
 	public var canAccessDebugMenus:Bool = !Flags.DISABLE_EDITORS;
 
@@ -76,7 +76,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.06);
 
-		versionText = new FunkinText(5, FlxG.height - 2, 0, [
+		versionText = new codenamecrew.funkin.Text(5, FlxG.height - 2, 0, [
 			Flags.VERSION_MESSAGE,
 			TU.translate("mainMenu.commit", [Flags.COMMIT_NUMBER, Flags.COMMIT_HASH]),
 			TU.translate("mainMenu.openMods", [controls.getKeyName(SWITCHMOD)]),
@@ -88,7 +88,7 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-		devModeWarning = new FunkinText(0, FlxG.height - 50, 1280, "You have to enable DEVELOPER MODE in the miscellaneous settings!", 24);
+		devModeWarning = new codenamecrew.funkin.Text(0, FlxG.height - 50, 1280, "You have to enable DEVELOPER MODE in the miscellaneous settings!", 24);
 		devModeWarning.alignment = CENTER;
 		add(devModeWarning);
 		devModeWarning.scrollFactor.set();
@@ -110,13 +110,13 @@ class MainMenuState extends MusicBeatState
 				if (controls.DEV_ACCESS) {
 					persistentUpdate = false;
 					persistentDraw = true;
-					openSubState(new funkin.editors.EditorPicker());
+					openSubState(new   codenamecrew.codenamecrew.funkin.editors.EditorPicker());
 				}
 				/*
 				if (FlxG.keys.justPressed.SEVEN)
-					FlxG.switchState(new funkin.desktop.DesktopMain());
+					FlxG.switchState(new   codenamecrew.codenamecrew.funkin.desktop.DesktopMain());
 				if (FlxG.keys.justPressed.EIGHT) {
-					CoolUtil.safeSaveFile("chart.json", Json.stringify(funkin.backend.chart.Chart.parse("dadbattle", "hard")));
+					CoolUtil.safeSaveFile("chart.json", Json.stringify(  codenamecrew.codenamecrew.funkin.backend.chart.Chart.parse("dadbattle", "hard")));
 				}
 				*/
 			}

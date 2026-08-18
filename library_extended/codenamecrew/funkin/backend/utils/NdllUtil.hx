@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 /**
  * Small util that allows you to load any function from ndlls via `getFunction`.
@@ -37,7 +37,7 @@ final class NdllUtil {
 
 		return Reflect.makeVarArgs(function(a:Array<Dynamic>) {
 			// This generates horrific code
-			return funkin.backend.system.macros.Utils.generateReflectionLike(25, "func", "a");
+			return   codenamecrew.codenamecrew.funkin.backend.system.macros.Utils.generateReflectionLike(25, "func", "a");
 			//return Reflect.callMethod(null, func, a); // wouldn't work for some reason, maybe cause like c++ functions doesn't have reflection enabled
 		});
 		#else

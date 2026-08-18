@@ -1,4 +1,4 @@
-package flx3d;
+package codenamecrew.flx3d;
 
 #if THREE_D_SUPPORT
 import away3d.core.managers.Stage3DManager;

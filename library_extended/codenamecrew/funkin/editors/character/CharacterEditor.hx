@@ -1,22 +1,22 @@
-package funkin.editors.character;
+package   codenamecrew.codenamecrew.funkin.editors.character;
 
-import funkin.editors.character.CharacterInfoScreen.CharacterExtraInfo;
-import funkin.editors.extra.AxisGizmo;
+import   codenamecrew.codenamecrew.funkin.editors.character.CharacterInfoScreen.CharacterExtraInfo;
+import   codenamecrew.codenamecrew.funkin.editors.extra.AxisGizmo;
 import flixel.math.FlxRect;
-import funkin.editors.stage.StageEditor;
-import funkin.game.Stage;
-import funkin.editors.ui.UITopMenu.UITopMenuButton;
-import funkin.editors.extra.CameraHoverDummy;
+import   codenamecrew.codenamecrew.funkin.editors.stage.StageEditor;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UITopMenu.UITopMenuButton;
+import   codenamecrew.codenamecrew.funkin.editors.extra.CameraHoverDummy;
 import openfl.display.BitmapData;
 import flixel.math.FlxPoint;
-import funkin.backend.system.framerate.Framerate;
-import funkin.backend.utils.XMLUtil.AnimData;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOption;
-import funkin.editors.ui.UIContextMenu.UIContextMenuOptionSpr;
-import funkin.game.Character;
+import   codenamecrew.codenamecrew.funkin.backend.system.framerate.Framerate;
+import   codenamecrew.codenamecrew.funkin.backend.utils.XMLUtil.AnimData;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOption;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIContextMenu.UIContextMenuOptionSpr;
+import   codenamecrew.codenamecrew.funkin.game.Character;
 import haxe.xml.Access;
 import haxe.xml.Printer;
-import funkin.editors.ui.UIImageExplorer.ImageSaveData;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIImageExplorer.ImageSaveData;
 import sys.FileSystem;
 import sys.io.File;
 

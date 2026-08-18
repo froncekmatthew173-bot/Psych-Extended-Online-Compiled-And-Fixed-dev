@@ -1,9 +1,9 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
-import funkin.options.PlayerSettings;
+import   codenamecrew.codenamecrew.funkin.options.PlayerSettings;
 import flixel.input.FlxInput;
 import flixel.input.actions.FlxAction;
-import funkin.backend.system.Controls;
+import   codenamecrew.codenamecrew.funkin.backend.system.Controls;
 import flixel.input.actions.FlxActionInput;
 import flixel.input.actions.FlxActionManager;
 import flixel.input.actions.FlxActionSet;
@@ -97,7 +97,7 @@ class ControlsUtil {
 
 	public static function loadCustomControls() {
 		var xmlPath = Paths.xml("config/controls");
-		for(source in [funkin.backend.assets.AssetSource.SOURCE, funkin.backend.assets.AssetSource.MODS]) {
+		for(source in [  codenamecrew.codenamecrew.funkin.backend.assets.AssetSource.SOURCE,   codenamecrew.codenamecrew.funkin.backend.assets.AssetSource.MODS]) {
 			if (Paths.assetsTree.existsSpecific(xmlPath, "TEXT", source)) {
 				var access:Access = null;
 				try {

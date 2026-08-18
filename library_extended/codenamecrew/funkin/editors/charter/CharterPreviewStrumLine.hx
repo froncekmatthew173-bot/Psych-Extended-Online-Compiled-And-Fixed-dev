@@ -1,6 +1,6 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
-import funkin.game.Note;
+import   codenamecrew.codenamecrew.funkin.game.Note;
 
 class CharterPreviewStrumLine extends FlxTypedGroup<FlxSprite>
 {

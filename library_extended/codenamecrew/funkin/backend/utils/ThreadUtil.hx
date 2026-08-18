@@ -1,4 +1,4 @@
-package funkin.backend.utils;
+package   codenamecrew.codenamecrew.funkin.backend.utils;
 
 #if (target.threaded)
 import sys.thread.Deque;
@@ -9,7 +9,7 @@ private typedef Thread = Dynamic;
 #end
 
 #if !macro
-import funkin.backend.system.Logs;
+import   codenamecrew.codenamecrew.funkin.backend.system.Logs;
 #end
 
 final class ThreadUtil {

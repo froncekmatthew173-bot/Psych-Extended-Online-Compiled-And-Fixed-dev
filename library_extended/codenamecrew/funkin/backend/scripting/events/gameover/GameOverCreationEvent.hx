@@ -1,4 +1,4 @@
-package funkin.backend.scripting.events.gameover;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.gameover;
 
 /**
  * CANCEL this event to prevent default behaviour!

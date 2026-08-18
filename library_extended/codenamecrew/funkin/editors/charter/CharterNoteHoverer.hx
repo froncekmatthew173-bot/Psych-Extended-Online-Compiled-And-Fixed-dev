@@ -1,4 +1,4 @@
-package funkin.editors.charter;
+package   codenamecrew.codenamecrew.funkin.editors.charter;
 
 class CharterNoteHoverer extends CharterNote {
 	public var showHoverer:Bool = false;

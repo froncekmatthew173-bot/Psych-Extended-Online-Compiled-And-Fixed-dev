@@ -1,4 +1,4 @@
-package funkin.editors.ui;
+package   codenamecrew.codenamecrew.funkin.editors.ui;
 
 class UINumericStepper extends UITextBox {
 	public var value(default, set):Float;

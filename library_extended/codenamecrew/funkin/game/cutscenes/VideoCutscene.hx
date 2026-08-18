@@ -1,10 +1,10 @@
-package funkin.game.cutscenes;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes;
 
 import flixel.tweens.FlxTween;
 import flixel.addons.display.FlxBackdrop;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import funkin.backend.FunkinText;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
 import haxe.Int64;
 import haxe.io.FPHelper;
 import haxe.io.Path;
@@ -30,12 +30,12 @@ class VideoCutscene extends Cutscene {
 
 	var cutsceneCamera:FlxCamera;
 
-	var text:FunkinText;
+	var text:codenamecrew.funkin.Text;
 	var loadingBackdrop:FlxBackdrop;
 	private var __loaded:Bool = false;
 
 	var bg:FlxSprite;
-	var subtitle:FunkinText;
+	var subtitle:codenamecrew.funkin.Text;
 
 	public var subtitles:Array<CutsceneSubtitle> = [];
 	var curSubtitle:Int = 0;
@@ -82,11 +82,11 @@ class VideoCutscene extends Cutscene {
 		bg.alpha = 0.5;
 		bg.visible = false;
 
-		subtitle = new FunkinText(0, FlxG.height * 0.875, 0, "", 20);
+		subtitle = new codenamecrew.funkin.Text(0, FlxG.height * 0.875, 0, "", 20);
 		subtitle.alignment = CENTER;
 		subtitle.visible = false;
 
-		text = new FunkinText(10, 10, Std.int(FlxG.width / 2), "Loading video...");
+		text = new codenamecrew.funkin.Text(10, 10, Std.int(FlxG.width / 2), "Loading video...");
 		text.cameras = [cutsceneCamera];
 		text.visible = false;
 		@:privateAccess

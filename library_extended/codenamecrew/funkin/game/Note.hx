@@ -1,15 +1,15 @@
-package funkin.game;
+package   codenamecrew.codenamecrew.funkin.game;
 
 import flixel.math.FlxPoint;
 import flixel.math.FlxAngle;
 import flixel.math.FlxRect;
-import funkin.backend.chart.ChartData;
-import funkin.backend.scripting.events.note.NoteCreationEvent;
-import funkin.backend.system.Conductor;
+import   codenamecrew.codenamecrew.funkin.backend.chart.ChartData;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.note.NoteCreationEvent;
+import   codenamecrew.codenamecrew.funkin.backend.system.Conductor;
 
 using StringTools;
 
-@:allow(funkin.game.PlayState)
+@:allow(  codenamecrew.codenamecrew.funkin.game.PlayState)
 class Note extends FlxSprite
 {
 	public var extra:Map<String, Dynamic> = [];

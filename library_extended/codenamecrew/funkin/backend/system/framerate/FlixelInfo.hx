@@ -1,7 +1,7 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
-import funkin.backend.scripting.ModState;
-import funkin.backend.system.macros.StringMacro;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.ModState;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.StringMacro;
 
 class FlixelInfo extends FramerateCategory {
 	public function new() {

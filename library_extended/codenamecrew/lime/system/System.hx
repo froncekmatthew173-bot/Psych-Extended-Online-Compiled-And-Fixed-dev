@@ -1,4 +1,4 @@
-package lime.system;
+package codenamecrew.lime.system;
 
 import haxe.Constraints;
 import lime._internal.backend.native.NativeCFFI;
@@ -605,7 +605,7 @@ class System
 	{
 		// executes first!!
 		#if (sys && !macro)
-		funkin.backend.system.Main.preInit();
+		  codenamecrew.codenamecrew.funkin.backend.system.Main.preInit();
 		#end
 
 		if (__applicationEntryPoint == null)

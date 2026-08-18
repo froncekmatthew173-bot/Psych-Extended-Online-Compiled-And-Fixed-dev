@@ -1,24 +1,24 @@
-package funkin.menus;
+package   codenamecrew.codenamecrew.funkin.menus;
 
 import flixel.text.FlxText.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import funkin.backend.FunkinText;
-import funkin.editors.ui.UIWarningSubstate.WarningButton;
+import   codenamecrew.codenamecrew.funkin.backend.codenamecrew.funkin.Text;
+import   codenamecrew.codenamecrew.funkin.editors.ui.UIWarningSubstate.WarningButton;
 
 class PlaytestingWarningSubstate extends MusicBeatSubstate
 {
 	var titleAlphabet:Alphabet;
-	var disclaimer:FunkinText;
+	var disclaimer:codenamecrew.funkin.Text;
 
 	var windowClosing:Bool = false;
 
 	var curSelected:Int = 0;
-	var options:Array<FunkinText> = [];
+	var options:Array<codenamecrew.funkin.Text> = [];
 	var buttonsData:Array<WarningButton> = [];
 
-	var indicator:FunkinText;
+	var indicator:codenamecrew.funkin.Text;
 
 	public function new(closingWindow:Bool, buttons:Array<WarningButton>) {
 		super();
@@ -44,7 +44,7 @@ class PlaytestingWarningSubstate extends MusicBeatSubstate
 		titleAlphabet.screenCenter(X);
 		add(titleAlphabet);
 
-		disclaimer = new FunkinText(16, titleAlphabet.y + titleAlphabet.height + 70, FlxG.width - 32, "", 32);
+		disclaimer = new codenamecrew.funkin.Text(16, titleAlphabet.y + titleAlphabet.height + 70, FlxG.width - 32, "", 32);
 		disclaimer.alignment = CENTER;
 		disclaimer.applyMarkup(TU.translate("playtesting.warningDesc"),
 			[
@@ -55,12 +55,12 @@ class PlaytestingWarningSubstate extends MusicBeatSubstate
 		add(disclaimer);
 
 		for (buttonData in buttonsData) {
-			var textOption:FunkinText = new FunkinText(0, disclaimer.y + disclaimer.height + 140, 0, buttonData.label, 24);
+			var textOption:codenamecrew.funkin.Text = new codenamecrew.funkin.Text(0, disclaimer.y + disclaimer.height + 140, 0, buttonData.label, 24);
 			textOption.borderSize = 4; if (buttonData.color != null) textOption.color = buttonData.color;
 			options.push(cast add(textOption));
 		}
 
-		indicator = new FunkinText(0, disclaimer.y + disclaimer.height + 86, 0, "V", 22);
+		indicator = new codenamecrew.funkin.Text(0, disclaimer.y + disclaimer.height + 86, 0, "V", 22);
 		indicator.borderSize = 4;
 		add(indicator);
 

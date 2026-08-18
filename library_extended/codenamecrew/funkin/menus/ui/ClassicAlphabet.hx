@@ -1,10 +1,10 @@
-package funkin.menus.ui;
+package   codenamecrew.codenamecrew.funkin.menus.ui;
 
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import funkin.backend.assets.IModsAssetLibrary;
-import funkin.backend.assets.LimeLibrarySymbol;
+import   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.LimeLibrarySymbol;
 import haxe.xml.Access;
 import openfl.utils.AssetLibrary;
 

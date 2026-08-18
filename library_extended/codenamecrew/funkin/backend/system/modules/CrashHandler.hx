@@ -1,6 +1,6 @@
-package funkin.backend.system.modules;
+package   codenamecrew.codenamecrew.funkin.backend.system.modules;
 
-import funkin.backend.utils.NativeAPI;
+import   codenamecrew.codenamecrew.funkin.backend.utils.NativeAPI;
 import haxe.CallStack;
 import openfl.Lib;
 import openfl.errors.Error;

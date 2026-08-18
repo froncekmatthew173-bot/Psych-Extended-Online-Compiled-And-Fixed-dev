@@ -1,4 +1,4 @@
-package funkin.options.categories;
+package   codenamecrew.codenamecrew.funkin.options.categories;
 
 class AppearanceOptions extends TreeMenuScreen {
 	public function new() {

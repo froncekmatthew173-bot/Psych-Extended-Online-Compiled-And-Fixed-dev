@@ -1,8 +1,8 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 import flixel.util.FlxSignal.FlxTypedSignal;
-import funkin.backend.system.MainState;
-import funkin.backend.utils.CoolUtil;
+import   codenamecrew.codenamecrew.funkin.backend.system.MainState;
+import   codenamecrew.codenamecrew.funkin.backend.utils.CoolUtil;
 import haxe.ds.StringMap;
 import haxe.io.Path;
 import lime.text.Font;

@@ -1,6 +1,6 @@
-package funkin.backend.scripting.events.stage;
+package   codenamecrew.codenamecrew.funkin.backend.scripting.events.stage;
 
-import funkin.game.Stage;
+import   codenamecrew.codenamecrew.funkin.game.Stage;
 import haxe.xml.Access;
 
 final class StageNodeEvent extends CancellableEvent {

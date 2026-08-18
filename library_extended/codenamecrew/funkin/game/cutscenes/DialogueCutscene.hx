@@ -1,12 +1,12 @@
-package funkin.game.cutscenes;
+package   codenamecrew.codenamecrew.funkin.game.cutscenes;
 
 import flixel.sound.FlxSound;
-import funkin.backend.scripting.Script;
-import funkin.backend.scripting.events.CancellableEvent;
-import funkin.backend.scripting.events.DynamicEvent;
-import funkin.backend.scripting.events.dialogue.*;
-import funkin.backend.utils.FunkinParentDisabler;
-import funkin.game.cutscenes.dialogue.*;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.Script;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.CancellableEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.DynamicEvent;
+import   codenamecrew.codenamecrew.funkin.backend.scripting.events.dialogue.*;
+import   codenamecrew.codenamecrew.funkin.backend.utils.codenamecrew.funkin.ParentDisabler;
+import   codenamecrew.codenamecrew.funkin.game.cutscenes.dialogue.*;
 import haxe.io.Path;
 import haxe.xml.Access;
 
@@ -53,11 +53,11 @@ class DialogueCutscene extends ScriptedCutscene {
 		//Logs.trace('Could not find script for dialogue cutscene at "${scriptPath}"', WARNING, YELLOW);  // Too many warnings honestly, stawp  - Nex
 	}
 
-	var parentDisabler:FunkinParentDisabler;
+	var parentDisabler:codenamecrew.funkin.ParentDisabler;
 	public override function create() {
 		super.create();
 
-		add(parentDisabler = new FunkinParentDisabler());  // MESS WITH THIS IN SCRIPTS TO RESUME PLAYSTATE'S TWEENS!!  - Nex
+		add(parentDisabler = new codenamecrew.funkin.ParentDisabler());  // MESS WITH THIS IN SCRIPTS TO RESUME PLAYSTATE'S TWEENS!!  - Nex
 		try {
 			var event = EventManager.get(DialogueStructureEvent).recycle(dialogueData);
 			event.dialogueData = new Access(Xml.parse(Assets.getText(dialoguePath)).firstElement());

@@ -1,12 +1,12 @@
-package funkin.backend.system.framerate;
+package   codenamecrew.codenamecrew.funkin.backend.system.framerate;
 
 #if TRANSLATIONS_SUPPORT
-import funkin.backend.assets.TranslatedAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.TranslatedAssetLibrary;
 #end
-import funkin.backend.assets.AssetsLibraryList;
-import funkin.backend.assets.IModsAssetLibrary;
-import funkin.backend.assets.ScriptedAssetLibrary;
-import funkin.backend.system.macros.StringMacro;
+import   codenamecrew.codenamecrew.funkin.backend.assets.AssetsLibraryList;
+import   codenamecrew.codenamecrew.funkin.backend.assets.IModsAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.assets.ScriptedAssetLibrary;
+import   codenamecrew.codenamecrew.funkin.backend.system.macros.StringMacro;
 
 class AssetTreeInfo extends FramerateCategory {
 	private var lastUpdateTime:Float = 1;

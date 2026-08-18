@@ -1,4 +1,4 @@
-package funkin.backend.scripting;
+package   codenamecrew.codenamecrew.funkin.backend.scripting;
 
 import hscript.*;
 import hscript.Expr.Error;
@@ -62,7 +62,7 @@ class HScript extends Script {
 		}));
 
 		#if GLOBAL_SCRIPT
-		funkin.backend.scripting.GlobalScript.call("onScriptCreated", [this, "hscript"]);
+		  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.call("onScriptCreated", [this, "hscript"]);
 		#end
 		loadFromString(code);
 	}
@@ -165,7 +165,7 @@ class HScript extends Script {
 		}
 
 		#if GLOBAL_SCRIPT
-		funkin.backend.scripting.GlobalScript.call("onScriptSetup", [this, "hscript"]);
+		  codenamecrew.codenamecrew.funkin.backend.scripting.GlobalScript.call("onScriptSetup", [this, "hscript"]);
 		#end
 	}
 

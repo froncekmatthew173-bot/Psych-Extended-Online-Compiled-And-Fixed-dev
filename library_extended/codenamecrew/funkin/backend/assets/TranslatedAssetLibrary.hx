@@ -1,4 +1,4 @@
-package funkin.backend.assets;
+package   codenamecrew.codenamecrew.funkin.backend.assets;
 
 import lime.utils.AssetLibrary as LimeAssetLibrary;
 import openfl.utils.AssetLibrary;

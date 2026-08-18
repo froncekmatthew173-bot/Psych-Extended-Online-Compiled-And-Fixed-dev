@@ -1,4 +1,4 @@
-package funkin.backend.chart;
+package   codenamecrew.codenamecrew.funkin.backend.chart;
 
 import flixel.util.FlxColor;
 
