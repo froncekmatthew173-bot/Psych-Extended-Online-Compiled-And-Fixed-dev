@@ -5,6 +5,7 @@ import online.GameClient;
 import shaders.RGBPalette;
 import shaders.RGBPalette.RGBShaderReference;
 import backend.NoteSkinData;
+import backend.NoteSkinData.NoteSkinStructure;
 import shaders.ColorSwap;
 
 class StrumNote extends FlxSprite
@@ -74,10 +75,15 @@ class StrumNote extends FlxSprite
 		if(PlayState.SONG != null && PlayState.SONG.arrowSkin != null && PlayState.SONG.arrowSkin.length > 1) skin = PlayState.SONG.arrowSkin;
 		else skin = Note.defaultNoteSkin;
 
-		var customSkin:String = skin + Note.getNoteSkinPostfix(mustPress);
-		if(Paths.fileExists('images/$customSkin.png', IMAGE)) skin = customSkin;
-
-		texture = skin; //Load texture and anims
+		// CNE-style noteskin support
+		var cnePath:Null<String> = Note.getCNEPath(mustPress);
+		if (cnePath != null) {
+			texture = cnePath;
+		} else {
+			var customSkin:String = skin + Note.getNoteSkinPostfix(mustPress);
+			if(Paths.fileExists('images/$customSkin.png', IMAGE)) skin = customSkin;
+			texture = skin; //Load texture and anims
+		}
 		scrollFactor.set();
 	}
 
@@ -88,12 +94,17 @@ class StrumNote extends FlxSprite
 
 		Note.colArray = Note.getColArrayFromKeys();
 
+		// CNE-style noteskin support: check if texture is a CNE path
+		var cnePath:Null<String> = Note.getCNEPath(player == 1);
+		var isCNE:Bool = (cnePath != null && texture == cnePath);
+
 		if(PlayState.isPixelStage)
 		{
 			var graphic = Paths.image('pixelUI/' + texture);
+			if (isCNE) graphic = Paths.image(texture);
 			if (graphic == null && texture.endsWith('_ODD')) {
 				@:bypassAccessor texture = texture.substring(0, texture.length - '_ODD'.length);
-				graphic = Paths.image('pixelUI/' + texture);
+				graphic = isCNE ? Paths.image(texture) : Paths.image('pixelUI/' + texture);
 				Note.colArray = Note.getColArrayFromKeys(true);
 			}
 
@@ -101,7 +112,10 @@ class StrumNote extends FlxSprite
 			if (!texture.endsWith('_ODD'))
 				width = width / 4;
 			height = height / 5;
-			loadGraphic(Paths.image('pixelUI/' + texture), true, Math.floor(width), Math.floor(height));
+			if (isCNE)
+				loadGraphic(Paths.image(texture), true, Math.floor(width), Math.floor(height));
+			else
+				loadGraphic(Paths.image('pixelUI/' + texture), true, Math.floor(width), Math.floor(height));
 
 			antialiasing = false;
 			setGraphicSize(Std.int(width * PlayState.daPixelZoom * Note.noteScale));
@@ -116,7 +130,7 @@ class StrumNote extends FlxSprite
 		}
 		else
 		{
-			frames = Paths.getSparrowAtlas(texture);
+			frames = Paths.getSparrowAtlas(isCNE ? texture : texture);
 			if (graphic == null && texture.endsWith('_ODD')) {
 				@:bypassAccessor texture = texture.substring(0, texture.length - '_ODD'.length);
 				frames = Paths.getSparrowAtlas(texture);

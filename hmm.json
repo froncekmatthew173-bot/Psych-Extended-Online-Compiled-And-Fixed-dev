@@ -111,6 +111,10 @@
       "type": "haxelib"
     },
     {
+      "name": "flxanimate",
+      "type": "haxelib"
+    },
+    {
       "name": "lumod",
       "type": "haxelib",
       "version": "2.2.0"
@@ -168,10 +172,8 @@
     },
     {
       "name": "mobile-controls",
-      "type": "git",
-      "dir": null,
-      "ref": null,
-      "url": "https://github.com/ArkoseLabsOfficial/mobile-controls"
+      "type": "haxelib",
+      "version": "1.0.0"
     },
     {
       "name": "hscript-improved",

@@ -55,6 +55,7 @@ typedef SwagSong =
 
 	//codename engine legacy (WIP)
 	@:optional var strumLines:Array<StrumLine>;
+	@:optional var meta:Dynamic;
 }
 
 class Song

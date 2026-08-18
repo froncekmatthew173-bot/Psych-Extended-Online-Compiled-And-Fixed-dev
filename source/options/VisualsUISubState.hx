@@ -352,11 +352,15 @@ class VisualsUISubState extends BaseOptionsMenu
 		var data:NoteSkinStructure = NoteSkinData.getCurrent();
 		Mods.currentModDirectory = data.folder;
 
-		var skin:String = Note.defaultNoteSkin;
-		var customSkin:String = skin + Note.getNoteSkinPostfix();
-		if(Paths.fileExists('images/$customSkin.png', IMAGE)) skin = customSkin;
-
-		note.texture = skin; //Load texture and anims
+		// CNE-style noteskin support
+		if (data.path != null) {
+			note.texture = data.path;
+		} else {
+			var skin:String = Note.defaultNoteSkin;
+			var customSkin:String = skin + Note.getNoteSkinPostfix();
+			if(Paths.fileExists('images/$customSkin.png', IMAGE)) skin = customSkin;
+			note.texture = skin;
+		}
 		note.reloadNote();
 		note.playAnim('static');
 	}

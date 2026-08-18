@@ -151,6 +151,31 @@ class WeekData {
 						}
 					}
 				}
+
+				// CNE data/weeks/weeks/ XML week fallback
+				var cneXmlFileToCheck:String = directories[j] + 'data/weeks/weeks/' + sexList[i] + '.xml';
+				if(!weeksLoaded.exists(sexList[i])) {
+					var week:WeekFile = getWeekFileXML(cneXmlFileToCheck);
+					if(week != null) {
+						var weekFile:WeekData = new WeekData(week, sexList[i]);
+
+						#if MODS_ALLOWED
+						if(j >= originalLength) {
+							weekFile.folder = directories[j].substring(Paths.mods().length, directories[j].length-1);
+						}
+						#end
+
+						if (
+							weekFile != null && (
+								(/*online.GameClient.isConnected() &&*/ !isStoryMode) ||
+								((isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay))
+							)
+						) {
+							weeksLoaded.set(sexList[i], weekFile);
+							weeksList.push(sexList[i]);
+						}
+					}
+				}
 			}
 		}
 
@@ -188,6 +213,35 @@ class WeekData {
 						var weekName = file.substr(0, file.length - 4);
 						if(!weeksLoaded.exists(weekName))
 							addWeekXML(isStoryMode, weekName, path, directories[i], i, originalLength);
+					}
+				}
+			}
+
+			// CNE-style weeks: scan data/weeks/weeks/ directory
+			var cneWeeksDir:String = directories[i] + 'data/weeks/weeks/';
+			if(FunkinFileSystem.exists(cneWeeksDir)) {
+				// Read CNE weeks.txt ordering file
+				var cneWeekListFile:String = directories[i] + 'data/weeks/weeks.txt';
+				var cneWeekList:Array<String> = CoolUtil.coolTextFile(cneWeekListFile);
+				for (daWeek in cneWeekList)
+				{
+					if(!weeksLoaded.exists(daWeek)) {
+						var xmlPath:String = cneWeeksDir + daWeek + '.xml';
+						if(FunkinFileSystem.exists(xmlPath))
+							addWeekXML(isStoryMode, daWeek, xmlPath, directories[i], i, originalLength);
+					}
+				}
+
+				// Also scan for any XML files not in weeks.txt
+				for (file in FunkinFileSystem.readDirectory(cneWeeksDir))
+				{
+					if (file.endsWith('.xml'))
+					{
+						var weekName = file.substr(0, file.length - 4);
+						if(!weeksLoaded.exists(weekName)) {
+							var path = haxe.io.Path.join([cneWeeksDir, file]);
+							addWeekXML(isStoryMode, weekName, path, directories[i], i, originalLength);
+						}
 					}
 				}
 			}

@@ -5,6 +5,7 @@ package objects;
 
 import flixel.graphics.frames.FlxAtlasFrames;
 import backend.NoteSkinData;
+import backend.NoteSkinData.NoteSkinStructure;
 import online.GameClient;
 import backend.NoteTypesConfig;
 import shaders.ColorSwap;
@@ -471,6 +472,50 @@ class Note extends FlxSprite
 			lastPostfix = postfix;
 		}
 
+		// CNE-style noteskin support: load from game/notes/ path if available
+		var cnePath:Null<String> = getCNEPath(mustPress);
+		if (cnePath != null && texture.length < 1) {
+			var animName:String = null;
+			if(animation.curAnim != null)
+				animName = animation.curAnim.name;
+
+			if(PlayState.isPixelStage) {
+				var graphic = Paths.image(cnePath);
+				if(graphic != null) {
+					if(isSustainNote) {
+						// Check for sustain end variant
+						var endGraphic = Paths.image(cnePath + '_END');
+						if(endGraphic != null)
+							graphic = endGraphic;
+						loadGraphic(graphic, true, Math.floor(graphic.width / 4), Math.floor(graphic.height / 2));
+						originalHeight = graphic.height / 2;
+					} else {
+						loadGraphic(graphic, true, Math.floor(graphic.width / 4), Math.floor(graphic.height / 5));
+					}
+					loadPixelNoteAnims();
+					antialiasing = false;
+					if(isSustainNote) {
+						offsetX += _lastNoteOffX;
+						_lastNoteOffX = (width - 7) * (PlayState.daPixelZoom / 2) * noteScale;
+						offsetX -= _lastNoteOffX;
+					}
+					if(animName != null) animation.play(animName, true);
+					updateHitbox();
+					return;
+				}
+			} else {
+				frames = Paths.getSparrowAtlas(cnePath);
+				if (frames != null) {
+					loadNoteAnims();
+					centerOffsets();
+					centerOrigin();
+					if(animName != null) animation.play(animName, true);
+					updateHitbox();
+					return;
+				}
+			}
+		}
+
 		var animName:String = null;
 		if(animation.curAnim != null) {
 			animName = animation.curAnim.name;
@@ -542,6 +587,12 @@ class Note extends FlxSprite
 		if(noteSkin != ClientPrefs.defaultData.noteSkin)
 			skin = '-' + noteSkin.trim().toLowerCase().replace(' ', '_');
 		return skin;
+	}
+
+	public static function getCNEPath(?mustPress:Bool = true):Null<String>
+	{
+		var data:NoteSkinStructure = NoteSkinData.getCurrent(mustPress == (GameClient.getPlayerSelf()?.bfSide ?? true) ? 0 : 1);
+		return data.path;
 	}
 
 	function loadNoteAnims() {

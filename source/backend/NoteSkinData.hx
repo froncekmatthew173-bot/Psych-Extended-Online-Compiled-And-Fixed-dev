@@ -45,6 +45,31 @@ class NoteSkinData {
 			}
 		}
 
+		// Scan CNE-style mods for noteskins in images/game/notes/
+		#if MODS_ALLOWED
+		for (mod in Mods.parseList().enabled) {
+			var modDir:String = Paths.mods(mod + '/');
+			var notesDir:String = modDir + 'images/game/notes';
+			// Only scan if the mod has a game/notes directory
+			if (FileSystem.exists(notesDir) && FileSystem.isDirectory(notesDir)) {
+				for (file in FileSystem.readDirectory(notesDir)) {
+					if (file.endsWith('.png') && !file.startsWith('_')) {
+						var skinName:String = file.substring(0, file.length - 4); // strip .png
+						if (!noteSkinArray.contains(skinName)) {
+							noteSkins.push({
+								skin: skinName,
+								folder: mod,
+								url: online.mods.OnlineMods.getModURL(mod),
+								path: 'game/notes/' + skinName
+							});
+							noteSkinArray.push(skinName);
+						}
+					}
+				}
+			}
+		}
+		#end
+
 		noteSkins.insert(0, {skin: ClientPrefs.defaultData.noteSkin, folder: ''}); //Default skin always comes first
 		noteSkinArray.insert(0, ClientPrefs.defaultData.noteSkin);
 	}
@@ -69,4 +94,5 @@ typedef NoteSkinStructure = {
 	var skin:String;
 	var folder:String;
 	@:optional var url:String;
+	@:optional var path:String;
 }

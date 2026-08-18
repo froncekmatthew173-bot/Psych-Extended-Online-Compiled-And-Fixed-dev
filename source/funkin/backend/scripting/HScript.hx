@@ -345,6 +345,17 @@ class Script extends FlxBasic implements IFlxDestroyable {
 			"FunkinText"		=> funkin.backend.FunkinText,
 			"FunkinSprite"		=> funkin.backend.FunkinSprite,
 
+			/* CNE Compatibility Stubs */
+			"WindowUtils"		=> funkin.backend.utils.WindowUtils,
+			"NdllUtil"			=> funkin.backend.utils.NdllUtil,
+			"MusicBeatTransition"	=> funkin.backend.MusicBeatTransition,
+			"FunkinSave"		=> funkin.savedata.FunkinSave,
+			"HighscoreEntry"	=> funkin.savedata.HighscoreEntry,
+			"CNEOptions"		=> funkin.backend.utils.Options,
+			"DiscordUtil"		=> funkin.backend.utils.DiscordUtil,
+			"Week"				=> funkin.backend.week.Week,
+			"CNECoolUtil"		=> funkin.backend.utils.CoolUtil,
+
 			/* States */
 			"PlayState"		 => states.PlayState,
 			"FreeplayState"	 => states.FreeplayState,
@@ -354,7 +365,7 @@ class Script extends FlxBasic implements IFlxDestroyable {
 			"TitleState"		 => states.TitleState,
 			"OptionsState"		 => options.OptionsState,
 			"LoadingState"		 => states.LoadingState,
-			"MusicBeatState"	 => backend.MusicBeatState,
+			"MusicBeatState"	 => funkin.backend.MusicBeatState,
 
 			/* Substates */
 			"GameOverSubstate"  => substates.GameOverSubstate,

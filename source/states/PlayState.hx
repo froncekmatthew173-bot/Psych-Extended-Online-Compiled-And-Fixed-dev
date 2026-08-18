@@ -221,7 +221,7 @@ class PlayState extends MusicBeatState
 
 	public static var SONG(default, null):SwagSong;
 
-	public static function loadSong(jsonInput:String, ?folder:String):SwagSong {
+	public static function loadSong(jsonInput:String, ?folder:String, ?unused1:Bool, ?unused2:Bool):SwagSong {
 		RAW_SONG = Song.loadRawSong(jsonInput, folder);
 		return SONG = Song.parseRawJSON(jsonInput, RAW_SONG);
 	}
@@ -566,6 +566,11 @@ class PlayState extends MusicBeatState
 
 	public var precacheList:Map<String, String> = new Map<String, String>();
 	public var songName:String;
+
+	public function getIconRPC():String {
+		if (boyfriend != null && boyfriend.healthIcon != null) return boyfriend.healthIcon;
+		return "bf";
+	}
 
 	// Callbacks for stages
 	public var startCallback:Void->Void = null;
@@ -1271,6 +1276,8 @@ class PlayState extends MusicBeatState
 			findAndStartScripts('scripts');
 			findAndStartScripts('songs', true); //global scripts for PlayStation
 			findAndStartScripts('songs/${songName}/scripts', true);
+			// CNE-style global scripts in data/scripts/
+			findAndStartScripts('data/scripts', true);
 			/*
 			var foldersToCheck:Array<String> = Mods.directoriesWithFile(Paths.getPreloadPath(), 'scripts/');
 			for (folder in foldersToCheck)

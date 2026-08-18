@@ -18,6 +18,12 @@ class ModState extends MusicBeatState {
 	public var data:Dynamic = null;
 
 	/**
+	* The mod directory that was active when this ModState was created.
+	* Used to restore the mod context for script loading.
+	*/
+	public var savedModDir:String = null;
+
+	/**
 	* ModState Constructor.
 	* Inherits from MusicBeatState and allows the execution of an HScript from assets/data/states passed via parameters.
 	*
@@ -34,7 +40,18 @@ class ModState extends MusicBeatState {
 			lastData = _data;
 
 		data = lastData;
+		#if MODS_ALLOWED
+		savedModDir = Mods.currentModDirectory;
+		#end
 		super(true, lastName);
+	}
+
+	override public function create() {
+		#if MODS_ALLOWED
+		if (savedModDir != null)
+			Mods.currentModDirectory = savedModDir;
+		#end
+		super.create();
 	}
 }
 #end

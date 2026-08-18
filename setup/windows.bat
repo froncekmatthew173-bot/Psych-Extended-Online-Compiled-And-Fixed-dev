@@ -22,7 +22,7 @@ haxelib install UnRAR 1.0.0 --quiet
 haxelib git away3d https://github.com/Snirozu/away3d master --quiet
 haxelib install json2object 3.11.0 --quiet
 haxelib install hxjsonast 1.1.0 --quiet
-haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate v4.0.0 --quiet
+haxelib git flxanimate https://github.com/Dot-Stuff/flxanimate --quiet
 haxelib install lumod 2.1.0 --quiet
 haxelib install actuate 1.9.0 --quiet
 haxelib install compiletime 2.8.0 --quiet

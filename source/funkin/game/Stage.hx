@@ -7,11 +7,8 @@ import flixel.math.FlxPoint;
 import haxe.xml.Access;
 import funkin.backend.utils.XMLUtil;
 import funkin.backend.system.interfaces.IBeatReceiver;
-import funkin.backend.scripting.HScript;
 import funkin.backend.scripting.events.stage.*;
-import funkin.backend.system.interfaces.IBeatReceiver;
 import haxe.io.Path;
-import haxe.xml.Access;
 import objects.Character;
 
 using StringTools;
@@ -21,7 +18,7 @@ class Stage extends FlxBasic implements IBeatReceiver {
 	public var stageXML:Access;
 	public var stagePath:String;
 	public var stageSprites:Map<String, FlxSprite> = [];
-	public var stageScript:Script;
+	public var stageScript:Dynamic;
 	public var state:FlxState;
 	public var characterPoses:Map<String, StageCharPos> = [];
 

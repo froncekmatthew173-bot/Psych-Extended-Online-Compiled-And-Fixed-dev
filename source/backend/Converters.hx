@@ -231,7 +231,11 @@ class Converters {
 			player1: "bf",
 			player2: "pico",
 			gfVersion: "gf",
-			stage: "stage"
+			stage: "stage",
+			meta: {
+				name: metaData.name,
+				displayName: metaData.displayName != null ? metaData.displayName : metaData.name
+			}
 		};
 		if (metaData.displayName == null) psychJson.song = metaData.name;
 

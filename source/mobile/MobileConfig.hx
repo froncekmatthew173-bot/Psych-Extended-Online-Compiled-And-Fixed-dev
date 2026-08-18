@@ -7,13 +7,6 @@ import openfl.utils.Assets;
 
 using StringTools;
 
-enum ButtonModes
-{
-	ACTION;
-	DPAD;
-	HITBOX;
-}
-
 class MobileConfig {
 	public static var actionModes:Map<String, MobileButtonsData> = new Map();
 	public static var dpadModes:Map<String, MobileButtonsData> = new Map();
@@ -112,67 +105,4 @@ class MobileConfig {
 		return dirs;
 		#end
 	}
-}
-
-typedef MobileButtonsData =
-{
-	buttons:Array<ButtonsData>
-}
-
-typedef CustomHitboxData =
-{
-	hints:Array<HitboxData>, //support library's jsons
-	none:Array<HitboxData>,
-	single:Array<HitboxData>,
-	double:Array<HitboxData>,
-	triple:Array<HitboxData>,
-	quad:Array<HitboxData>
-}
-
-typedef HitboxData =
-{
-	button:String, // what Hitbox Button should be used, must be a valid Hitbox Button var from Hitbox as a string.
-	buttonIDs:Array<String>, // what Hitbox Button Iad should be used, If you're using a the library for PsychEngine 0.7 Versions, This is useful.
-	buttonUniqueID:Dynamic, // the button's special ID for button
-	//if custom ones isn't setted these will be used
-	x:Dynamic, // the button's X position on screen.
-	y:Dynamic, // the button's Y position on screen.
-	width:Dynamic, // the button's Width on screen.
-	height:Dynamic, // the button's Height on screen.
-	position:Array<Float>,
-	scale:Array<Int>,
-	color:String, // the button color, default color is white.
-	returnKey:String, // the button return, default return is nothing (please don't add custom return if you don't need).
-	extraKeyMode:Null<Int>,
-	//Top
-	topPosition:Array<Float>,
-	topScale:Array<Int>,
-	topColor:String,
-	topReturnKey:String,
-	topExtraKeyMode:Null<Int>,
-	//Middle
-	middlePosition:Array<Float>,
-	middleScale:Array<Int>,
-	middleColor:String,
-	middleReturnKey:String,
-	middleExtraKeyMode:Null<Int>,
-	//Bottom
-	bottomPosition:Array<Float>,
-	bottomScale:Array<Int>,
-	bottomColor:String,
-	bottomReturnKey:String,
-	bottomExtraKeyMode:Null<Int>
-}
-
-
-typedef ButtonsData =
-{
-	button:String, // the button's name for checking pressed directly.
-	buttonIDs:Array<String>, // what MobileButton Button IDs should be used.
-	buttonUniqueID:Dynamic, // the button's special ID for button
-	graphic:String, // the graphic of the button, usually can be located in the MobilePad xml.
-	position:Array<Null<Float>>, // the button's X/Y position on screen.
-	color:String, // the button color, default color is white.
-	scale:Null<Float>, //the button scale, default scale is 1.
-	returnKey:String // the button return, default return is nothing but If you're game using a lua scripting this will be useful.
 }

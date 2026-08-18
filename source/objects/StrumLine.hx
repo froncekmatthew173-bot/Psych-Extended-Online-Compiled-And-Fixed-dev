@@ -38,4 +38,6 @@ class StrumLine extends FlxTypedGroup<StrumNote> {
 		this.noteCount = noteCount;
 		this.characters = characters;
 	}
+
+	public var vocals:Dynamic = null;
 }
