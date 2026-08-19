@@ -651,6 +651,42 @@ class Paths
 			localTrackedAssets.push(key);
 			return currentTrackedSounds.get(file);
 		}
+
+		// CNE fallback: try original song name (with spaces) when formatted path fails
+		// CNE mods may store songs in folders with original casing/spaces
+		if (Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0) {
+			var originalKey:String = key;
+			// Check if the key contains a formatted song path (has hyphens from formatToSongPath)
+			if (originalKey.indexOf('-') > 0) {
+				// Try to find the original folder by scanning the songs directory in the mod
+				var songsPath:String = mods('${Mods.currentModDirectory}/$path');
+				if (FileSystem.exists(songsPath)) {
+					var basePart:String = originalKey;
+					var slashIdx = originalKey.indexOf('/');
+					if (slashIdx > 0)
+						basePart = originalKey.substring(0, slashIdx);
+					// Try each song folder in the mod's songs directory
+					for (entry in FileSystem.readDirectory(songsPath)) {
+						var entryLower = entry.toLowerCase();
+						if (entryLower == basePart.toLowerCase() || entryLower.replace(' ', '-') == basePart) {
+							var restOfKey = slashIdx > 0 ? originalKey.substring(slashIdx) : '';
+							var originalFile:String = mods('${Mods.currentModDirectory}/$path/$entry$restOfKey.$SOUND_EXT');
+							if (FunkinFileSystem.exists(originalFile)) {
+								try {
+									if (!currentTrackedSounds.exists(originalFile)) {
+										currentTrackedSounds.set(originalFile, FunkinFileSystem.getSound(originalFile));
+									}
+								} catch (e:Dynamic) {
+									return null;
+								}
+								localTrackedAssets.push(originalFile);
+								return currentTrackedSounds.get(originalFile);
+							}
+						}
+					}
+				}
+			}
+		}
 		#end
 		// I hate this so god damn much
 		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);

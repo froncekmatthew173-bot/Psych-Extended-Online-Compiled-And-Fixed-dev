@@ -309,6 +309,36 @@ class MusicBeatState extends FlxUIState
 				var filePath:String = "states/" + scriptName;
 				if (customPath != null)
 					filePath = customPath;
+
+				// CNE-style state redirect: check if this state should be redirected to a script
+				#if MODS_ALLOWED
+				var shortStateName = className.substr(className.lastIndexOf(".")+1);
+				var redirect = Mods.getCNEStateRedirect(shortStateName);
+				if (redirect != null) {
+					filePath = "states/" + redirect;
+				}
+				#end
+
+				// CNE-style per-mod script loading: data/states/<name>/LIB_<modName>
+				#if MODS_ALLOWED
+				var modsToCheck:Array<String> = [];
+				if (Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0)
+					modsToCheck.push(Mods.currentModDirectory);
+				for (mod in Mods.getGlobalMods())
+					if (!modsToCheck.contains(mod))
+						modsToCheck.push(mod);
+
+				for (mod in modsToCheck) {
+					var path = Paths.script('data/$filePath/LIB_$mod');
+					var script = Script.create(path);
+					if (script is DummyScript) continue;
+					script.remappedNames.set(script.fileName, '$mod:${script.fileName}');
+					stateScripts.add(script);
+					script.load();
+				}
+				#end
+
+				// Standard Psych-style script loading
 				var path = Paths.script('data/' + filePath);
 				var script = Script.create(path);
 				if (script is DummyScript) {
@@ -317,9 +347,44 @@ class MusicBeatState extends FlxUIState
 					stateScripts.add(script);
 					script.load();
 				}
+
+				// CNE-style: load data/scripts/ for all states (not just PlayState)
+				#if MODS_ALLOWED
+				_loadCNEGlobalScripts('data/scripts');
+				#end
 			}
 		}
 	}
+
+	#if MODS_ALLOWED
+	function _loadCNEGlobalScripts(folder:String) {
+		var dirs:Array<String> = [];
+		if (Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0)
+			dirs.push(Mods.currentModDirectory);
+		for (mod in Mods.getGlobalMods())
+			if (!dirs.contains(mod))
+				dirs.push(mod);
+
+		for (mod in dirs) {
+			var modPath:String = Paths.mods('$mod/$folder');
+			if (sys.FileSystem.exists(modPath)) {
+				for (file in sys.FileSystem.readDirectory(modPath)) {
+					var fullPath = '$modPath/$file';
+					if (!sys.FileSystem.isDirectory(fullPath)) {
+						var ext = file.toLowerCase();
+						if (ext.endsWith('.hsc') || ext.endsWith('.hx') || ext.endsWith('.hscript')) {
+							var script = Script.create(fullPath);
+							if (script is DummyScript) continue;
+							script.remappedNames.set(script.fileName, '$mod:${script.fileName}');
+							stateScripts.add(script);
+							script.load();
+						}
+					}
+				}
+			}
+		}
+	}
+	#end
 	#end
 
 	public function call(name:String, ?args:Array<Dynamic>, ?defaultVal:Dynamic):Dynamic {

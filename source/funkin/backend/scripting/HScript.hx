@@ -842,6 +842,11 @@ class GlobalScript {
 		if(initialized) return;
 		initialized = true;
 
+		// Load CNE-style mod configurations (flags.ini / config/modpack)
+		#if MODS_ALLOWED
+		backend.Mods.loadCNEConfigs();
+		#end
+
 		onSetupScript();
 
 		//maybe later
@@ -910,6 +915,25 @@ class GlobalScript {
 			scripts.add(script);
 			script.load();
 		}
+
+		// CNE-style per-mod global script loading: data/global/LIB_<modName>
+		#if MODS_ALLOWED
+		var modsToCheck:Array<String> = [];
+		if (Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0)
+			modsToCheck.push(Mods.currentModDirectory);
+		for (mod in Mods.getGlobalMods())
+			if (!modsToCheck.contains(mod))
+				modsToCheck.push(mod);
+
+		for (mod in modsToCheck) {
+			var modPath = Paths.script('data/global/LIB_$mod');
+			var modScript = Script.create(modPath);
+			if (modScript is DummyScript) continue;
+			modScript.remappedNames.set(modScript.fileName, '$mod:${modScript.fileName}');
+			scripts.add(modScript);
+			modScript.load();
+		}
+		#end
 	}
 
 	public static inline function event<T:CancellableEvent>(name:String, event:T):T {

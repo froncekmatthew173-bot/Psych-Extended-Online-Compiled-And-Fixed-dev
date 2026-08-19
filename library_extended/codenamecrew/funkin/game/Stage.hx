@@ -90,8 +90,10 @@ class Stage extends FlxBasic implements IBeatReceiver {
 			stageName = xml.getAtt("name").getDefault(stageFile);
 
 			if (PlayState.instance == state) {
-				if(xml.has.startCamPosX) PlayState.instance.camFollow.x = startCam.x;
-				if(xml.has.startCamPosY) PlayState.instance.camFollow.y = startCam.y;
+				if(PlayState.instance.camFollow != null) {
+					if(xml.has.startCamPosX) PlayState.instance.camFollow.x = startCam.x;
+					if(xml.has.startCamPosY) PlayState.instance.camFollow.y = startCam.y;
+				}
 				if(xml.has.zoom) PlayState.instance.defaultCamZoom = defaultZoom;
 			}
 			if (xml.has.folder) {

@@ -37,6 +37,17 @@ class Mods
 		'mobile'
 	];
 
+	/**
+	 * CNE-style mod flags parsed from config/modpack or flags.ini.
+	 * Outer key = mod name, value = raw INI content.
+	 */
+	public static var cneModRawConfigs:Map<String, String> = [];
+
+	/**
+	 * CNE-style state redirects parsed from [StateRedirects] section
+	 */
+	public static var cneStateRedirects:Map<String, String> = [];
+
 	private static var globalMods:Array<String> = [];
 
 	inline public static function getGlobalMods()
@@ -351,5 +362,151 @@ class Mods
 		}
 
 		return [stages, stagePaths];
+	}
+
+	// ============================================================
+	// CNE-style mod configuration support
+	// ============================================================
+
+	/**
+	 * Loads CNE-style mod configuration (config/modpack or flags.ini) for all enabled mods.
+	 * Parses [Common], [Discord], [Flags], and [StateRedirects] sections.
+	 */
+	public static function loadCNEConfigs() {
+		cneModRawConfigs.clear();
+		cneStateRedirects.clear();
+
+		var list = parseList();
+		for (mod in list.enabled) {
+			loadCNEConfigForMod(mod);
+		}
+	}
+
+	/**
+	 * Loads CNE-style mod configuration for a single mod.
+	 * Looks for config/modpack first, then data/config/flags.ini.
+	 */
+	public static function loadCNEConfigForMod(mod:String) {
+		#if MODS_ALLOWED
+		var configPath:String = null;
+		var modpackPath:String = Paths.mods('$mod/config/modpack');
+		if (FileSystem.exists(modpackPath)) {
+			configPath = modpackPath;
+		} else {
+			var flagsPath:String = Paths.mods('$mod/data/config/flags.ini');
+			if (FileSystem.exists(flagsPath)) {
+				configPath = flagsPath;
+			}
+		}
+
+		if (configPath == null) return;
+
+		try {
+			var content:String = File.getContent(configPath);
+			if (content == null || content.length == 0) return;
+
+			cneModRawConfigs.set(mod, content);
+
+			// Extract state redirects from the INI content
+			var currentSection:String = null;
+			for (line in content.split("\n")) {
+				line = line.trim();
+				if (line.length == 0 || line.charAt(0) == "#" || line.charAt(0) == ";") continue;
+
+				if (line.charAt(0) == "[" && line.charAt(line.length - 1) == "]") {
+					currentSection = line.substring(1, line.length - 1).trim();
+					continue;
+				}
+
+				if (currentSection == "StateRedirects" || currentSection == "StateRedirects.force") {
+					var eqIndex = line.indexOf("=");
+					if (eqIndex > 0) {
+						var key = line.substring(0, eqIndex).trim();
+						var value = line.substring(eqIndex + 1).trim();
+						if (currentSection == "StateRedirects.force" || !cneStateRedirects.exists(key))
+							cneStateRedirects.set(key, value);
+					}
+				}
+			}
+		} catch (e) {
+			trace('Error loading CNE config for mod "$mod": $e');
+		}
+		#end
+	}
+
+	/**
+	 * Gets the resolved CNE state redirect for a given state name.
+	 * Returns null if no redirect exists.
+	 */
+	public static function getCNEStateRedirect(stateName:String):String {
+		return cneStateRedirects.get(stateName);
+	}
+
+	/**
+	 * Gets CNE mod flags for a specific mod by parsing the raw INI content.
+	 * Returns a map of "section.key" -> value pairs.
+	 */
+	public static function getCNEFlags(mod:String):Map<String, String> {
+		var raw = cneModRawConfigs.get(mod);
+		if (raw == null) return null;
+		var result:Map<String, String> = [];
+		var currentSection:String = null;
+		for (line in raw.split("\n")) {
+			line = line.trim();
+			if (line.length == 0 || line.charAt(0) == "#" || line.charAt(0) == ";") continue;
+			if (line.charAt(0) == "[" && line.charAt(line.length - 1) == "]") {
+				currentSection = line.substring(1, line.length - 1).trim();
+				continue;
+			}
+			var eqIndex = line.indexOf("=");
+			if (eqIndex > 0) {
+				var key = line.substring(0, eqIndex).trim();
+				var value = line.substring(eqIndex + 1).trim();
+				if ((value.charAt(0) == '"' && value.charAt(value.length - 1) == '"') ||
+					(value.charAt(0) == "'" && value.charAt(value.length - 1) == "'"))
+					value = value.substring(1, value.length - 1);
+				var fullKey = (currentSection != null ? currentSection + "." : "") + key;
+				result.set(fullKey, value);
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Gets a specific CNE flag value across all mods (first match wins).
+	 */
+	public static function getCNEFlag(flagName:String):String {
+		for (mod => raw in cneModRawConfigs) {
+			if (raw == null) continue;
+			var currentSection:String = null;
+			var sectionsToCheck = ["Common", "Flags", ""];
+			var inTargetSection = false;
+
+			for (line in raw.split("\n")) {
+				line = line.trim();
+				if (line.length == 0 || line.charAt(0) == "#" || line.charAt(0) == ";") continue;
+
+				if (line.charAt(0) == "[" && line.charAt(line.length - 1) == "]") {
+					currentSection = line.substring(1, line.length - 1).trim();
+					inTargetSection = sectionsToCheck.contains(currentSection);
+					continue;
+				}
+
+				if (inTargetSection) {
+					var eqIndex = line.indexOf("=");
+					if (eqIndex > 0) {
+						var key = line.substring(0, eqIndex).trim();
+						if (key == flagName) {
+							var value = line.substring(eqIndex + 1).trim();
+							if ((value.charAt(0) == '"' && value.charAt(value.length - 1) == '"') ||
+								(value.charAt(0) == "'" && value.charAt(value.length - 1) == "'"))
+								value = value.substring(1, value.length - 1);
+							return value;
+						}
+					}
+				}
+			}
+		}
+		return null;
 	}
 }

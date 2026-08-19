@@ -205,6 +205,27 @@ class MusicBeatSubstate extends FlxSubState
 				var filePath:String = "substates/" + scriptName;
 				if (customPath != null)
 					filePath = customPath;
+
+				// CNE-style per-mod script loading: data/substates/<name>/LIB_<modName>
+				#if MODS_ALLOWED
+				var modsToCheck:Array<String> = [];
+				if (Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0)
+					modsToCheck.push(Mods.currentModDirectory);
+				for (mod in Mods.getGlobalMods())
+					if (!modsToCheck.contains(mod))
+						modsToCheck.push(mod);
+
+				for (mod in modsToCheck) {
+					var path = Paths.script('data/$filePath/LIB_$mod');
+					var script = Script.create(path);
+					if (script is DummyScript) continue;
+					script.remappedNames.set(script.fileName, '$mod:${script.fileName}');
+					stateScripts.add(script);
+					script.load();
+				}
+				#end
+
+				// Standard Psych-style script loading
 				var path = Paths.script('data/' + filePath);
 				var script = Script.create(path);
 				if (script is DummyScript) {

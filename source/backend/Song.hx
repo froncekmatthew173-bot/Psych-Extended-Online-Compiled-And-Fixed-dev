@@ -178,6 +178,23 @@ class Song
 			} else if (FunkinFileSystem.exists(modSongPath)) {
 				rawJson = FunkinFileSystem.getText(modSongPath).trim();
 			}
+
+			// CNE fallback: try original song name (with spaces/casing) when formatted path fails
+			if (rawJson == null && !isEvent && Mods.currentModDirectory != null && Mods.currentModDirectory.length > 0) {
+				var origSongName:String = (PlayState.SONG != null && PlayState.SONG.song != null && PlayState.SONG.song.length > 0) ? PlayState.SONG.song : songName;
+				if (origSongName != songName) {
+					var origCneChartPath = Paths.modFolders('songs/$origSongName/$chartsFolder.json');
+					var origCneMetaPath = Paths.modFolders('songs/$origSongName/meta-$difficulty.json');
+					if (!FunkinFileSystem.exists(origCneMetaPath))
+						origCneMetaPath = Paths.modFolders('songs/$origSongName/meta.json');
+
+					if (FunkinFileSystem.exists(origCneChartPath)) {
+						var chartData = Json.parse(FunkinFileSystem.getText(origCneChartPath).trim());
+						var metaData = Json.parse(FunkinFileSystem.getText(origCneMetaPath).trim());
+						rawJson = Converters.parseCodenameChart(chartData, metaData, isEvent);
+					}
+				}
+			}
 			#end
 
 			if (rawJson == null) {
@@ -194,6 +211,23 @@ class Song
 					rawJson = Converters.parseCodenameChart(chartData, metaData, isEvent);
 				} else if (FunkinFileSystem.exists(baseSongPath)) {
 					rawJson = FunkinFileSystem.getText(baseSongPath);
+				}
+
+				// CNE fallback for base paths: try original song name
+				if (rawJson == null && !isEvent) {
+					var origSongName:String = (PlayState.SONG != null && PlayState.SONG.song != null && PlayState.SONG.song.length > 0) ? PlayState.SONG.song : songName;
+					if (origSongName != songName) {
+						var origBaseCneChartPath = Paths.getPath('songs/$origSongName/$chartsFolder.json', TEXT, null, true);
+						var origBaseCneMetaPath = Paths.getPath('songs/$origSongName/meta-$difficulty.json', TEXT, null, true);
+						if (!FunkinFileSystem.exists(origBaseCneMetaPath))
+							origBaseCneMetaPath = Paths.getPath('songs/$origSongName/meta.json', TEXT, null, true);
+
+						if (FunkinFileSystem.exists(origBaseCneChartPath)) {
+							var chartData = Json.parse(FunkinFileSystem.getText(origBaseCneChartPath));
+							var metaData = Json.parse(FunkinFileSystem.getText(origBaseCneMetaPath));
+							rawJson = Converters.parseCodenameChart(chartData, metaData, isEvent);
+						}
+					}
 				}
 
 				if (rawJson == null)
